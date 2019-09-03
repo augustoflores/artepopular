@@ -1,0 +1,31 @@
+.objeto, .opcion{
+  transition-duration: 500ms
+}
+.objeto{
+  position: absolute;
+}
+.objeto:hover, .activo{
+  filter: brightness(200%);
+}
+.opcion:hover{
+  color: blue;
+}
+#cuarto{
+  position: absolute;
+  left:0;
+  top:100px;
+}
+#opciones{
+  position: absolute;
+  right: 30px;
+  top:10px:
+}
+#ventana{
+  position: absolute;
+  width:80%;
+  margin: auto;
+  bottom:50px;
+  background-color: aquamarine;
+  display: block;
+  height: 100px;
+}
