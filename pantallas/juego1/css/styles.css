@@ -1,4 +1,38 @@
 body {
-    padding: 0;
-    margin: 0; 
-}
+  padding: 0;
+  margin: 0; }
+
+#juego1 .contenedor {
+  width: 1920px;
+  height: 1080px; }
+#juego1 .cabecera {
+  display: flex;
+  height: 150px;
+  padding: 1px;
+  width: 100%; }
+#juego1 .usrInfo,
+#juego1 .gameNav {
+  flex-basis: 10%; }
+#juego1 .gameDesc {
+  flex-basis: 79%; }
+#juego1 .gameboardWrpr {
+  display: flex; }
+#juego1 .imgChorro {
+  flex-basis: 463px;
+  overflow: hidden; }
+  #juego1 .imgChorro img {
+    transform: rotate(50deg); }
+#juego1 .gameBoard {
+  flex-basis: 1200px; }
+#juego1 .jarrones {
+  flex-basis: 239px; }
+  #juego1 .jarrones img {
+    height: 500px; }
+#juego1 .gameActionWrp {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 1200px;
+  height: 100%; }
+
+/*# sourceMappingURL=styles.css.map */
