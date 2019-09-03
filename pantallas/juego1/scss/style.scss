@@ -1,0 +1,49 @@
+body {
+    padding: 0;
+    margin: 0; 
+}
+#juego1 {
+    .contenedor {
+        width: 1920px;
+        height: 1080px;
+    }
+    .cabecera {
+        display: flex;
+        height: 150px;
+        padding: 1px;
+        width: 100%;
+    }
+    .usrInfo,
+    .gameNav {
+        flex-basis: 10%;
+    }
+    .gameDesc {
+        flex-basis: 79%;
+    }
+    .gameboardWrpr {
+        display: flex;
+    }
+    .imgChorro {
+        flex-basis: 463px;
+        overflow: hidden;
+        img {
+            transform: rotate(50deg);
+        }
+    }
+    .gameBoard {
+        flex-basis: 1200px;
+    }
+    .jarrones {
+        flex-basis: 239px;
+        img {
+            height: 500px;
+        }
+    }
+    .gameActionWrp {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 1200px;
+        height: 100%;
+    }
+}
