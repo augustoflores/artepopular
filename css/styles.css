@@ -126,10 +126,10 @@ iframe {
   background: rgba(255,255,255,.3);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  height: 100px;
+  height: 150px;
   padding: 20px;
-  margin: 0 60px;
-  border: solid thick cyan;
+  margin: 0 20px;
+  border: solid 3px cyan;
   border-bottom: none;
 }
 .globotexto {
@@ -153,4 +153,11 @@ iframe {
 }
 #next{
   right: 5px;
+}
+.personaje{
+  float: left;
+  margin-right: 20px;
+}
+.personaje img{
+  width:100px;
 }
