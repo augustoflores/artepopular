@@ -1,4 +1,8 @@
 body{
-  color:red;
-  background: rgba(255,255,255,.5);
+  overflow: hidden;
+
+}
+img{
+  width: 100%;
+  margin: auto;
 }
