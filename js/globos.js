@@ -2,7 +2,7 @@ $(function () {
   let indexglobo = -1;
   let arrGlobos = $(".globostexto .globotexto");
   let arrImages = $(".imagecontainer .image");
-  $(".next").click(function () {
+  $(".globonext").click(function () {
     if (indexglobo < (arrGlobos.length - 1)) {
       indexglobo++;
       $(".globostexto .globotexto").hide(0);
@@ -13,5 +13,5 @@ $(function () {
     }
     window.location.href = '../../pantallas/'+$("body").data("nextscreen")+'/index.html';
   });
-  $(".next").click();
+  $(".globonext").click();
 });

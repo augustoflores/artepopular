@@ -1,3 +1,4 @@
+/*NUNITO*/
 @font-face {
   font-family: 'Nunito';
   src: url('../utils/nunito/Nunito-Black.ttf') format('truetype');
@@ -82,8 +83,18 @@
   font-weight: 700;
   font-style: italic;
 }
-
-
+/*FIN NUNITO*/
+/*COLORES FUENTE*/
+.font-azul{
+  color: #00d7fc;
+}
+.font-amarilla{
+  color: #ffc33e;
+}
+.font-verde{
+  color: #07dd00;
+}
+/*FIN COLORES FUENTE*/
 
 html{
   width: 100%;
@@ -91,6 +102,7 @@ html{
 }
 *{
   box-sizing: border-box;
+  transition: .5s;
 }
 body {
   font-family: 'Nunito', sans-serif;
@@ -123,10 +135,11 @@ iframe {
   position: absolute;
 }
 .areatexto {
-  background: rgba(255,255,255,.3);
+  /*background: rgba(255,255,255,.2);*/
+  background-color: #011c3a;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  height: 150px;
+  height: 277px;
   padding: 20px;
   margin: 0 20px;
   border: solid 3px cyan;
@@ -135,10 +148,14 @@ iframe {
 .globotexto {
   width: 85%;
 }
-.next {
+.globonext {
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.globonext:hover, .globonext:active, .globonext:focus{
+  transform: translateX(10px)
 }
 /*FIN ESTILOS CUADROS DE TEXTO */
 .nav {
@@ -159,5 +176,6 @@ iframe {
   margin-right: 20px;
 }
 .personaje img{
-  width:100px;
+  width: 234px;
+  float: left;
 }
