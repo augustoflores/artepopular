@@ -2,6 +2,9 @@ body {
   padding: 0;
   margin: 0; }
 
+img {
+  display: block; }
+
 #juego1 .contenedor {
   width: 1920px;
   height: 1080px; }
@@ -18,7 +21,7 @@ body {
   border-right: #ff1743 2px solid;
   border-left: #ff1743 2px solid;
   display: block;
-  height: 85px;
+  height: 105px;
   width: 330px;
   padding: 20px 30px;
   position: absolute;
@@ -31,9 +34,9 @@ body {
     margin: 0; }
   #juego1 .gameDesc h3 {
     line-height: 1em;
-    margin: 12px 0 0;
     font-size: 23px;
-    color: #ddd; }
+    color: #ddd;
+    margin: 0; }
 #juego1 .gameActionWrp {
   height: 626px;
   width: 100%; }
@@ -48,7 +51,23 @@ body {
 #juego1 .gameBoard {
   display: inline-block;
   vertical-align: top;
-  width: 1000px; }
+  width: 1100px; }
+#juego1 .gameboardWrpr {
+  width: 1920px; }
+#juego1 .gameinst {
+  padding-top: 10px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-right: solid 2px #00d7fc;
+  border-left: solid 2px #00d7fc;
+  border-top: solid 2px #00d7fc;
+  margin: 0 auto;
+  display: flex;
+  width: 1820px; }
+  #juego1 .gameinst .elenaimg {
+    flex-basis: 320px; }
+  #juego1 .gameinst .instTxt {
+    flex-basis: 1500px; }
 #juego1 .jarrones {
   display: inline-block;
   vertical-align: top;

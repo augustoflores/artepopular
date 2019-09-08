@@ -6,6 +6,9 @@ body {
     padding: 0;
     margin: 0; 
 }
+img {
+    display: block;
+}
 #juego1 {
     .contenedor {
         width: 1920px;
@@ -25,7 +28,7 @@ body {
         border-right: $rojo 2px solid;
         border-left: $rojo 2px solid;
         display: block;
-        height: 85px;
+        height: 105px;
         width: 330px;
         padding: 20px 30px;
         position: absolute;
@@ -39,9 +42,9 @@ body {
         }
         h3 {
             line-height: 1em;
-            margin: 12px 0 0;
             font-size: 23px;
             color: #ddd;
+            margin: 0;
         }
     }
     .gameActionWrp {
@@ -62,7 +65,27 @@ body {
     .gameBoard {
         display: inline-block;
         vertical-align: top;
-        width: 1000px;
+        width: 1100px;
+    }
+    .gameboardWrpr {
+        width: 1920px;
+    }
+    .gameinst {
+        padding-top: 10px;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        border-right: solid 2px $azul;
+        border-left: solid 2px $azul;
+        border-top: solid 2px $azul;
+        margin: 0 auto;
+        display: flex;
+        width: 1820px;
+        .elenaimg {
+            flex-basis: 320px; 
+        }
+        .instTxt {
+            flex-basis: 1500px
+        }
     }
     .jarrones {
         display: inline-block;
