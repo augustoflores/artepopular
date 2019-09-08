@@ -94,6 +94,9 @@
 .font-verde{
   color: #07dd00;
 }
+.font-rosa{
+  color: #ff1743;
+}
 /*FIN COLORES FUENTE*/
 
 html{
@@ -106,6 +109,9 @@ html{
 }
 body {
   font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+
 
   /*
   background: -moz-linear-gradient(270deg, rgba(6, 46, 72, 1) 0%, rgba(0, 9, 16, 1) 100%);
@@ -135,18 +141,46 @@ iframe {
   position: absolute;
 }
 .areatexto {
-  /*background: rgba(255,255,255,.2);*/
+  /* background: rgba(255,255,255,.2); */
   background-color: #011c3a;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   height: 277px;
   padding: 20px;
-  margin: 0 20px;
+  margin: 0px 48px;
   border: solid 3px cyan;
   border-bottom: none;
 }
 .globotexto {
   width: 85%;
+}
+.bordertexto {
+  background-color:black;
+  color: #07dd00;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  border: solid 2px;
+  z-index: 40;
+  width: 490px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-130%);
+}
+.bordertextoright {
+  background-color: #000d2d;
+  color: #00d7fc;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 23px;
+  text-align: center;
+  border: solid 2px;
+  z-index: 40;
+  width: 410px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-163%,-130%);
 }
 .globonext {
   position: absolute;
@@ -157,16 +191,41 @@ iframe {
 .globonext:hover, .globonext:active, .globonext:focus{
   transform: translateX(10px)
 }
+
 /*FIN ESTILOS CUADROS DE TEXTO */
+.tituloescena {
+  width: 481px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border: solid 2px #ff1743;
+  border-top: none;
+  position: absolute;
+  left: 48px;
+  padding: 10px 0 20px 20px;
+}
+.escenanumero {
+  font-size: 42px;
+  font-weight: bolder;
+  color: #00d7fc;
+}
+.nombreescena {
+  font-size: 46px;
+  font-weight: bold;
+  color: #ff1743;
+}
+
 .nav {
   position: absolute;
   top: 5px;
-  background: black;
+  background: rgba(0,0,0,.7);
   padding: 5px;
   cursor: pointer;
+  width: 40px;
+  text-align: center;
+  border-radius: 10px;
 }
 #prev{
-  right: 30px;
+  right: 55px;
 }
 #next{
   right: 5px;
@@ -179,3 +238,80 @@ iframe {
   width: 234px;
   float: left;
 }
+/**/
+.containerbotones {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items:center;
+  bottom: 470px;
+  padding: 0 300px;
+  justify-content: space-around;
+}
+.circulo {
+  border-radius: 50%;
+  background-color: #000c22;
+  color: #1e2124;
+  width: 17vh;
+  height: 17vh;
+  text-align: center;
+  border: solid 6px white;
+  position: relative;
+  font-size: 139px;
+}
+.circulo .pie {
+  color: antiquewhite;
+  /* transform: translateY(30px); */
+  font-size: 30px;
+  transform: translate(-50%, 140%);
+}
+.circulo .linea1{
+  color: #ffc33e;
+}
+.circulo .linea2{
+  color: #ff1743;
+}
+.circulo .linea2{
+
+}
+.circulo p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circulo.cian {
+  border: solid 6px #00d7fc;
+  background-color: #000c22;
+}
+.circulo.verde {
+  border: solid 6px #07dd00;
+  background-color: #050b06;
+}
+.circulo.amarillo {
+  border: solid 6px #ffc33e;
+  background-color: #171309;
+}
+.circulo.magenta {
+  border: solid 6px #d221ff;
+  background-color: #1b0d1f;
+}
+.circulo.rojo {
+  background-color: #1b0d1f;
+  border: solid 6px #ff1743;
+}
+.circulo.icono {
+  font-size: 0;
+}
+.outerglow{
+  -webkit-box-shadow: 0px 0px 12px 5px rgba(255,255,255,0.78);
+  -moz-box-shadow: 0px 0px 12px 5px rgba(255,255,255,0.78);
+  box-shadow: 0px 0px 12px 5px rgba(255,255,255,0.78);
+}
+.circulo:hover{
+  -webkit-box-shadow: 0px 0px 12px 5px rgba(255,255,255,0.5);
+  -moz-box-shadow: 0px 0px 12px 5px rgba(255,255,255,0.5);
+  box-shadow: 0px 0px 12px 5px rgba(255,255,255,0.5);
+}
+/**/
