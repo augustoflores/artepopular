@@ -51,23 +51,26 @@ img {
 #juego1 .gameBoard {
   display: inline-block;
   vertical-align: top;
-  width: 1100px; }
+  width: 900px; }
 #juego1 .gameboardWrpr {
-  width: 1920px; }
+  margin: 0 auto;
+  height: 640px;
+  width: 1620px; }
 #juego1 .gameinst {
-  padding-top: 10px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   border-right: solid 2px #00d7fc;
   border-left: solid 2px #00d7fc;
   border-top: solid 2px #00d7fc;
+  padding-top: 10px;
   margin: 0 auto;
   display: flex;
   width: 1820px; }
   #juego1 .gameinst .elenaimg {
     flex-basis: 320px; }
   #juego1 .gameinst .instTxt {
-    flex-basis: 1500px; }
+    flex-basis: 1500px;
+    font-size: 23px; }
 #juego1 .jarrones {
   display: inline-block;
   vertical-align: top;
@@ -79,7 +82,8 @@ img {
 #juego1 .gameActionWrp {
   justify-content: center;
   align-items: center;
-  width: 1200px;
-  height: 100%; }
+  margin: 0 auto;
+  width: 620px;
+  height: 640px; }
 
 /*# sourceMappingURL=style.css.map */

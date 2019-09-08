@@ -65,18 +65,20 @@ img {
     .gameBoard {
         display: inline-block;
         vertical-align: top;
-        width: 1100px;
+        width: 900px;
     }
     .gameboardWrpr {
-        width: 1920px;
+        margin: 0 auto;
+        height: 640px;
+        width: 1620px;
     }
     .gameinst {
-        padding-top: 10px;
         border-top-right-radius: 30px;
         border-top-left-radius: 30px;
         border-right: solid 2px $azul;
         border-left: solid 2px $azul;
         border-top: solid 2px $azul;
+        padding-top: 10px;
         margin: 0 auto;
         display: flex;
         width: 1820px;
@@ -84,7 +86,8 @@ img {
             flex-basis: 320px; 
         }
         .instTxt {
-            flex-basis: 1500px
+            flex-basis: 1500px;
+            font-size: 23px;
         }
     }
     .jarrones {
@@ -100,7 +103,8 @@ img {
     .gameActionWrp {
         justify-content: center;
         align-items: center;
-        width: 1200px;
-        height: 100%;
+        margin: 0 auto;
+        width: 620px;
+        height: 640px;
     }
 }
