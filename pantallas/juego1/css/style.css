@@ -1,0 +1,66 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+#juego1 .contenedor {
+  width: 1920px;
+  height: 1080px; }
+#juego1 .cabecera {
+  position: relative;
+  display: block;
+  height: 150px;
+  padding: 1px;
+  width: 100%; }
+#juego1 .gameDesc {
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom: #ff1743 2px solid;
+  border-right: #ff1743 2px solid;
+  border-left: #ff1743 2px solid;
+  display: block;
+  height: 85px;
+  width: 330px;
+  padding: 20px 30px;
+  position: absolute;
+  left: 30px; }
+  #juego1 .gameDesc h2 {
+    text-transform: uppercase;
+    line-height: 1.2em;
+    color: #ffc33e;
+    font-size: 30px;
+    margin: 0; }
+  #juego1 .gameDesc h3 {
+    line-height: 1em;
+    margin: 12px 0 0;
+    font-size: 23px;
+    color: #ddd; }
+#juego1 .gameActionWrp {
+  height: 626px;
+  width: 100%; }
+  #juego1 .gameActionWrp .row {
+    margin: 0 auto;
+    display: flex;
+    width: 600px; }
+  #juego1 .gameActionWrp .col {
+    flex-basis: 150px; }
+    #juego1 .gameActionWrp .col img {
+      transition: transform 0.3s ease-in-out; }
+#juego1 .gameBoard {
+  display: inline-block;
+  vertical-align: top;
+  width: 1000px; }
+#juego1 .jarrones {
+  display: inline-block;
+  vertical-align: top;
+  width: 350px; }
+  #juego1 .jarrones.dos img {
+    transform: scaleX(-1) rotate(2deg);
+    max-width: 100%;
+    width: 100%; }
+#juego1 .gameActionWrp {
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 100%; }
+
+/*# sourceMappingURL=style.css.map */

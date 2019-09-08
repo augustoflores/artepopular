@@ -1,3 +1,7 @@
+$rojo: #ff1743;
+$amarillo: #ffc33e;
+$grisClaro: #ddd;
+$azul: #00d7fc;
 body {
     padding: 0;
     margin: 0; 
@@ -8,41 +12,71 @@ body {
         height: 1080px;
     }
     .cabecera {
-        display: flex;
+        position: relative;
+        display: block;
         height: 150px;
         padding: 1px;
         width: 100%;
     }
-    .usrInfo,
-    .gameNav {
-        flex-basis: 10%;
-    }
     .gameDesc {
-        flex-basis: 79%;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom: $rojo 2px solid;
+        border-right: $rojo 2px solid;
+        border-left: $rojo 2px solid;
+        display: block;
+        height: 85px;
+        width: 330px;
+        padding: 20px 30px;
+        position: absolute;
+        left: 30px;
+        h2 {
+            text-transform: uppercase;
+            line-height: 1.2em;
+            color: $amarillo;
+            font-size: 30px;
+            margin: 0;
+        }
+        h3 {
+            line-height: 1em;
+            margin: 12px 0 0;
+            font-size: 23px;
+            color: #ddd;
+        }
     }
-    .gameboardWrpr {
-        display: flex;
-    }
-    .imgChorro {
-        flex-basis: 463px;
-        overflow: hidden;
-        img {
-            transform: rotate(50deg);
+    .gameActionWrp {
+        height: 626px;
+        width: 100%;
+        .row {
+            margin: 0 auto;
+            display: flex;
+            width: 600px;
+        }
+        .col {
+            flex-basis: 150px;
+            img {
+                transition: transform 0.3s ease-in-out;
+            }
         }
     }
     .gameBoard {
-        flex-basis: 1200px;
+        display: inline-block;
+        vertical-align: top;
+        width: 1000px;
     }
     .jarrones {
-        flex-basis: 239px;
-        img {
-            height: 500px;
+        display: inline-block;
+        vertical-align: top;
+        width: 350px;
+        &.dos img {
+            transform: scaleX(-1) rotate(2deg);
+            max-width: 100%;
+            width: 100%;
         }
     }
     .gameActionWrp {
         justify-content: center;
         align-items: center;
-        display: flex;
         width: 1200px;
         height: 100%;
     }
