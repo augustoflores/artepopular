@@ -7,8 +7,8 @@ $(function () {
       indexglobo++;
       $(".globostexto .globotexto").hide(0);
       $(".imagecontainer .image").hide(0);
-      $(arrGlobos[indexglobo]).fadeIn();
-      $(arrImages[indexglobo]).fadeIn();
+      $(arrGlobos[indexglobo]).fadeIn(0);
+      $(arrImages[indexglobo]).fadeIn(0);
       return true;
     }
     window.location.href = '../../pantallas/'+$("body").data("nextscreen")+'/index.html';
