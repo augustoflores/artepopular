@@ -4,13 +4,13 @@ var arrPages = [
   "pantalla1",
   "pantalla2",
   "escena1-mapa",
-  "escena1-taller"
+  "escena1-taller",
+  "juego1"
 ]
 $(function () {
   //$('iframe').on('load', function (event) {
   //console.log(document.getElementById("contentframe").contentWindow.location.href);
   //});
-
   $("#prev").click(function () {
     currentpageindex--;
     newSrc = './pantallas/' + arrPages[currentpageindex] + '/index.html';
