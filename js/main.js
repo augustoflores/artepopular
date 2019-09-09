@@ -1,11 +1,17 @@
 var url = ""
 var currentpageindex = 0;
 var arrPages = [
-  "pantalla1",
-  "pantalla2",
-  "escena1-mapa",
-  "escena1-taller",
-  "juego1"
+  "home",
+  "intro",
+  "escena1",
+  //"escena1-taller",
+  //"juego1",
+  //"escena1-conclusion",
+  "escena2",
+  //"escena2-conclusion",
+  "escena3",
+  "escena4",
+  "escena5"
 ]
 $(function () {
   //$('iframe').on('load', function (event) {
@@ -24,10 +30,11 @@ $(function () {
   })
 });
 
-function urlFromChild(newurl) {
+function urlFromChild(newurl,parentscreen) {
   pathSplit = newurl.split("/");
   currentScreen = pathSplit[pathSplit.length - 2];
-  currentpagearrayindex = arrPages.indexOf(currentScreen)
-  currentpageindex = currentpagearrayindex;
   window.location.hash = currentScreen;
+  if(parentscreen) currentScreen=parentscreen;
+  currentpagearrayindex = arrPages.indexOf(currentScreen);
+  currentpageindex = currentpagearrayindex;
 }
