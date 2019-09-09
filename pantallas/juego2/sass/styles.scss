@@ -37,6 +37,62 @@ body {
         margin: 0 auto; 
         width: 1620px;
         height: 626px;
+        .navGame {
+            width: 100%;
+            height: 260px;
+            ul {
+                justify-content: center;
+                list-style: none;
+                display: flex;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                li {
+                    flex-basis: auto;
+                    padding: 0 15px;
+                    margin: 0 5px;
+                    color: $rojo;
+                    cursor: pointer;
+                    &:hover {
+                        color: $verde;
+                    }
+                    &.active {
+                        color: $verde;
+                    }
+                }
+            }
+        }
+        .submenus {
+            padding-top: 10px;
+        }
+        #menuCabezas {
+            display: flex;
+            justify-content: center;
+            .btn {
+                position: relative;
+                flex-basis: 180px;
+                margin: 0 10px;
+                height: 160px;
+                &::before {
+                    border-radius: 80px;
+                    border: solid $verde 2px;
+                    position: absolute;
+                    display: block;
+                    height: 150px;
+                    width: 150px;
+                    content: "";
+                    z-index: 5;
+                    left: 0;
+                    top: 0;
+                }
+                img {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    z-index: 10;
+                }
+            }
+        }
     }
     .footer {
         border-top: $verde 2px solid;
