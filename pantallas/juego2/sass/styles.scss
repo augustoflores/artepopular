@@ -1,0 +1,120 @@
+$verde: #07dd00;
+$amarillo: #ffc33e;
+$rojo: #ff1743;
+$bco: #fefefe;
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#juego2 {
+    .rectnguloTop {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border-bottom: solid 2px $verde;
+        border-right: solid 2px $verde;
+        border-left: solid 2px $verde;
+        padding-left: 25px;
+        position: relative;
+        height: 128px;
+        width: 441px;
+        left: 50px;
+        h1 {
+            text-transform: uppercase;
+            padding-top: 20px;
+            color: $amarillo;
+            font-size: 42px;
+            margin: 0;
+        }
+        h2 {
+            font-size: 22px;
+            color: $bco;
+            margin: 0;
+        }
+    }
+    .gameSceneCont {
+        margin: 0 auto; 
+        width: 1620px;
+        height: 626px;
+        .navGame {
+            width: 100%;
+            height: 260px;
+            ul {
+                justify-content: center;
+                list-style: none;
+                display: flex;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                li {
+                    flex-basis: auto;
+                    padding: 0 15px;
+                    margin: 0 5px;
+                    color: $rojo;
+                    cursor: pointer;
+                    &:hover {
+                        color: $verde;
+                    }
+                    &.active {
+                        color: $verde;
+                    }
+                }
+            }
+        }
+        .submenus {
+            padding-top: 10px;
+        }
+        #menuCabezas {
+            display: flex;
+            justify-content: center;
+            .btn {
+                position: relative;
+                flex-basis: 180px;
+                margin: 0 10px;
+                height: 160px;
+                &::before {
+                    border-radius: 80px;
+                    border: solid $verde 2px;
+                    position: absolute;
+                    display: block;
+                    height: 150px;
+                    width: 150px;
+                    content: "";
+                    z-index: 5;
+                    left: 0;
+                    top: 0;
+                }
+                img {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    z-index: 10;
+                }
+            }
+        }
+    }
+    .footer {
+        border-top: $verde 2px solid;
+        border-right: $verde 2px solid;
+        border-left:  $verde 2px solid;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        margin: 0 auto;
+        width: 1840px;
+        height: 289px;
+        display: flex;
+        .pedro {
+            flex-basis: 150px;
+        }
+        .txtFooter {
+            flex-basis: 1535px;
+            font-size: 20px;
+            color: $bco;
+        }
+        .footerRight {
+            flex-basis: 300px;
+        }
+    }
+
+}

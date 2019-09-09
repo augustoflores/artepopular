@@ -6,6 +6,9 @@ body {
     padding: 0;
     margin: 0; 
 }
+img {
+    display: block;
+}
 #juego1 {
     .contenedor {
         width: 1920px;
@@ -24,11 +27,11 @@ body {
         border-bottom: $rojo 2px solid;
         border-right: $rojo 2px solid;
         border-left: $rojo 2px solid;
-        display: block;
-        height: 85px;
-        width: 330px;
-        padding: 20px 30px;
+        padding: 20px 30px 0px;
         position: absolute;
+        display: block;
+        height: 128px;
+        width: 440px;
         left: 30px;
         h2 {
             text-transform: uppercase;
@@ -39,9 +42,9 @@ body {
         }
         h3 {
             line-height: 1em;
-            margin: 12px 0 0;
             font-size: 23px;
             color: #ddd;
+            margin: 0;
         }
     }
     .gameActionWrp {
@@ -62,7 +65,30 @@ body {
     .gameBoard {
         display: inline-block;
         vertical-align: top;
-        width: 1000px;
+        width: 900px;
+    }
+    .gameboardWrpr {
+        margin: 0 auto;
+        height: 640px;
+        width: 1620px;
+    }
+    .gameinst {
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        border-right: solid 2px $azul;
+        border-left: solid 2px $azul;
+        border-top: solid 2px $azul;
+        padding-top: 10px;
+        margin: 0 auto;
+        display: flex;
+        width: 1820px;
+        .elenaimg {
+            flex-basis: 320px; 
+        }
+        .instTxt {
+            flex-basis: 1500px;
+            font-size: 23px;
+        }
     }
     .jarrones {
         display: inline-block;
@@ -77,7 +103,8 @@ body {
     .gameActionWrp {
         justify-content: center;
         align-items: center;
-        width: 1200px;
-        height: 100%;
+        margin: 0 auto;
+        width: 620px;
+        height: 640px;
     }
 }

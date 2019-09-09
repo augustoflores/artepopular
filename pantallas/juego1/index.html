@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,34 +16,34 @@
         </div>
         <div class="gameboardWrpr">
             <div class="jarrones">
-                <img src="img/cantaros.png" alt="agua">
+                <img src="img/chorro.gif" alt="agua">
             </div>
             <div class="gameBoard">
                 <div class="gameActionWrp">
                     <div class="nivel">
-                        <div class="A row">
-                            <div class="col" id="a1"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="a2"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="a3"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="a4"><img src="img/recta-bca.png"></div>
+                        <div id="A" class="row">
+                            <div class="col"><img src="img/circulo-rojo.png" id="a1" data-row="A" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="a2" data-row="A" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="a3" data-row="A" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="a4" data-row="A" data-grado="0"></div>
                         </div>
-                        <div class="B row">
-                            <div class="col" id="b1"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="b2"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="b3"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="b4"><img src="img/recta-bca.png"></div>
+                        <div id="B" class="row">
+                            <div class="col"><img src="img/circulo-rojo.png" id="b1" data-row="B" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="b2" data-row="B" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="b3" data-row="B" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="b4" data-row="B" data-grado="0"></div>
                         </div>
-                        <div class="C row">
-                            <div class="col" id="c1"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="c2"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="c3"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="c4"><img src="img/recta-bca.png"></div>
+                        <div id="C" class="row">
+                            <div class="col"><img src="img/circulo-rojo.png" id="c1" data-row="C" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="c2" data-row="C" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="c3" data-row="C" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="c4" data-row="C" data-grado="0"></div>
                         </div>
-                        <div class="D row">
-                            <div class="col" id="c1"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="c2"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="c3"><img src="img/recta-bca.png"></div>
-                            <div class="col" id="c4"><img src="img/recta-bca.png"></div>
+                        <div id="D" class="row">
+                            <div class="col"><img src="img/circulo-rojo.png" id="c1" data-row="D" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="c2" data-row="D" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="c3" data-row="D" data-grado="0"></div>
+                            <div class="col"><img src="img/circulo-rojo.png" id="c4" data-row="D" data-grado="0"></div>
                         </div>
                     </div>
                 </div>
@@ -51,9 +52,19 @@
                 <img src="img/cantaros.png" alt="Cantaros">
             </div>
         </div>
-        <div class="gameinst"></div>
+        <div class="gameinst">
+            <div class="elenaimg">
+                <img src="img/elena.png">
+            </div>
+            <div class="instTxt">
+                <p>Vamos a poner a prueba tus habilidades, selecciona entre la figuras que consideres son de  y selecciónalas. </p>
+                <p>Una vez que las tenga, apila los cántaros en orden para poder llenarlos</p>
+                <p>Toca las piezas para alinearlas y hacer que el chorro,Alinea las piezas para que fluya el chorro y llene los cántaros</p>
+            </div>
+        </div>
 
     </div>
+    <script src="../../utils/js/jquery-3.4.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
