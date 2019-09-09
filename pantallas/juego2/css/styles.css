@@ -1,0 +1,49 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+#juego2 .rectnguloTop {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom: solid 2px #07dd00;
+  border-right: solid 2px #07dd00;
+  border-left: solid 2px #07dd00;
+  padding-left: 25px;
+  position: relative;
+  height: 128px;
+  width: 441px;
+  left: 50px; }
+  #juego2 .rectnguloTop h1 {
+    text-transform: uppercase;
+    padding-top: 20px;
+    color: #ffc33e;
+    font-size: 42px;
+    margin: 0; }
+  #juego2 .rectnguloTop h2 {
+    font-size: 22px;
+    color: #fefefe;
+    margin: 0; }
+#juego2 .gameSceneCont {
+  margin: 0 auto;
+  width: 1620px;
+  height: 626px; }
+#juego2 .footer {
+  border-top: #07dd00 2px solid;
+  border-right: #07dd00 2px solid;
+  border-left: #07dd00 2px solid;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  margin: 0 auto;
+  width: 1840px;
+  height: 289px;
+  display: flex; }
+  #juego2 .footer .pedro {
+    flex-basis: 150px; }
+  #juego2 .footer .txtFooter {
+    flex-basis: 1535px;
+    font-size: 20px;
+    color: #fefefe; }
+  #juego2 .footer .footerRight {
+    flex-basis: 300px; }
+
+/*# sourceMappingURL=styles.css.map */
