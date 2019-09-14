@@ -24,8 +24,8 @@
   position: absolute;
   width:80%;
   margin: auto;
-  bottom:50px;
+  bottom:0px;
   background-color: aquamarine;
-  display: block;
-  height: 100px;
+  display: flex;
+  height: auto;
 }

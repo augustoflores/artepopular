@@ -112,7 +112,7 @@ html{
 }
 body {
   font-family: 'Nunito', sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 25px;
 
 
@@ -213,9 +213,9 @@ iframe {
   border-bottom-right-radius: 24px;
   border: solid 2px #ff1743;
   border-top: none;
-  position: absolute;
-  left: 48px;
-  padding: 10px 0 20px 20px;
+  text-align: center;
+  margin: auto;
+  padding: 5px;
 }
 .escena2 .tituloescena {
   width: 481px;
@@ -230,12 +230,12 @@ iframe {
 .escenanumero {
   font-size: 42px;
   font-weight: bolder;
-  color: #00d7fc;
+  color: #ff1743;
 }
 .nombreescena {
   font-size: 46px;
   font-weight: bold;
-  color: #ff1743;
+  color: white;
 }
 
 .nav {

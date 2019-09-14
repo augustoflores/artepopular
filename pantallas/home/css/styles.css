@@ -1,7 +1,47 @@
 body{
   overflow: hidden;
-  text-align: center
+  text-align: center;
+  margin: 100px 0;
+}
+a{
+  text-decoration: none;
 }
 img{
   margin: auto;
+}
+.titulo{
+  width: 100%;
+  font-family: Nunito;
+  font-size: 82px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.02;
+  letter-spacing: 1.48px;
+  text-align: center;
+  color: #ff1743;
+}
+.subtitulo{
+    font-family: Nunito;
+    width:100%;
+    font-size: 34px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.21;
+    letter-spacing: 0.85px;
+    text-align: center;
+    color: #f2ca17;
+}
+.iniciar{
+    width: 100%;
+    font-family: Nunito;
+    font-size: 34px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00d7fc;
 }
