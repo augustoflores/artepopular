@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="../../utils/css/animate.css">
+  <script src="../../utils/js/currentpage.js"></script>
+  <script src="../../utils/js/jquery-3.4.1.min.js"></script>
+  <script src="../../js/globos.js"></script>
+  <!--memorama-->
+  <link href="./css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+
+<!--ipt type="text/javascript" src="./ui/frontend/scripts/jquery.min.js"></script>-->
+<script type="text/javascript" src="./js/jquery.ui.min.js"></script>
+<script type="text/javascript">
+
+  $( document ).ready(function() {
+
+    var card_01= {src:"Grupo440.png",title:"1"};
+    var card_02= {src:"Grupo441.png",title:"2"};
+    var card_03= {src:"Grupo442.png",title:"3"};
+    var card_04= {src:"Grupo443.png",title:"4"};
+    var card_05= {src:"Grupo444.png",title:"5"};
+    var card_06= {src:"piiedra@1,25x.png",title:"6"};
+    var card_07= {src:"piiedra@1,25x.png",title:"7"};
+    var card_08= {src:"piiedra@1,25x.png",title:"8"};
+    var card_09= {src:"piiedra@1,25x.png",title:"9"};
+
+    var array1 = [card_01,card_02,card_03,card_04,card_05,card_06,card_07,card_08,card_09];
+    
+    function aleatorio(variable){
+      var long = variable.length;
+      for (var i = 0; i < long; i++) {
+        var aleatorio = Math.floor(Math.random() * long);
+        var temp = variable[i]; 
+        variable[i] = variable[aleatorio];
+        variable[aleatorio] = temp;
+      }
+      return    (variable);
+    }
+
+    var cards = aleatorio(array1).concat(aleatorio(array1)); 
+
+    console.log(cards);
+
+    for (var item = 0; item < cards.length; item++) {
+      $('#container').append('<div class="wrapper-item floatLeft" id="item'+item+'"><div class="item floatLeft off active"><img src="./img/'+cards[item].src+'" title="'+cards[item].title+'"/></div></div>');
+    }
+
+    /*for (var i = 0; i < 4; i++) {
+      $('#viewcards').append('<div class="floatLeft"><img src="./img/'+array1[i].src+'" title=""/></div></div>');
+    }*/
+  });
+</script>
+
+<script type="text/javascript" src="./js/main.js"></script>
+  <!-- end Memorama-->
+</head>
+
+<body data-nextscreen="nextscreen">
+  <div id="juego5">
+    <div class="cabecera">
+
+        <div class="tituloescena  animated fadeInDown faster">
+          <div class="escenanumero"></div>
+          <div class="nombreescena">RETO FINAL</div>
+        </div>
+        
+    </div>
+
+    <div class="gameSceneCont">
+
+      <div id="instructions" class="title hidden">Completa el memorama hasta encontrar las 5 piezas ocultas.</div>
+      <div id="mainbox"  class="">
+
+    <div id="viewcards" class=""> 
+         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo440.png" title=""/></div>
+         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo441.png" title=""/></div>
+         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo442.png" title=""/></div>
+         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo443.png" title=""/></div>
+         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo444.png" title=""/></div>
+         <div stile="clear: both;"></div>
+    </div>
+    
+    <!--Memorama-->
+    
+
+    
+
+
+
+    
+    
+        <div id="msg-game-over"class=""></div>
+        <div id="btn-comenzar" class="bordertexto">Comenzar</div>
+        <div id="container" class="hidden memorama floatLeft"> 
+         
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--end Memorama.-->
+
+    <!---->
+
+    <!--<div class="gameinst">-->
+        <div class="containertexto">
+          <div class="areatexto animated fadeInUp faster">
+            <div class="personaje">
+            <img src="./img/josealfredo.png">
+          </div>
+          <div class="globostexto">
+            <div class="globotexto">
+              <p>¿Conoces el nombre estos utensilios? 
+              </p>
+              <p>
+                 Hay <strong>metates</strong> y los <strong>molcajetes</strong> de roca volcánica, forman parte del arte popular hecho en piedra. También tenemos un hermoso <strong>baúl de madera tallado</strong> y un <strong>xoloitzcuintle de piedra<strong> que puede adornar felizmente tu habitación...
+              </p>
+
+            </div>
+            <div class="globotexto">
+              <p>Ayuda a José Alfredo a tallar las piezas para descubrir su forma y organizarlas en pares. Talla por turnos pares e intenta encontrar todas las piezas ocultas.
+            </p>
+
+              <p><span class="textRed">Talla dos piedras</span> por turno y encuentra los pares en el menor número de turnos posible.</p>
+
+            </div>
+            <div class="globotexto">
+              <p><span class="textRed">¡Felicidades lo lograste!</span> Has ganado la insignia:
+<strong>Objeto de Piedra</strong></p>
+<br>
+<p>De esta manera también vives el arte popular, vistiéndolo con gran orgullo.
+
+</p>
+            </div>
+
+          </div>
+          <img src="./img/adelante.png" class="globonext hidden">
+        </div>
+      </div>
+    <!--</div>  -->
+  </div>  
+</body>
+
+</html>

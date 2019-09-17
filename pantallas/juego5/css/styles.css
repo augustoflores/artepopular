@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding:0;
+	margin:0;
+}
+/*
+body{
+	background:url(../img/sky.gif) repeat-x #DCF5F8;
+}
+h1{
+	color:#55BAC6;
+	display:block;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size:28px;
+	margin-top:10px;
+}
+h2{
+	color:#FFFFFF;
+	display:block;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size:14px;
+	text-transform: uppercase;
+}
+ul{
+	list-style:none;
+}
+#header{
+	display:block;
+	padding:20px 0px;
+	width:100%;
+	vertical-align:middle;
+}
+#header img{
+	display:block;
+	margin-left:100px;
+}
+#header .content{
+	display:block;
+	margin:auto;
+	width:960px;
+}
+
+#footer,
+#footer .footer-grass,
+#footer .footer-content{
+	display:block;
+	float:left;
+	width:100%;
+}
+#footer{
+	height:200px;
+	position:relative;
+}
+#footer .footer-grass{
+	position:absolute;
+	top:0px;
+	height:49px;
+	background:url(../img/grass.png) repeat-x top;
+}
+#footer .footer-content{
+	background:#63BE6A;
+	height:151px;
+	position:absolute;
+	top:49px;
+	width:100%;
+}
+#footer .footer-text{
+	margin:auto;
+	width:960px;
+	text-align:center;
+}
+#footer .footer-text .copy{
+	color:#FFFFFF;
+	display:block;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	margin-top:15px;
+	width:960px;
+}
+#footer .footer-text .copy a{
+	color:#FFFFFF;
+	font-weight:bold;
+	text-decoration:none;
+}
+#footer .footer-text ul{
+	display:block;
+	margin:auto;
+	width:960px;
+}
+#footer .footer-text ul li{
+	display:block;
+	float:left;
+	margin:0 10%;
+}
+#footer .footer-text ul h3{
+	color:#4B9952;
+	font-size:20px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-style:italic;
+}*/
+/*Memorama*/
+
+#mainbox{
+	display:block;
+	margin:auto;
+	width:1100px;
+}
+
+.floatLeft{
+	display: block;
+	float:left;
+}
+.floatRight{
+	display: block;
+	float:right;
+}
+.item{
+	display: block;
+}
+.item.off{
+	display: none;
+}
+.item img{
+	display: block;
+	width: 135px;
+	margin: 9px 0 0 9px;
+}
+.memorama{
+	display: block;
+	margin-bottom:20px;
+}
+.wrapper-item{
+	/*background:#55BAC6;*/
+	background-image: url("../img/piedra@1,25x.png");
+	background-size: 154px 160px;
+	display: block;
+	height:auto;	
+	min-height: 160px;
+	margin: 7px 14px 7px 14px;
+	padding: 0px;
+	width: 154px;
+}
+
+.wrapper-item:hover{
+	/*box-shadow: 0px 0px 12px 5px rgba(255,255,255,0.5);*/
+}
+.title{
+  width: 1366px;
+  height: 107px;
+  font-family: Nunito;
+  font-size: 33px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffc33e;
+}
+
+#juego5 .gameSceneCont {
+    margin: 0 auto;
+    width: 1620px;
+    height: 626px;
+}
+
+#juego5 .cabecera {
+    position: relative;
+    display: block;
+    height: 150px;
+    padding: 1px;
+    width: 100%;
+}
+
+#juego5 .gameinst {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-right: solid 2px #00d7fc;
+    border-left: solid 2px #00d7fc;
+    border-top: solid 2px #00d7fc;
+    padding-top: 10px;
+    margin: 0 auto;
+    display: flex;
+    width: 1820px;
+}
+
+.flipped {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+     filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.textRed{
+	color: #ff1743;
+}
+
+.hidden{
+	display:none;
+}
+
+#btn-comenzar{
+	/**margin:6em auto;*/
+	top:450px;
+	cursor: pointer;
+	/*transition: transform .2s; /* Animation */
+}
+
+#btn-comenzar:hover {
+  	background-color: #07dd00;
+	color:  black;
+}
+
+#msg-game-over{
+	color: #07dd00;
+}
+
+.wrapper-card{
+	/*background:#55BAC6;
+	background-image: url("../img/piedra@1,25x.png");*/
+	background-size: 154px 160px;
+	display: block;
+	height:auto;	
+	min-height: 160px;
+	margin: 7px 14px 7px 14px;
+	padding: 0px;
+	width: 154px;
+}
+
+#viewcards{
+	width: 100%;
+	text-align: center;
+}
+
+.zoom {
+  padding: 25px;
+  /*background-color: green;*/
+  transition: transform .2s; /* Animation */
+  /*width: 200px;
+  height: 200px;*/
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
