@@ -70,6 +70,12 @@ body {
                 flex-basis: 180px;
                 margin: 0 10px;
                 height: 160px;
+                width: 180px;
+                &.empty {
+                    &::before {
+                        border-color: $amarillo;
+                    }
+                }
                 &::before {
                     border-radius: 80px;
                     border: solid $verde 2px;
@@ -86,7 +92,10 @@ body {
                     position: relative;
                     display: block;
                     z-index: 10;
-                    width: 80%;
+                    width: 144px;
+                    &.can-drop {
+                        width: 319px;
+                    }
                 }
             }
         }

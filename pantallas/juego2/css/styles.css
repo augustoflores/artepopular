@@ -54,7 +54,10 @@ body {
       position: relative;
       flex-basis: 180px;
       margin: 0 10px;
-      height: 160px; }
+      height: 160px;
+      width: 180px; }
+      #juego2 .header .sbMenuItemsCont .btn.empty::before {
+        border-color: #ffc33e; }
       #juego2 .header .sbMenuItemsCont .btn::before {
         border-radius: 80px;
         border: solid #07dd00 2px;
@@ -70,7 +73,9 @@ body {
         position: relative;
         display: block;
         z-index: 10;
-        width: 80%; }
+        width: 144px; }
+        #juego2 .header .sbMenuItemsCont .btn img.can-drop {
+          width: 319px; }
   #juego2 .header .submenus {
     padding-top: 10px; }
 #juego2 .gameSceneCont {
