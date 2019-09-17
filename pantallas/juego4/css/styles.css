@@ -1,0 +1,17 @@
+#juego{
+  position: absolute;
+  left:50%;
+  top:35%;
+  width: 1067px;
+  height: 703px;
+  display: block;
+  transform: translate(-50%,-50%);
+  background-image: url(../img/fondojuegodes.png);
+  background-repeat: no-repeat;
+}
+.pieza{
+  position: absolute;
+}
+.areatexto {
+  /*height: 207px!important;*/
+}
