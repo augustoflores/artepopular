@@ -102,6 +102,23 @@ body {
     color: #fefefe; }
   #juego2 .footer .footerRight {
     flex-basis: 300px; }
+#juego2 .dragg {
+  transition: 0.3s ease-in-out;
+  touch-action: none;
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  position: absolute; }
+#juego2 .drop-active {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 2px rgba(255, 255, 255, 0.1) dashed; }
+#juego2 .in10 {
+  z-index: 10; }
+#juego2 .in8 {
+  z-index: 8; }
+#juego2 .in5 {
+  z-index: 5; }
+#juego2 .in3 {
+  z-index: 3; }
 #juego2 .rectnguloTop {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -123,13 +140,5 @@ body {
     font-size: 22px;
     color: #fefefe;
     margin: 0; }
-#juego2 .dragg {
-  transition: 0.3s ease-in-out;
-  touch-action: none;
-  -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px); }
-#juego2 .drop-active {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 2px rgba(255, 255, 255, 0.1) dashed; }
 
 /*# sourceMappingURL=styles.css.map */

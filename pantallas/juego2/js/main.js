@@ -20,11 +20,16 @@ var screenPosition = {
 };
 var categoriaSelecc;
 var dentroDropzone = false;
-$(document).ready(empezarJuego);
+$(document).ready(inicio);
+
+function inicio(){
+  $('#btnDescripcion').on('click', empezarJuego);
+}
 
 function empezarJuego(){
     $('.btnNav').on('click', abrirMneu);
     $('.footer').fadeOut('slow');
+    $('#menuPatas').addClass('activo');
 
     interact('#dropzone').dropzone({
       accept: '.dropIN',
@@ -40,6 +45,8 @@ function empezarJuego(){
         var obj = event.target;
         screenPosition.x = event.x;
         screenPosition.y = event.y;
+        console.log(screenPosition.x+' ,'+screenPosition.y);
+        
         
         dentroDropzone = dropped;
         if(dentroDropzone) {
@@ -113,6 +120,7 @@ function empezarJuego(){
           event.relatedTarget.dataset.x=imgPos[0];
           event.relatedTarget.dataset.y=imgPos[1];
           event.relatedTarget.style.transform="translate("+imgPos[0]+"px, "+imgPos[1]+"px)";
+          //event.relatedTarget.style.transform="translate("+screenPosition.x+"px, "+screenPosition.y+"px)";
           $('#dropzone').append(imgDropped);
           
         }else{
