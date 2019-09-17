@@ -15,31 +15,71 @@
                 <h1>Reto 2</h1>
                 <h2>Animales fantásticos</h2>
             </div>
-        </div>
-        <div class="gameSceneCont">
             <div class="navGame">
-                <ul>
-                    <li id="patas">Patas</li>
-                    <li id="cola"> Colas</li>
-                    <li id="cabeza" class="active">Cabeza</li>
-                    <li id="orejas">Orejas</li>
-                    <li id="alas">Alas</li>
-                    <li id="cuerpo">Cuerpo</li>
-                    <li id="stickers">Stickers</li>
+                <ul class="menuJ2">
+                    <li>
+                        <a href="javascript: void(0);" class="activo btnNav" data-sbmenu="menuPatas">Patas</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);" class="btnNav" data-sbmenu="menuColas">Colas</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);" class="btnNav" data-sbmenu="menuCabezas">Cabeza</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);" class="btnNav" data-sbmenu="menuOrejas">Orejas</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);" class="btnNav" data-sbmenu="menuAlas">Alas</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);" class="btnNav" data-sbmenu="menuCuerpo">Cuerpo</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);" class="btnNav" data-sbmenu="menuStickers">Stickers</a>
+                    </li>
                 </ul>
                 <div class="submenus">
-                    <div id="menuCabezas">
-                        <div class="btn"><img src="img/cabeza.png"></div>
-                        <div class="btn"><img src="img/cabeza.png"></div>
-                        <div class="btn"><img src="img/cabeza.png"></div>
-                        <div class="btn"><img src="img/cabeza.png"></div>
-                        <div class="btn"><img src="img/cabeza.png"></div>
-                        <div class="btn"><img src="img/cabeza.png"></div>
+                    <!-- Menú de Patas -->
+                    <div class="sbMenuItemsCont animated fadeIn" id="menuPatas">
+                        <div class="btn"><img src="img/patas/patas.png" class="dragg dropIN in8" id="pata1"></div>
+                    </div>
+                    <!-- Menú de Colas -->
+                    <div class="sbMenuItemsCont animated fadeIn" id="menuColas">
+                        No hay Colas
+                    </div>
+                    <!-- Menú de Orejas -->
+                    <div class="sbMenuItemsCont animated fadeIn" id="menuOrejas">
+                        No hay Orejas
+                    </div>
+                    <!-- Menú de Alas -->
+                    <div class="sbMenuItemsCont animated fadeIn" id="menuAlas">
+                        No hay Alas
+                    </div>
+                    <!-- Menú de Cuerpo -->
+                    <div class="sbMenuItemsCont animated fadeIn" id="menuCuerpo">
+                        <div class="btn"><img src="img/cuerpo/cuerpo.png" id="cuerpo1" class="dragg dropIN in5"></div>
+                    </div>
+                    <!-- Menú de Stickers -->
+                    <div class="sbMenuItemsCont animated fadeIn" id="menuStickers">
+                        No hay Stickers
+                    </div>
+                    <!-- Menú de cabezas -->
+                    <div class="sbMenuItemsCont animated fadeIn" id="menuCabezas">
+                        <div class="btn"><img src="img/cabeza.png" class="in10 dragg dropIN" id="cabeza1"></div>
+                        <div class="btn"><img src="img/cabeza.png" class="in10 dragg dropIN" id="cabeza2"></div>
+                        <div class="btn"><img src="img/cabeza.png" class="in10 dragg dropIN" id="cabeza3"></div>
+                        <div class="btn"><img src="img/cabeza.png" class="in10 dragg dropIN" id="cabeza4"></div>
+                        <div class="btn"><img src="img/cabeza.png" class="in10 dragg dropIN" id="cabeza5"></div>
+                        <div class="btn"><img src="img/cabeza.png" class="in10 dragg dropIN" id="cabeza6"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="gameSceneCont" id="dropzone">
+        </div>
         <div class="footer">
+            <button id="btnDescripcion">¡Vámos!</button>
             <div class="pedro">
                 <img src="img/pedro.png">
             </div>
@@ -51,5 +91,8 @@
             <div class="footerRight"></div>
         </div>
     </div>
+    <script src="../../utils/js/jquery-3.4.1.min.js"></script>
+    <script src="js/interact.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

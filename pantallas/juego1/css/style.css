@@ -5,6 +5,28 @@ body {
 img {
   display: block; }
 
+#juego1 #btnDescripcion {
+  display: none;
+  border: solid #07dd00 3px;
+  background-color: #333;
+  border-radius: 30px;
+  margin-left: -100px;
+  text-align: center;
+  position: absolute;
+  font-size: 21px;
+  cursor: pointer;
+  color: #07dd00;
+  height: 50px;
+  width: 200px;
+  top: -25px;
+  left: 50%; }
+#juego1 #chorroFinal {
+  transform: rotate(32deg);
+  position: absolute;
+  outline: none;
+  display: none;
+  width: 120px;
+  right: 30px; }
 #juego1 .contenedor {
   width: 1920px;
   height: 1080px; }
@@ -51,6 +73,7 @@ img {
 #juego1 .gameBoard {
   display: inline-block;
   vertical-align: top;
+  position: relative;
   width: 900px; }
 #juego1 .gameboardWrpr {
   margin: 0 auto;
@@ -62,6 +85,8 @@ img {
   border-right: solid 2px #00d7fc;
   border-left: solid 2px #00d7fc;
   border-top: solid 2px #00d7fc;
+  align-items: center;
+  position: relative;
   padding-top: 10px;
   margin: 0 auto;
   display: flex;
@@ -75,10 +100,17 @@ img {
   display: inline-block;
   vertical-align: top;
   width: 350px; }
-  #juego1 .jarrones.dos img {
-    transform: scaleX(-1) rotate(2deg);
-    max-width: 100%;
-    width: 100%; }
+  #juego1 .jarrones .imgNiveles {
+    position: relative;
+    height: 605px;
+    width: 239px; }
+    #juego1 .jarrones .imgNiveles img {
+      position: absolute;
+      display: none;
+      left: 0;
+      top: 0; }
+    #juego1 .jarrones .imgNiveles .cantaroIntro {
+      display: block; }
 #juego1 .gameActionWrp {
   justify-content: center;
   align-items: center;

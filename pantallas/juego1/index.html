@@ -1,70 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/styles.css">
+	<link rel="stylesheet" href="../../utils/css/animate.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="contenedor" id="juego1">
-        <div class="cabecera">
-                <h2>Reto 1</h2>
-                <h3>Cántaros de mi corazón</h3>
-        </div>
-        <div class="gameboardWrpr">
-            <div class="jarrones">
-                <img src="img/chorro.gif" alt="agua">
-            </div>
-            <div class="gameBoard">
-                <div class="gameActionWrp">
-                    <div class="nivel">
-                        <div id="A" class="row">
-                            <div class="col"><img src="img/circulo-rojo.png" id="a1" data-row="A" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="a2" data-row="A" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="a3" data-row="A" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="a4" data-row="A" data-grado="0"></div>
-                        </div>
-                        <div id="B" class="row">
-                            <div class="col"><img src="img/circulo-rojo.png" id="b1" data-row="B" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="b2" data-row="B" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="b3" data-row="B" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="b4" data-row="B" data-grado="0"></div>
-                        </div>
-                        <div id="C" class="row">
-                            <div class="col"><img src="img/circulo-rojo.png" id="c1" data-row="C" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="c2" data-row="C" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="c3" data-row="C" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="c4" data-row="C" data-grado="0"></div>
-                        </div>
-                        <div id="D" class="row">
-                            <div class="col"><img src="img/circulo-rojo.png" id="c1" data-row="D" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="c2" data-row="D" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="c3" data-row="D" data-grado="0"></div>
-                            <div class="col"><img src="img/circulo-rojo.png" id="c4" data-row="D" data-grado="0"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jarrones dos">
-                <img src="img/cantaros.png" alt="Cantaros">
-            </div>
-        </div>
-        <div class="gameinst">
-            <div class="elenaimg">
-                <img src="img/elena.png">
-            </div>
-            <div class="instTxt">
-                <p>Vamos a poner a prueba tus habilidades, selecciona entre la figuras que consideres son de  y selecciónalas. </p>
-                <p>Una vez que las tenga, apila los cántaros en orden para poder llenarlos</p>
-                <p>Toca las piezas para alinearlas y hacer que el chorro,Alinea las piezas para que fluya el chorro y llene los cántaros</p>
-            </div>
-        </div>
+	<div class="contenedor" id="juego1">
+		<div class="cabecera">
+			<hgroup class="gameDesc">
+				<h2>Reto 1</h2>
+				<h3>Cántaros de mi corazón</h3>
+			</hgroup>
+		</div>
+		<div class="gameboardWrpr">
+			<div class="jarrones">
+				<img src="img/chorro.gif" alt="agua">
+			</div>
+			<div class="gameBoard">
+					<img src="img/chorro.gif" alt="agua" class="animated fadeIn" id="chorroFinal">
+				<div class="gameActionWrp">
+					<div class="nivel">
+						<div id="A" class="row">
+							<div class="col"><img src="img/circulo-rojo.png" id="a1" data-row="A" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="a2" data-row="A" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="a3" data-row="A" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="a4" data-row="A" data-grado="0"></div>
+						</div>
+						<div id="B" class="row">
+							<div class="col"><img src="img/circulo-rojo.png" id="b1" data-row="B" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="b2" data-row="B" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="b3" data-row="B" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="b4" data-row="B" data-grado="0"></div>
+						</div>
+						<div id="C" class="row">
+							<div class="col"><img src="img/circulo-rojo.png" id="c1" data-row="C" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="c2" data-row="C" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="c3" data-row="C" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="c4" data-row="C" data-grado="0"></div>
+						</div>
+						<div id="D" class="row">
+							<div class="col"><img src="img/circulo-rojo.png" id="d1" data-row="D" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="d2" data-row="D" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="d3" data-row="D" data-grado="0"></div>
+							<div class="col"><img src="img/circulo-rojo.png" id="d4" data-row="D" data-grado="0"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="jarrones dos">
+				<div class="imgNiveles">
+					<img src="img/cantaros-intro.png" class="animated fadeIn cantaroIntro">
+					<img src="img/cantarosN1.png" class="animated fadeIn cantaroN1">
+					<img src="img/cantarosN2.png" class="animated fadeIn cantaroN2">
+					<img src="img/cantarosN3.png"  class="animated fadeIn cantaroN3">
+				</div>
+			</div>
+		</div>
+		<div class="gameinst">
+			<button id="btnDescripcion">¡Vámos!</button>
+			<div class="elenaimg">
+				<img src="img/elena.png" id="elenaImagen">
+			</div>
+			<div class="instTxt">
+				<p>Vamos a poner a prueba tus habilidades, selecciona entre la figuras que consideres son de  y selecciónalas. </p>
+				<p>Una vez que las tenga, apila los cántaros en orden para poder llenarlos</p>
+				<p>Toca las piezas para alinearlas y hacer que el chorro,Alinea las piezas para que fluya el chorro y llene los cántaros</p>
+			</div>
+		</div>
 
-    </div>
-    <script src="../../utils/js/jquery-3.4.1.min.js"></script>
-    <script src="js/main.js"></script>
+	</div>
+	<script src="../../utils/js/jquery-3.4.1.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>

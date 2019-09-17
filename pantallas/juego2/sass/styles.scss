@@ -9,37 +9,30 @@ body {
 }
 
 #juego2 {
-    .rectnguloTop {
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        border-bottom: solid 2px $verde;
-        border-right: solid 2px $verde;
-        border-left: solid 2px $verde;
-        padding-left: 25px;
-        position: relative;
-        height: 128px;
-        width: 441px;
-        left: 50px;
-        h1 {
-            text-transform: uppercase;
-            padding-top: 20px;
-            color: $amarillo;
-            font-size: 42px;
-            margin: 0;
-        }
-        h2 {
-            font-size: 22px;
-            color: $bco;
-            margin: 0;
-        }
+    #btnDescripcion {
+        border: solid $verde 3px;
+        background-color: #333;
+        border-radius: 30px;
+        margin-left: -100px;
+        text-align: center;
+        position: absolute;
+        font-size: 21px;
+        cursor: pointer;
+        color: $verde;
+        height: 50px;
+        width: 200px;
+        top: -25px;
+        left: 50%;
     }
-    .gameSceneCont {
-        margin: 0 auto; 
-        width: 1620px;
-        height: 626px;
+    .header {
+        align-items: flex-start;
+        display: flex;
         .navGame {
-            width: 100%;
-            height: 260px;
+            flex-basis: 1420px;
+            position: relative;
+            padding-top: 20px;
+            height: 200px;
+            left: 50px;
             ul {
                 justify-content: center;
                 list-style: none;
@@ -49,37 +42,47 @@ body {
                 margin: 0;
                 li {
                     flex-basis: auto;
-                    padding: 0 15px;
                     margin: 0 5px;
-                    color: $rojo;
-                    cursor: pointer;
-                    &:hover {
-                        color: $verde;
-                    }
-                    &.active {
-                        color: $verde;
-                    }
+                }
+            }
+            .btnNav {
+                text-decoration: none;
+                cursor: pointer;
+                padding: 0 15px;
+                display: block;
+                color: $rojo;
+                &:hover {
+                    color: $verde;
+                }
+                &.activo {
+                    color: $verde;
                 }
             }
         }
-        .submenus {
-            padding-top: 10px;
-        }
-        #menuCabezas {
-            display: flex;
+        .sbMenuItemsCont {
             justify-content: center;
+            display: none;
+            &.activo {
+                display: flex;
+            }   
             .btn {
                 position: relative;
                 flex-basis: 180px;
                 margin: 0 10px;
                 height: 160px;
+                width: 180px;
+                &.empty {
+                    &::before {
+                        border-color: $amarillo;
+                    }
+                }
                 &::before {
                     border-radius: 80px;
                     border: solid $verde 2px;
                     position: absolute;
                     display: block;
-                    height: 150px;
-                    width: 150px;
+                    height: 120px;
+                    width: 120px;
                     content: "";
                     z-index: 5;
                     left: 0;
@@ -88,11 +91,23 @@ body {
                 img {
                     position: relative;
                     display: block;
-                    width: 100%;
                     z-index: 10;
+                    width: 144px;
+                    &.can-drop {
+                        width: 319px;
+                    }
                 }
             }
         }
+        .submenus {
+            padding-top: 10px;
+        }
+    }
+    .gameSceneCont {
+        border-radius: 30px;
+        margin: 0 auto; 
+        width: 1620px;
+        height: 626px;
     }
     .footer {
         border-top: $verde 2px solid;
@@ -100,6 +115,7 @@ body {
         border-left:  $verde 2px solid;
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;
+        position: relative;
         margin: 0 auto;
         width: 1840px;
         height: 289px;
@@ -116,5 +132,51 @@ body {
             flex-basis: 300px;
         }
     }
-
+    .dragg {
+        transition: 0.3s ease-in-out;
+        touch-action: none;
+        -webkit-transform: translate(0px, 0px);
+                transform: translate(0px, 0px);
+        position: absolute
+    }
+    .drop-active {
+        background-color: rgba(255,255,255,0.04);
+        border: 2px rgba(255,255,255,0.1) dashed;
+    }
+    .in10 {
+        z-index: 10;
+    }
+    .in8 {
+        z-index: 8;
+    }
+    .in5 {
+        z-index: 5;
+    }
+    .in3 {
+        z-index: 3;
+    }
+    .rectnguloTop {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border-bottom: solid 2px $verde;
+        border-right: solid 2px $verde;
+        border-left: solid 2px $verde;
+        position: relative;
+        padding-left: 25px;
+        flex-basis: 440px;
+        height: 128px;
+        left: 50px;
+        h1 {
+            text-transform: uppercase;
+            padding-top: 20px;
+            color: $amarillo;
+            font-size: 42px;
+            margin: 0;
+        }
+        h2 {
+            font-size: 22px;
+            color: $bco;
+            margin: 0;
+        }
+    }
 }

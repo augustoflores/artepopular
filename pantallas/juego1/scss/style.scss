@@ -2,6 +2,7 @@ $rojo: #ff1743;
 $amarillo: #ffc33e;
 $grisClaro: #ddd;
 $azul: #00d7fc;
+$verde: #07dd00;
 body {
     padding: 0;
     margin: 0; 
@@ -10,6 +11,31 @@ img {
     display: block;
 }
 #juego1 {
+
+    #btnDescripcion {
+        display: none;
+        border: solid $verde 3px;
+        background-color: #333;
+        border-radius: 30px;
+        margin-left: -100px;
+        text-align: center;
+        position: absolute;
+        font-size: 21px;
+        cursor: pointer;
+        color: $verde;
+        height: 50px;
+        width: 200px;
+        top: -25px;
+        left: 50%;
+    }
+    #chorroFinal{
+        transform: rotate(32deg);
+        position: absolute;
+        outline: none;
+        display: none;
+        width: 120px;
+        right: 30px;
+    }
     .contenedor {
         width: 1920px;
         height: 1080px;
@@ -65,6 +91,7 @@ img {
     .gameBoard {
         display: inline-block;
         vertical-align: top;
+        position: relative;
         width: 900px;
     }
     .gameboardWrpr {
@@ -78,6 +105,8 @@ img {
         border-right: solid 2px $azul;
         border-left: solid 2px $azul;
         border-top: solid 2px $azul;
+        align-items: center;
+        position: relative;
         padding-top: 10px;
         margin: 0 auto;
         display: flex;
@@ -94,12 +123,22 @@ img {
         display: inline-block;
         vertical-align: top;
         width: 350px;
-        &.dos img {
-            transform: scaleX(-1) rotate(2deg);
-            max-width: 100%;
-            width: 100%;
+        .imgNiveles {
+            position: relative;
+            height: 605px;
+            width: 239px;
+            img {
+                position: absolute;
+                display: none;
+                left: 0;
+                top: 0;
+            }
+            .cantaroIntro {
+                display: block;
+            }
         }
     }
+    
     .gameActionWrp {
         justify-content: center;
         align-items: center;
