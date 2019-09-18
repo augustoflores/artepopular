@@ -28,6 +28,9 @@ $(function () {
     newSrc = './pantallas/' + arrPages[currentpageindex] + '/index.html';
     document.getElementById("contentframe").src = newSrc;
   })
+  $("#tooglemenu").click(function () {
+    $("#menu").toggleClass("hidemenu");
+  });
 });
 
 function urlFromChild(newurl,parentscreen) {
@@ -37,4 +40,5 @@ function urlFromChild(newurl,parentscreen) {
   if(parentscreen) currentScreen=parentscreen;
   currentpagearrayindex = arrPages.indexOf(currentScreen);
   currentpageindex = currentpagearrayindex;
+  //$("#menu").addClass("hidemenu");
 }

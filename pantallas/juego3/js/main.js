@@ -1,21 +1,51 @@
-$(function() {
-  var mySound = new buzz.sound("./sounds/click.m4a");
-
-  $(".opcion").click(function (event) {
-    let name=$(event.target).html();
-    $(".objeto").removeClass("activo")
-    $("#"+name).addClass("activo")
-    $("#ventana #texto").html($("#"+name).attr("alt"))
-    $("#ventana #imagen").attr("src","./imgs/"+ $("#"+name).data("img"));
-    mySound.play()
-  })
+$(function () {
+  var totalpistas=$(".opcion").length;
+  var pistasencontradas=0;
+  $(".opcion").css("opacity",.5)
+  $("#equipar").hide();
+  var objetoactual = null;
+  actualizarpistas();
   $(".objeto").click(function () {
-    let text=$(this).attr("alt")
-    $("#ventana #texto").html(text)
-    console.log(this)
-    $("#ventana #imagen").attr("src","./imgs/"+ $(this).data("img"));
-    $(".objeto").removeClass("activo")
-    $(this).addClass("activo")
-    mySound.play()
+    objetoactual=this;
+    var mySound = new buzz.sound("./sounds/click.m4a");
+    let text = $(this).attr("alt")
+    animartexto("#texto",text);
+    $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
+    $(".objeto").removeClass("activo");
+    $(".objeto").addClass("inactivo")
+    $(this).removeClass("inactivo");
+    $(this).addClass("activo");
+    $("#equipar").show();
+    mySound.play();
   })
+  $("#equipar").click(function () {
+    $(this).hide()
+    $(objetoactual).hide();
+    name="#Text"+$(objetoactual).attr("id");
+    $(name).css("opacity",1);
+    $(name).append("&#10003;");
+    $(".objeto").removeClass("activo");
+    $(".objeto").removeClass("inactivo");
+    pistasencontradas++;
+    if(pistasencontradas==totalpistas){
+      animartexto("#texto","has concluido");
+    }
+    actualizarpistas();
+  });
+  animartexto("#texto");
+  function animartexto(selector,texto) {
+    if(!texto) texto = $(selector).html();
+    var app = $(selector)[0];
+    var typewriter = new Typewriter(app, {
+      loop: false,
+      delay: 10,
+      cursor: ""
+    });
+    typewriter.typeString(texto)
+      .pauseFor(0)
+      .start();
+  }
+  function actualizarpistas(){
+    $("#contador").html(pistasencontradas+" / "+totalpistas)
+  }
 });

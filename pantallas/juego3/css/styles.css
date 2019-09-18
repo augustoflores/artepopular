@@ -3,29 +3,44 @@
 }
 .objeto{
   position: absolute;
+  transform: scale(.5);
+  transform-origin: top left;
 }
+
 .objeto:hover, .activo{
-  filter: brightness(200%);
+  filter: brightness(130%) grayscale(0);
+}
+.inactivo{
+  filter:  brightness(100%) grayscale(1);
 }
 .opcion:hover{
   color: blue;
 }
 #cuarto{
   position: absolute;
-  left:0;
-  top:100px;
+  left:50%;
+  top:50%;
+  width: 1620px;
+  height: 640px;
+  display: block;
+  transform: translate(-50%,-50%);
+  /*background-image: url(../img/fondojuego.png)*/
 }
 #opciones{
   position: absolute;
-  right: 30px;
+  right: 0;
   top:10px:
 }
 #ventana{
-  position: absolute;
-  width:80%;
-  margin: auto;
-  bottom:0px;
-  background-color: aquamarine;
+
+}
+#equipar{
+  transform: translate(-50%,-80%);
+}
+.globotexto {
   display: flex;
-  height: auto;
+  align-items: center;
+}
+div#contador {
+  font-size: 70px;
 }

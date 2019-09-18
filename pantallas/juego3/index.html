@@ -10,33 +10,63 @@
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../utils/css/animate.css">
   <script src="../../utils/js/jquery-3.4.1.min.js"></script>
+  <script src="../../utils/js/type.js"></script>
   <script src="../../utils/js/currentpage.js"></script>
   <script src="../../utils/js/buzz.min.js"></script>
   <script src="./js/main.js"></script>
 </head>
 
 <body>
-  <div id="opciones">
-    <div class="opcion">Biombo01</div>
-    <div class="opcion">Biombo02</div>
-    <div class="opcion">Biombo03</div>
-    <div class="opcion">Biombo04</div>
-    <div class="opcion">Biombo05</div>
-    <div class="opcion">Biombo06</div>
-    <div class="opcion">Biombo07</div>
-  </div>
+
   <div id="cuarto">
-    <img class="objeto " style="top:0px;   left:0px;"  src="./imgs/biombo.png" alt="Lorem ipsum dolor 01" data-img="icon1.png" id="Biombo01">
-    <img class="objeto " style="top:10px;  left:10px;" src="./imgs/biombo.png" alt="Lorem ipsum dolor 02" data-img="icon2.png" id="Biombo02">
-    <img class="objeto " style="top:20px;  left:20px;" src="./imgs/biombo.png" alt="Lorem ipsum dolor 03" data-img="icon3.png" id="Biombo03">
-    <img class="objeto " style="top:30px;  left:30px;" src="./imgs/biombo.png" alt="Lorem ipsum dolor 04" data-img="icon4.png" id="Biombo04">
-    <img class="objeto " style="top:40px;  left:40px;" src="./imgs/biombo.png" alt="Lorem ipsum dolor 05" data-img="icon5.png" id="Biombo05">
-    <img class="objeto " style="top:50px;  left:50px;" src="./imgs/biombo.png" alt="Lorem ipsum dolor 06" data-img="icon6.png" id="Biombo06">
-    <img class="objeto " style="top:60px;  left:50px;" src="./imgs/biombo.png" alt="Lorem ipsum dolor 07" data-img="icon7.png" id="Biombo07">
+      <div id="opciones">
+          <div class="opcion" id="TextImagen01">Tapete</div>
+          <div class="opcion" id="TextImagen02">Biombo</div>
+          <div class="opcion" id="TextImagen03">Candil</div>
+          <div class="opcion" id="TextImagen04">Cerdo</div>
+          <div class="opcion" id="TextImagen05">Talavera</div>
+          <div class="opcion" id="TextImagen06">Yunque</div>
+          <div class="opcion" id="TextImagen07">Telas<br> importadas</div>
+        </div>
+    <div id="contador"></div>
+    <img class="objeto " style="top:464px; left:434px; transform: scale(.8); " src="./imgs/tapete.png"
+      alt="Lorem ipsum dolor 05" data-img="icon5.png" id="Imagen01">
+    <img class="objeto " style="top:-5px;  left:1143px; transform: scale(.3);" src="./imgs/candil.png"
+      alt="El candil utilizaba velas para la iluminación, otro gran invento traído por los españoles. En sus cristales se reflejó el lujo y la elegancia con la que se vivía en los palacios virreinales. En la actualidad los seguimos usando, claro que ahora con luz eléctrica." data-img="icon2.png" id="Imagen03">
+    <img class="objeto " style="top:390px;  left:1060px;transform: scale(.8)" src="./imgs/cerdo.png" alt="Oink! Ya quiero llegar a la Nueva España."
+      data-img="icon3.png" id="Imagen04">
+    <img class="objeto " style="top:270px; left:1170px; transform: scale(.5);" src="./imgs/biombo.png"
+      alt="El biombo es considerado un mueble de origen oriental. Se usaba para dividir el espacio de los grandes salones. Está conformado por varios paneles que se extienden a manera de mapa en acordeón. Su forma permitió pintar diferentes escenas en una historia, con esto también decoraba el salón donde se colocaba y le daba personalidad.
+      " data-img="icon1.png" id="Imagen02">
+    <img class="objeto " style="top:160px;  left:979px; transform: scale(.5);" src="./imgs/talavera.png" alt="De China se trajeron delicadas cerámicas para embellecer los salones de los grandes palacios en la Nueva España. Sus decorado tan característico también fue influencia para crear nuestra propia identidad, un ejemplo muy conocido es la talavera del estado de Puebla, que destaca por el color azul de sus decorados sobre fondo blanco ¿La has visto?"
+      data-img="icon4.png" id="Imagen05">
+    <img class="objeto " style="top:211px;  left:270px; transform: scale(.9);" src="./imgs/yunque.png" alt="Para dar forma al metal, necesitas un yunque, forja y el martillo. Estas tres herramientas las heredamos de los españoles y ayudaron en gran medida al desarrollo de nuestros pueblos. Gracias al oficio del herrero se diseñó el arado para cultivar la tierra o se construyeron las herraduras para proteger las patas de los caballos, animales indispensables en el camino hacia la modernidad."
+      data-img="icon6.png" id="Imagen06">
+    <img class="objeto " style="top:420px;  left:480px; transform: scale(1.1);" src="./imgs/telaimportada.png" alt="En la Nao también viajaron telas importadas de diferentes materiales como el algodón, el lino y la seda que originaron nuevas formas de vestir en los habitantes de la Nueva España. Los nuevos materiales y técnicas con que se trabajaban se mezclaron con los existentes, creando así prendas de origen mestizo. Un claro ejemplo es el rebozo que tanto gusta y usan las mujeres."
+      data-img="icon7.png" id="Imagen07">
   </div>
-  <div id="ventana">
-    <img src="" id="imagen">
-    <div id="texto"></div>
+
+  <div class="containertexto" id="ventana">
+    <div class="areatexto animated fadeInUp faster">
+      <div class="globostexto">
+        <div class="bordertexto" id="equipar">
+                Equipar
+              </div>
+        <div class="globotexto">
+            
+          
+          <div class="personaje">
+            <img src="./imgs/angelito.png" id="imagen">
+          </div>
+          <div id="texto">
+            
+            Descubre en este salón mexicano 9 objetos que fueron importados de otras partes del mundo,
+            equípalas para que regresen seguro a su destino a <span class="font-rosa">la Nueva España.</span></div>
+        </div>
+      </div>
+      <img src="./img/adelante.png" class="globonext">
+
+    </div>
   </div>
 
 </body>

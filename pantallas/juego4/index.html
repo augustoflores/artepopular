@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +12,60 @@
   <script src="../../utils/js/jquery-3.4.1.min.js"></script>
   <script src="../../utils/js/currentpage.js"></script>
   <script src="../../utils/js/buzz.min.js"></script>
+  <script src="../../utils/js/type.js"></script>
   <script src="../../utils/js/Tone.js"></script>
-  <script src="./js/main.js"></script>  
+  <script src="./js/main.js"></script>
 </head>
-<body>
-  <div id="turno">
 
+<body>
+  <div id="juego">
+    <div id="turno">
+    </div>
+    <div id="piezas">
+      <img class="pieza" id="pieza8" data-note="C4" style="top: 4px;left: 418px;" src="./img/plecaroja.png" />
+      <img class="pieza" id="pieza7" data-note="D4" style="top: 75px;left: 159px;" src="./img/l2.png" />
+      <img class="pieza" id="pieza6" data-note="E4" style="top: 77px;left: 543px;" src="./img/r2.png" />
+      <img class="pieza" id="pieza5" data-note="F4" style="top: 358px;left: 3px;" src="./img/l1.png" />
+      <img class="pieza" id="pieza4" data-note="G4" style="top: 358px;left: 700px;" src="./img/r1.png" />
+      <img class="pieza" id="pieza3" data-note="A4" style="top: 358px;left: 385px;" src="./img/m1.png" />
+      <img class="pieza" id="pieza2" data-note="B4" style="top: 652px;left: 98px;transform: scaleY(-1);"
+        src="./img/plecaroja.png" />
+      <img class="pieza" id="pieza1" data-note="C5" style="top: 651px;left: 419px;" src="./img/plecarosa.png" />
+      <img class="pieza" id="pieza0" data-note="D5" style="top: 657px;left: 726px;transform: scaleY(-1);"
+        src="./img/plecaroja.png" />
+    </div>
+
+
+    <div id="retro"></div>
   </div>
-  <div id="piezas">
-    <div class="pieza" id="pieza0" data-note="C">0</div>
-    <div class="pieza" id="pieza1" data-note="D">1</div>
-    <div class="pieza" id="pieza2" data-note="E">2</div>
-    <div class="pieza" id="pieza3" data-note="F">3</div>
-    <div class="pieza" id="pieza4" data-note="G">4</div>
+  <div class="containertexto" id="ventana">
+    <div class="areatexto animated fadeInUp faster">
+      <div class="personaje">
+        <img src="./img/mujer3.png" id="imagen">
+      </div>
+      <div class="globostexto">
+        <!---div class="bordertexto" id="equipar">
+          Equipar
+        </div-->
+        <div class="bordertexto" id="comenzar">
+          Comenzar
+        </div>
+        <div class="bordertexto" id="iniciar">
+          Iniciar
+        </div>
+        <div class="bordertexto" id="continuar">
+            Continuar
+        </div>
+        <div class="globotexto">
+          <p>Vamos a poner a prueba tu memoria</p>
+          <p>A continuación verás un patrón textil que se iluminará en cierto orden. Observa con atención.</p>
+          <p>Al terminar la secuencia, toca sobre cada patrón para repetir el orden anterior, cuidado que si te
+            equivocas, tendrás qué repetir el patrón. <span class="bolder">Hagamos una prueba</span> </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div id="iniciar">
-    Iniciar
-  </div>
-  <div id="retro"></div>
+
 </body>
+
 </html>
