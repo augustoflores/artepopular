@@ -96,7 +96,7 @@ function empezarJuego(){
           // El objeto se ha depositado en la zona
 
           imgPos=[];
-          imgPos.push( screenPosition.x - 260 );
+          imgPos.push( screenPosition.x - 60 );
           imgPos.push( screenPosition.y - 290 );
           
           if(categoriaSelecc==='menuCabezas'){
