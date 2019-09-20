@@ -3,7 +3,8 @@ $(function () {
   let arrGlobos = $(".globostexto .globotexto");
   let arrImages = $(".imagecontainer .image");
   let texto="";
-  $(".globonext").click(function () {
+  $(".globonext, .cajanext").click(function (event) {
+    event.stopPropagation();
     if (indexglobo < (arrGlobos.length - 1)) {
       indexglobo++;
       $(".globostexto .globotexto").hide(0);
@@ -11,9 +12,7 @@ $(function () {
       texto = $(arrGlobos[indexglobo]).html();
       $(arrGlobos[indexglobo]).html("")
       $(arrGlobos[indexglobo]).fadeIn(0);
-
       var app = $(arrGlobos[indexglobo])[0];
-
       var typewriter = new Typewriter(app, {
           loop: false,
           delay: 30,

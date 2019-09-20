@@ -13,6 +13,8 @@ $(function () {
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
     $(".objeto").removeClass("activo");
     $(".objeto").addClass("inactivo")
+    $("#fondo").addClass("inactivo")
+
     $(this).removeClass("inactivo");
     $(this).addClass("activo");
     $("#equipar").show();
@@ -20,15 +22,18 @@ $(function () {
   })
   $("#equipar").click(function () {
     $(this).hide()
-    $(objetoactual).hide();
     name="#Text"+$(objetoactual).attr("id");
     $(name).css("opacity",1);
     $(name).append("&#10003;");
     $(".objeto").removeClass("activo");
     $(".objeto").removeClass("inactivo");
+    $(objetoactual).addClass("equipado");
+    $(objetoactual).unbind( "click" );
+    $("#fondo").removeClass("inactivo")
     pistasencontradas++;
     if(pistasencontradas==totalpistas){
-      animartexto("#texto","has concluido");
+      animartexto("#texto","¡Felicidades! Acabaste de equipar la Nao");
+      $("#ventana #imagen").attr("src", "./imgs/angelito.png");
     }
     actualizarpistas();
   });
@@ -47,5 +52,6 @@ $(function () {
   }
   function actualizarpistas(){
     $("#contador").html(pistasencontradas+" / "+totalpistas)
+    $("#conteoequipar").html((pistasencontradas+1)+" / "+totalpistas)
   }
 });

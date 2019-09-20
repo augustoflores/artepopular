@@ -159,6 +159,7 @@ iframe {
   margin: 0px 48px;
   border: solid 3px cyan;
   border-bottom: none;
+  position: relative;
 }
 .escena2 .areatexto {
   background-color: #040b05;
@@ -378,4 +379,10 @@ iframe {
   padding: 0;
   margin: 0;
 }
-/**/
+/*colorizer*/
+.colorize-red{
+  filter: brightness(50%) sepia(100%) saturate(9900%) hue-rotate(345deg);
+}
+.rotate45{
+  transform: rotate(45deg)
+}
