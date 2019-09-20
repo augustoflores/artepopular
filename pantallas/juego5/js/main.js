@@ -99,6 +99,7 @@ $(function(){//Main function
 	$('.wrapper-item').click(function(event) {//Handle click event				
 		var attrId = $(this).attr("id");
 		attrId = '#'+attrId;
+
 		$(attrId + '> .item').addClass("toCheck");//To handle comparison
 		if($(attrId + '> .item').hasClass("active")){
 			
@@ -109,7 +110,13 @@ $(function(){//Main function
 				speed: 200
 			});
 			*/
-			$(this).addClass('flipped').show().animate({ left: 1600 + "px" , top : 2370 + "px"}, 5000, 'linear');
+			if($(this).hasClass("flipped")){
+				$(this).removeClass('flipped');
+			}else{
+				$(this).addClass('flipped').show().animate({ left: 1600 + "px" , top : 2370 + "px"}, 5000, 'linear');
+			}	
+
+			
 			
 			toSelect(attrId);//Selecting items
 			if(toCheck()){
@@ -119,11 +126,13 @@ $(function(){//Main function
 					
 				}else{
 					setTimeout("toHide()",900);
+
 				}
 			}
 		}else{			
 			$(attrId + '> .item').removeClass("toCheck");//To handle comparison
 		}
+
 	});
 
 	$('#btn-comenzar').click(function(event) {//
