@@ -87,15 +87,22 @@
 /*COLORES FUENTE*/
 .font-azul{
   color: #00d7fc;
+  font-weight: 900;
 }
 .font-amarilla{
   color: #ffc33e;
+  font-weight: 900;
 }
 .font-verde{
   color: #07dd00;
+  font-weight: 900;
 }
 .font-rosa{
   color: #ff1743;
+  font-weight: 900;
+}
+.bold{
+  font-weight: 900;
 }
 .bolder{
   font-weight: bolder;
@@ -112,10 +119,8 @@ html{
 }
 body {
   font-family: 'Nunito', sans-serif;
-  font-weight: normal;
-  font-size: 25px;
-
-
+  font-weight: lighter;
+  font-size: 28px;
   /*
   background: -moz-linear-gradient(270deg, rgba(6, 46, 72, 1) 0%, rgba(0, 9, 16, 1) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(6, 46, 72, 1)), color-stop(100%, rgba(0, 9, 16, 1)));
@@ -132,7 +137,12 @@ body {
   color: white;
   margin: 0px;
 }
-
+span.Typewriter__wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70%;
+}
 iframe {
   width: 100%;
   height: 100%;
@@ -169,8 +179,13 @@ iframe {
 .globotexto {
   width: 85%;
 }
+.globostexto {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 .bordertexto {
-  background-color:black;
+  background-color: black;
   color: #07dd00;
   font-weight: bold;
   padding: 10px;
@@ -181,8 +196,10 @@ iframe {
   width: 490px;
   position: absolute;
   left: 50%;
-  transform: translate(-50%,-130%);
+  top: 0;
+  transform: translate(-50%,-50%);
 }
+
 .bordertextoright {
   background-color: #000d2d;
   color: #00d7fc;
@@ -195,17 +212,25 @@ iframe {
   width: 410px;
   position: absolute;
   left: 50%;
-  transform: translate(-163%,-130%);
+  transform: translate(-163%,-50%);
+  top: 0;
 }
 .globonext {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   right: 10px;
   cursor: pointer;
 }
-.globonext:hover, .globonext:active, .globonext:focus{
-  transform: translateX(10px)
+.textnext {
+  position: absolute;
+  right: 0;
+  top: -50px;
+  font-weight: bold;
+  color: #00c3e7;
 }
+/*.globonext:hover, .globonext:active, .globonext:focus{
+  transform: translateX(10px)
+}*/
 
 /*FIN ESTILOS CUADROS DE TEXTO */
 .tituloescena {
@@ -257,7 +282,7 @@ iframe {
 }
 .personaje{
   float: left;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 .personaje img{
   width: 234px;

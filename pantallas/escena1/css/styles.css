@@ -4,3 +4,6 @@ body{
 .imagecontainer{
   height: 100%;
 }
+.titulo {
+  margin-top: 60px;
+}
