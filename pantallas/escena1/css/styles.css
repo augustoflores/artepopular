@@ -7,3 +7,14 @@ body{
 .titulo {
   margin-top: 60px;
 }
+.boton {
+  background-color: #000d2d;
+  color: cyan;
+  padding: 10px;
+  border-radius: 30px;
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  border: solid;
+  margin: 0 45px;
+}

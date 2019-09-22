@@ -107,6 +107,10 @@
 .bolder{
   font-weight: bolder;
 }
+.center-text{
+  text-align: center;
+}
+
 /*FIN COLORES FUENTE*/
 
 html{
