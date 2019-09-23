@@ -11,6 +11,7 @@ $(function () {
     let text = $(this).attr("alt")
     animartexto("#texto",text);
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
+    //inactivar($(".objeto"));
     $(".objeto").removeClass("activo");
     $(".objeto").addClass("inactivo")
     $("#fondo").addClass("inactivo")
@@ -53,5 +54,18 @@ $(function () {
   function actualizarpistas(){
     $("#contador").html(pistasencontradas+" / "+totalpistas)
     $("#conteoequipar").html((pistasencontradas+1)+" / "+totalpistas)
+  }
+  function activar(objs) {
+    $.each( objs, function( key, value ) {
+      console.log(value)
+    });
+    
+  }
+  function inactivar(objs) {
+    $.each( objs, function( key, obj ) {
+      src=$(obj).attr("src");
+      src=src.replace("color","BN")
+      $(obj).attr("src",src);
+    });
   }
 });

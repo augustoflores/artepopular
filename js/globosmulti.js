@@ -20,6 +20,7 @@ $(function () {
       });
       console.log(typewriter)
       typewriter.typeString(texto)
+          .callFunction(function () {console.log("fin")})
           .pauseFor(0)
           .start();
       

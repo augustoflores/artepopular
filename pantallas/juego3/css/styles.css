@@ -3,15 +3,14 @@
 }
 .objeto{
   position: absolute;
-  transform: scale(.5);
   transform-origin: top left;
 }
 
-.objeto:hover, .activo{
+.activo{
   filter: brightness(130%) grayscale(0);
 }
 .inactivo{
-  filter:  brightness(100%) grayscale(1);
+  filter:  brightness(50%) grayscale(1);
 }
 .equipado{
   filter:  brightness(30%) grayscale(1);
@@ -22,20 +21,30 @@
   position: absolute;
   left:50%;
   top:50%;
-  width: 1620px;
-  height: 640px;
+  width: 1200px;
+  height: 620px;
   display: block;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-60%) scale(0.8);
   /*background-image: url(../img/fondojuego.png);*/
+}
+#tapiz{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 1200px;
+  height: 620px;
+  display: block;
+  background-image: url(../images/fondo.png);
+  background-size: contain;
 }
 #fondo{
   position: absolute;
   left:0;
   top:0;
-  width: 1620px;
-  height: 640px;
+  width: 1200px;
+  height: 620px;
   display: block;
-  background-image: url(../img/fondojuego.png);
+  background-image: url(../images/Salon_NoFondoNiObjetosColor.png);
 }
 #opciones{
   position: absolute;
