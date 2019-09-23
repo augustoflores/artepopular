@@ -3,6 +3,10 @@ $(function () {
   let arrGlobos = $(".globostexto .globotexto");
   let arrImages = $(".imagecontainer .image");
   let texto = "";
+  var typingSound = new buzz.sound(
+    "../../audios/UX_Interaccion/blip.mp3",
+    {loop: true}
+    );
   $(".globonext, .cajanext").click(function (event) {
     event.stopPropagation();
     try {
@@ -31,7 +35,9 @@ $(function () {
         $(arrGlobos[indexglobo]).prepend(personajeborrado);
       }
       //console.log(typewriter)
+      typingSound.play();
       typewriter.typeString(texto)
+        .callFunction(function () {typingSound.pause()})
         .pauseFor(0)
         .start();
 
