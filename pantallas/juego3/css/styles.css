@@ -13,9 +13,11 @@
 .inactivo{
   filter:  brightness(100%) grayscale(1);
 }
-.opcion:hover{
-  color: blue;
+.equipado{
+  filter:  brightness(30%) grayscale(1);
+  pointer-events: none;
 }
+
 #cuarto{
   position: absolute;
   left:50%;
@@ -24,12 +26,21 @@
   height: 640px;
   display: block;
   transform: translate(-50%,-50%);
-  /*background-image: url(../img/fondojuego.png)*/
+  /*background-image: url(../img/fondojuego.png);*/
+}
+#fondo{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 1620px;
+  height: 640px;
+  display: block;
+  background-image: url(../img/fondojuego.png);
 }
 #opciones{
   position: absolute;
-  right: 0;
-  top:10px:
+  left: 1450px;
+  top:10px;
 }
 #ventana{
 

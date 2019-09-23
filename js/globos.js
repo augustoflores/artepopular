@@ -2,32 +2,43 @@ $(function () {
   let indexglobo = -1;
   let arrGlobos = $(".globostexto .globotexto");
   let arrImages = $(".imagecontainer .image");
-  let texto="";
-  $(".globonext").click(function () {
+  let texto = "";
+  $(".globonext, .cajanext").click(function (event) {
+    event.stopPropagation();
+    try {
+      var mySound = new buzz.sound("../../audios/UX_Interaccion/botones/Button_Click2_JFairbanks.mp3");
+      mySound.play();
+    } catch (e) {}
     if (indexglobo < (arrGlobos.length - 1)) {
       indexglobo++;
       $(".globostexto .globotexto").hide(0);
       $(".imagecontainer .image").hide(0);
+      borrado = $(arrGlobos[indexglobo]).find(".bordertexto, .bordertextoright").detach();
+      personajeborrado = $(arrGlobos[indexglobo]).find(".personaje").detach();
       texto = $(arrGlobos[indexglobo]).html();
       $(arrGlobos[indexglobo]).html("")
       $(arrGlobos[indexglobo]).fadeIn(0);
-
       var app = $(arrGlobos[indexglobo])[0];
-
       var typewriter = new Typewriter(app, {
-          loop: false,
-          delay: 30,
-          cursor: ""
+        loop: false,
+        delay: 10,
+        cursor: ""
       });
-      console.log(typewriter)
+      if (borrado.length > 0) {
+        $(arrGlobos[indexglobo]).prepend(borrado);
+      }
+      if (personajeborrado.length > 0) {
+        $(arrGlobos[indexglobo]).prepend(personajeborrado);
+      }
+      //console.log(typewriter)
       typewriter.typeString(texto)
-          .pauseFor(0)
-          .start();
-      
+        .pauseFor(0)
+        .start();
+
       $(arrImages[indexglobo]).fadeIn(0);
       return true;
     }
-    window.location.href = '../../pantallas/'+$("body").data("nextscreen")+'/index.html';
+    window.location.href = '../../pantallas/' + $("body").data("nextscreen") + '/index.html';
   });
   $(".globonext").click();
 });

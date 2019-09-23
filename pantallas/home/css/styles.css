@@ -22,7 +22,7 @@ img{
   color: #ff1743;
 }
 .subtitulo{
-    font-family: Nunito;
+    font-family: 'Times New Roman', Times, serif;
     width:100%;
     font-size: 34px;
     font-weight: normal;
@@ -31,8 +31,19 @@ img{
     line-height: 1.21;
     letter-spacing: 0.85px;
     text-align: center;
-    color: #f2ca17;
+    color: white;
 }
+.anos{
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+}
+hr{
+  width:50%;
+  border: #ff1743 solid thin;
+}
+
+
 .iniciar{
     width: 100%;
     font-family: Nunito;
@@ -43,5 +54,5 @@ img{
     line-height: 1.35;
     letter-spacing: normal;
     text-align: center;
-    color: #00d7fc;
+    color: white;
 }
