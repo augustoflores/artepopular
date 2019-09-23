@@ -5,7 +5,8 @@ $(function () {
   let texto = "";
   var typingSound = new buzz.sound(
     "../../audios/UX_Interaccion/blip.mp3",
-    {loop: true}
+    {loop: true,
+    volume:1}
     );
   $(".globonext, .cajanext").click(function (event) {
     event.stopPropagation();
