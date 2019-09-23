@@ -223,15 +223,20 @@ ul{
 
 .wrapper-card{
 	/*background:#55BAC6;
-	background-image: url("../img/piedra@1,25x.png");*/
-	background-size: 154px 160px;
+	background-image: url("../img/piedra@1,25x.png");
+	background-size: 154px 160px;*/
 	display: block;
 	height:auto;	
 	min-height: 160px;
 	margin: 7px 14px 7px 14px;
 	padding: 0px;
-	width: 154px;
+	width: 190px
 }
+
+.wrapper-card img{
+	max-width: 100%;
+
+	}
 
 #viewcards{
 	width: 100%;

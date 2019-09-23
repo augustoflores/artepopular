@@ -57,12 +57,20 @@ function toShow(){//To show items checked
 			}
 		});
 		if(src[0]<6){
+			try {
+			    var mySound = new buzz.sound("../../audios/juegos/bell_crowxxx.mp3");
+			    mySound.play();
+			} catch (e) {}
 			score++;
 			$('#msg-game-over').html('Score: '+score);
 		}
 
 		if(score>=5){
 
+			try {
+			    var mySound = new buzz.sound("../../audios/juegos/Win_SergiodelaCruzHernan.mp3");
+			    mySound.play();
+			} catch (e) {}
 			$('#msg-game-over').append(" Muy Bien");
 			$(".globonext").click();
 			$(".globonext").removeClass("hidden");
@@ -110,9 +118,14 @@ $(function(){//Main function
 				speed: 200
 			});
 			*/
+			try {
+			    var mySound = new buzz.sound("../../audios/juegos/HammerOnMetal_PublicDomain.mp3");
+			    mySound.play();
+			} catch (e) {}
 			if($(this).hasClass("flipped")){
 				$(this).removeClass('flipped');
 			}else{
+				
 				$(this).addClass('flipped').show().animate({ left: 1600 + "px" , top : 2370 + "px"}, 5000, 'linear');
 			}	
 
@@ -142,6 +155,12 @@ $(function(){//Main function
 	$('#instructions').fadeIn();
 	$('#msg-game-over').html("Score: 0");
 	$('#container').fadeIn("slow");
+
+	try {
+      var mySound = new buzz.sound("../../audios/UX_Interaccion/Snooker_Publicdomain.mp3");
+      mySound.play();
+    } catch (e) {}
+
 	$(".globonext").click();
 
 	
