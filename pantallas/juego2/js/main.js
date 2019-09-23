@@ -29,7 +29,7 @@ var screenPosition = {
 };
 var categoriaSelecc='menuCabezas';
 var dentroDropzone = false;
-$(document).ready(empezarJuego);
+$(document).ready(inicio);
 
 function inicio(){
   $('#btnDescripcion').on('click', empezarJuego);
