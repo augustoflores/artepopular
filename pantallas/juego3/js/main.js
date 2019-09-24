@@ -33,6 +33,7 @@ $(function () {
     $("#fondo").removeClass("inactivo")
     pistasencontradas++;
     if(pistasencontradas==totalpistas){
+      aventarConfetti()
       animartexto("#texto","¡Felicidades! Acabaste de equipar la Nao");
       $("#ventana #imagen").attr("src", "./imgs/angelito.png");
     }
@@ -67,5 +68,11 @@ $(function () {
       src=src.replace("color","BN")
       $(obj).attr("src",src);
     });
+  }
+  function aventarConfetti() {
+    var confettiSettings = {"target":"confetti-holder","max":"80","size":"3","animate":true,"props":["circle","square","triangle","line"],"colors":[[165,104,246],[230,61,135],[0,199,228],[253,214,126]],"clock":"25","rotate":false,"width":"1920","height":"1080"};
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+    
   }
 });
