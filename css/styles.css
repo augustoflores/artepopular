@@ -397,7 +397,14 @@ center{
   overflow: hidden;
   color: #a0586c;
   width: 150px;
-  height: 261px;
+  height: auto;
+  text-align: center;
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 #tooglemenu div {
   background-color: #a0586c;
@@ -410,8 +417,8 @@ center{
   opacity: 0;
 }
 .hidemenu{
-  width: 70px!important;
-  height: 54px!important;
+  width: 109px!important;
+  height: 66px!important;
 }
 .hidemenu #tooglemenu{
 
