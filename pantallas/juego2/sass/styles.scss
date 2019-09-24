@@ -169,7 +169,7 @@ body {
         align-items: flex-start;
         display: flex;
         .navGame {
-            flex-basis: 1420px;
+            flex-basis: 1180px;
             position: relative;
             padding-top: 20px;
             height: 200px;
@@ -208,10 +208,9 @@ body {
             }   
             .btn {
                 position: relative;
-                flex-basis: 165px;
+                flex-basis: 140px;
                 margin: 0 10px;
                 height: 160px;
-                width: 180px;
                 &.empty {
                     &::before {
                         border-color: $amarillo;
@@ -234,9 +233,9 @@ body {
                     display: block;
                     z-index: 10;
                     width: 144px;
-                    &.can-drop {
-                        // width: 319px;
-                    }
+                    // &.can-drop {
+                    //     // width: 319px;
+                    // }
                 }
             }
         }
@@ -281,8 +280,10 @@ body {
         position: absolute
     }
     .drop-active {
-        background-color: rgba(255,255,255,0.04);
-        border: 2px rgba(255,255,255,0.1) dashed;
+        &.gameSceneCont {
+            background-color: rgba(255,255,255,0.04);
+            border: 2px rgba(255,255,255,0.1) dashed;
+        }
     }
     .in15 {
         z-index: 15;
@@ -321,6 +322,19 @@ body {
             font-size: 22px;
             color: $bco;
             margin: 0;
+        }
+    }
+    .wrprBorrar {
+        position: relative;
+        flex-basis: 140px;
+        height: 170px;
+        left: 50px;
+        .borrar {
+            background: url(../img/basurero.png) no-repeat center bottom;
+            background-size: 70px;
+            padding-top: 30px;
+            height: 160px;
+            width: 100%;
         }
     }
 }

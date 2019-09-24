@@ -15,13 +15,10 @@ var alebrije={
     origen: '',
     ancho: 0
   },
-  patas: {
-    id: '',
-    x: 0,
-    y: 0,
-    image: '',
-    origen: ''
-  }
+  patas: [],
+  colas: [],
+  orejas: [],
+  stickers: []
 };
 var screenPosition = {
   x: 0,
@@ -29,6 +26,7 @@ var screenPosition = {
 };
 var categoriaSelecc='menuCabezas';
 var dentroDropzone = false;
+var anchoAntesBorrar = []; // Guardamos el ancho para animar al borrar
 $(document).ready(inicio);
 
 function inicio(){
@@ -37,8 +35,98 @@ function inicio(){
 
 function empezarJuego(){
     $('.btnNav').on('click', abrirMneu);
-    $('.footer').fadeOut('slow');
+    $('.menuJ2').removeAttr('style');
     $('#menuCabezas').addClass('activo');
+
+    // Borrarr
+    interact('#borrarDrop').dropzone({
+      accept: '.canErrase',
+      overlap: 0.1,
+      ondragenter: function (event) {
+        var draggableElement = event.relatedTarget;
+        var dropzoneElement = event.target;
+        console.log(event);
+        
+    
+        // feedback the possibility of a drop
+        dropzoneElement.classList.add('animated');
+        dropzoneElement.classList.add('bounce');
+        draggableElement.style.opacity='.3';
+      },
+      ondragleave: function (event) {
+        // remove the drop feedback style
+
+        event.target.classList.remove('animated');
+        event.target.classList.remove('bounce');
+        event.relatedTarget.style.opacity = '1';
+      },
+      ondrop: function (event) {
+        // alert(event.relatedTarget.id
+        //       + ' was dropped into '
+        //       + event.target.id);
+
+        id = event.relatedTarget.id;
+        txtId = id.split('-');
+        cat=txtId[0];
+        nId=txtId[1]-1;
+        indice=event.relatedTarget.getAttribute('data-indice');
+
+        console.log(cat+'-'+nId);
+        
+        
+        switch(cat){
+          case 'pata':
+              idpata = '#'+alebrije.patas[indice].id;
+              origen = alebrije.patas[indice].origen;
+              
+              $(idpata).remove();
+              $(origen).removeClass('empty').html(alebrije.patas[indice].image);
+              $(idpata).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.patas[indice].ancho);
+            break;
+          case 'cola':
+              idcola = '#'+alebrije.colas[indice].id;
+              origen = alebrije.colas[indice].origen;
+              
+              $(idcola).remove();
+              $(origen).removeClass('empty').html(alebrije.colas[indice].image);
+              $(idcola).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.colas[indice].ancho);
+            break;
+          case 'oreja':
+              idOreja = '#'+alebrije.orejas[indice].id;
+              origen = alebrije.orejas[indice].origen;
+              
+              $(idOreja).remove();
+              $(origen).removeClass('empty').html(alebrije.orejas[indice].image);
+              $(idOreja).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.orejas[indice].ancho);
+            break;
+          case 'cuerpo':
+              idcuerpo = '#'+alebrije.cuerpo.id;
+              origen = alebrije.cuerpo.origen;
+              
+              $(idcuerpo).remove();
+              $(origen).removeClass('empty').html(alebrije.cuerpo.image);
+              $(idcuerpo).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.cuerpo.ancho);
+            break;
+          case 'stick':
+              idStick = '#'+alebrije.stickers[indice].id;
+              origen = alebrije.stickers[indice].origen;
+              
+              $(idStick).remove();
+              $(origen).removeClass('empty').html(alebrije.stickers[indice].image);
+              $(idStick).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.stickers[indice].ancho);
+            break;
+          case 'cabeza':
+            idCabeza = '#'+alebrije.cabeza.id;
+            origen = alebrije.cabeza.origen;
+            
+            $(idCabeza).remove();
+            $(origen).removeClass('empty').html(alebrije.cabeza.image);
+            $(idCabeza).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.cabeza.ancho);
+            break;
+        }
+        
+      }
+    });
 
     interact('#dropzone').dropzone({
       accept: '.dropIN',
@@ -129,6 +217,41 @@ function empezarJuego(){
             alebrije.cuerpo.image = event.relatedTarget.outerHTML;
             alebrije.cuerpo.origen = event.relatedTarget.offsetParent;
             alebrije.cuerpo.ancho = width;
+          }else if(categoriaSelecc==='menuPatas') {
+            i=alebrije.patas.length;
+            alebrije.patas[i] = new Object();
+            alebrije.patas[i].id = event.relatedTarget.id;
+            alebrije.patas[i].image = event.relatedTarget.outerHTML;
+            alebrije.patas[i].origen = event.relatedTarget.offsetParent;
+            alebrije.patas[i].ancho = width;
+
+            event.relatedTarget.dataset.indice=i;
+
+          }else if(categoriaSelecc==='menuColas') {
+            i=alebrije.colas.length;
+            alebrije.colas[i] = new Object();
+            alebrije.colas[i].id = event.relatedTarget.id;
+            alebrije.colas[i].image = event.relatedTarget.outerHTML;
+            alebrije.colas[i].origen = event.relatedTarget.offsetParent;
+            alebrije.colas[i].ancho = width;
+            event.relatedTarget.dataset.indice=i;
+
+          }else if(categoriaSelecc==='menuOrejas') {
+            i=alebrije.orejas.length;
+            alebrije.orejas[i] = new Object();
+            alebrije.orejas[i].id = event.relatedTarget.id;
+            alebrije.orejas[i].image = event.relatedTarget.outerHTML;
+            alebrije.orejas[i].origen = event.relatedTarget.offsetParent;
+            alebrije.orejas[i].ancho = width;
+            event.relatedTarget.dataset.indice=i;
+          }else if(categoriaSelecc==='menuStickers') {
+            i=alebrije.stickers.length;
+            alebrije.stickers[i] = new Object();
+            alebrije.stickers[i].id = event.relatedTarget.id;
+            alebrije.stickers[i].image = event.relatedTarget.outerHTML;
+            alebrije.stickers[i].origen = event.relatedTarget.offsetParent;
+            alebrije.stickers[i].ancho = width;
+            event.relatedTarget.dataset.indice=i;
           }
           
           imgDropped=event.relatedTarget;
@@ -136,6 +259,7 @@ function empezarJuego(){
           event.relatedTarget.offsetParent.classList.add('empty');
           event.relatedTarget.classList.remove('dropIN');
           event.relatedTarget.classList.add('interaccion');
+          event.relatedTarget.classList.add('canErrase');
 
           
           event.relatedTarget.dataset.x=imgPos[0];

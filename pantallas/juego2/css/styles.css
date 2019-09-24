@@ -91,7 +91,7 @@ body {
   align-items: flex-start;
   display: flex; }
   #juego2 .header .navGame {
-    flex-basis: 1420px;
+    flex-basis: 1180px;
     position: relative;
     padding-top: 20px;
     height: 200px;
@@ -123,10 +123,9 @@ body {
       display: flex; }
     #juego2 .header .sbMenuItemsCont .btn {
       position: relative;
-      flex-basis: 165px;
+      flex-basis: 140px;
       margin: 0 10px;
-      height: 160px;
-      width: 180px; }
+      height: 160px; }
       #juego2 .header .sbMenuItemsCont .btn.empty::before {
         border-color: #ffc33e; }
       #juego2 .header .sbMenuItemsCont .btn::before {
@@ -177,7 +176,7 @@ body {
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
   position: absolute; }
-#juego2 .drop-active {
+#juego2 .drop-active.gameSceneCont {
   background-color: rgba(255, 255, 255, 0.04);
   border: 2px rgba(255, 255, 255, 0.1) dashed; }
 #juego2 .in15 {
@@ -211,5 +210,16 @@ body {
     font-size: 22px;
     color: #fefefe;
     margin: 0; }
+#juego2 .wrprBorrar {
+  position: relative;
+  flex-basis: 140px;
+  height: 170px;
+  left: 50px; }
+  #juego2 .wrprBorrar .borrar {
+    background: url(../img/basurero.png) no-repeat center bottom;
+    background-size: 70px;
+    padding-top: 30px;
+    height: 160px;
+    width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */
