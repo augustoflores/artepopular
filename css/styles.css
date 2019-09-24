@@ -119,7 +119,7 @@ html{
 }
 *{
   box-sizing: border-box;
-  transition: .5s;
+  transition: .25s;
 }
 body {
   font-family: 'Nunito', sans-serif;
@@ -141,6 +141,23 @@ body {
   color: white;
   margin: 0px;
 }
+#fondonegro{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black
+}
+#iframecontainer{
+  background-color: #000d2d;
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%)
+}
 span.Typewriter__wrapper {
   position: absolute;
   top: 50%;
@@ -148,8 +165,10 @@ span.Typewriter__wrapper {
   width: 70%;
 }
 iframe {
-  width: 100%;
-  height: 100%;
+ margin:auto;
+}
+center{
+
 }
 .imagecontainer {
   text-align: center;
@@ -248,14 +267,14 @@ iframe {
   padding: 5px;
 }
 .escena2 .tituloescena {
-  width: 481px;
+  /*width: 481px;
   border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  border-bottom-right-radius: 24px;*/
   border: solid 2px #07dd00;
   border-top: none;
-  position: absolute;
+  /*position: absolute;
   left: 48px;
-  padding: 10px 0 20px 20px;
+  padding: 10px 0 20px 20px;*/
 }
 .escenanumero {
   font-size: 42px;
@@ -374,11 +393,19 @@ iframe {
   top: 40px;
   background-color: #200e1a;
   border: #a0586c solid thin;
+  border-left: none!important;
   padding: 10px;
   overflow: hidden;
   color: #a0586c;
   width: 150px;
-  height: 261px;
+  height: auto;
+  text-align: center;
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 #tooglemenu div {
   background-color: #a0586c;
@@ -391,8 +418,8 @@ iframe {
   opacity: 0;
 }
 .hidemenu{
-  width: 70px!important;
-  height: 54px!important;
+  width: 109px!important;
+  height: 66px!important;
 }
 .hidemenu #tooglemenu{
 

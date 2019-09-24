@@ -9,12 +9,15 @@
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="../../utils/css/animate.css">
+  <script src="../../utils/js/confetti.min.js"></script>
   <script src="../../utils/js/type.js"></script>
   <script src="../../utils/js/currentpage.js"></script>
   <script src="../../utils/js/jquery-3.4.1.min.js"></script>
   <script src="../../utils/js/type.js"></script>
-
+  <script src="../../utils/js/buzz.min.js"></script>
   <script src="../../js/globos.js"></script>
+  <script src="../../utils/js/Tone.js"></script>
+  
   <!--memorama-->
   <link href="./css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
   <link rel="shortcut icon" href="./favicon.png" type="image/png">
@@ -24,6 +27,7 @@
 <script type="text/javascript">
 
   $( document ).ready(function() {
+  
 
     var card_01= {src:"Grupo440.png",title:"1"};
     var card_02= {src:"Grupo441.png",title:"2"};
@@ -36,6 +40,7 @@
     var card_09= {src:"piiedra@1,25x.png",title:"9"};
 
     var array1 = [card_01,card_02,card_03,card_04,card_05,card_06,card_07,card_08,card_09];
+    var array2 = [card_01,card_02,card_03,card_04,card_05,card_06,card_07,card_08,card_09];
     
     function aleatorio(variable){
       var long = variable.length;
@@ -48,7 +53,7 @@
       return    (variable);
     }
 
-    var cards = aleatorio(array1).concat(aleatorio(array1)); 
+    var cards = aleatorio(array1).concat(aleatorio(array2)); 
 
     console.log(cards);
 
@@ -63,11 +68,13 @@
 </script>
 
 <script type="text/javascript" src="./js/main.js"></script>
-  <!-- end Memorama-->
+<!-- end Memorama-->
 </head>
 
-<body data-nextscreen="nextscreen">
+<body data-nextscreen="escena5">
   <div id="juego5">
+
+ 
     <div class="cabecera">
 
         <div class="tituloescena  animated fadeInDown faster">
@@ -76,37 +83,28 @@
         </div>
         
     </div>
-
-    <div class="gameSceneCont">
-
+    <section class="gameSceneCont">
       <div id="instructions" class="title hidden">Completa el memorama hasta encontrar las 5 piezas ocultas.</div>
       <div id="mainbox"  class="">
 
     <div id="viewcards" class=""> 
-         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo440.png" title=""/></div>
-         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo441.png" title=""/></div>
-         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo442.png" title=""/></div>
-         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo443.png" title=""/></div>
-         <div class="wrapper-card floatLeft"><img class="zoom" src="./img/Grupo444.png" title=""/></div>
+         <div id="c1" class="wrapper-card floatLeft animated fadeIn slow delay-1s"><img class="zoom" src="./img/Asset 1@2x.png" title=""/></div>
+         <div id="c2" class="wrapper-card floatLeft animated fadeIn slow delay-2s"><img class="zoom" src="./img/molcajete.png" title=""/></div>
+         <div id="c3" class="wrapper-card floatLeft animated fadeIn slow delay-3s"><img class="zoom" src="./img/madera.png" title=""/></div>
+         <div id="c4" class="wrapper-card floatLeft animated fadeIn slow delay-4s"><img class="zoom" src="./img/piedra@3x.png" title=""/></div>
+         <div id="c5" class="wrapper-card floatLeft animated fadeIn slow delay-5s"><img class="zoom" src="./img/tarro.png" title=""/></div>
          <div stile="clear: both;"></div>
     </div>
     
     <!--Memorama-->
-    
-
-    
-
-
-
-    
-    
         <div id="msg-game-over"class=""></div>
-        <div id="btn-comenzar" class="animated fadeIn faster bordertexto">Comenzar</div>
+        <div id="btn-comenzar" class="bordertexto animated fadeIn slow delay-7s">Comenzar</div>
         <div id="container" class="hidden memorama floatLeft"> 
          
         </div>
       </div>
-    </div>
+      <canvas id="canvas1"></canvas>
+    </section>
 
 
 
