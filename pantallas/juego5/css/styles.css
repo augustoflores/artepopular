@@ -163,7 +163,7 @@ ul{
 #juego5 .gameSceneCont {
     margin: 0 auto;
     width: 1620px;
-    height: 626px;
+    height: 646px;
 }
 
 #juego5 .cabecera {
@@ -255,3 +255,53 @@ ul{
 .zoom:hover {
   transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+
+/*   Confeti*/
+body {
+        overflow-x: hidden;
+      }
+      section {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        white-space: nowrap;
+      }
+      section > * {
+        z-index: 9;
+        position: relative;
+        top: 0;
+      }
+      section > canvas {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+      }
+
+      .spacing {
+        width: 100%;
+        min-height: 20%;
+        background: -moz-linear-gradient(-45deg, #1f6bd3 0%, #2c44c9 100%);
+        background: -webkit-linear-gradient(-45deg, #1f6bd3 0%, #2c44c9 100%);
+        background: linear-gradient(135deg, #1f6bd3 0%, #2c44c9 100%);
+        background: linear-gradient(to right bottom,#2c44c9,#2c44c9,#5955bd,#8280ce);
+        background: -webkit-linear-gradient(to right bottom,#2c44c9,#2c44c9,#5955bd,#8280ce);
+      }
+
+      a {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        z-index: 99;
+        border: none;
+      }
+      a img {
+        max-width: 50px;
+        border-radius: 50px;
+        border: 1px solid #efefef;
+        -webkit-box-shadow: 0 0 5px 0 rgba(55,55,55,.3);
+        box-shadow: 0 0 5px 0 rgba(55,55,55,.3);
+      }
+/**/
