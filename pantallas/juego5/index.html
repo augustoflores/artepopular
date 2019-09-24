@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="../../utils/css/animate.css">
+  <script src="../../utils/js/confetti.min.js"></script>
   <script src="../../utils/js/type.js"></script>
   <script src="../../utils/js/currentpage.js"></script>
   <script src="../../utils/js/jquery-3.4.1.min.js"></script>
@@ -16,6 +17,7 @@
   <script src="../../utils/js/buzz.min.js"></script>
   <script src="../../js/globos.js"></script>
   <script src="../../utils/js/Tone.js"></script>
+  
   <!--memorama-->
   <link href="./css/styles.css" type="text/css" rel="stylesheet" media="screen"/>
   <link rel="shortcut icon" href="./favicon.png" type="image/png">
@@ -25,6 +27,7 @@
 <script type="text/javascript">
 
   $( document ).ready(function() {
+  
 
     var card_01= {src:"Grupo440.png",title:"1"};
     var card_02= {src:"Grupo441.png",title:"2"};
@@ -65,11 +68,13 @@
 </script>
 
 <script type="text/javascript" src="./js/main.js"></script>
-  <!-- end Memorama-->
+<!-- end Memorama-->
 </head>
 
 <body data-nextscreen="escena5">
   <div id="juego5">
+
+ 
     <div class="cabecera">
 
         <div class="tituloescena  animated fadeInDown faster">
@@ -78,9 +83,7 @@
         </div>
         
     </div>
-
-    <div class="gameSceneCont">
-
+    <section class="gameSceneCont">
       <div id="instructions" class="title hidden">Completa el memorama hasta encontrar las 5 piezas ocultas.</div>
       <div id="mainbox"  class="">
 
@@ -94,21 +97,14 @@
     </div>
     
     <!--Memorama-->
-    
-
-    
-
-
-
-    
-    
         <div id="msg-game-over"class=""></div>
-        <div id="btn-comenzar" class="bordertexto animated fadeIn slow delay-10s">Comenzar</div>
+        <div id="btn-comenzar" class="bordertexto animated fadeIn slow delay-7s">Comenzar</div>
         <div id="container" class="hidden memorama floatLeft"> 
          
         </div>
       </div>
-    </div>
+      <canvas id="canvas1"></canvas>
+    </section>
 
 
 

@@ -7,6 +7,7 @@
 //
 *//////////////////////////////////////////////////////////////////////////
 var score=0;
+
 function toSelect(attrId){//Select Items
 	if($(attrId + '> .item').hasClass("off")){
 		$(attrId + '> .item').removeClass("off").addClass("on");
@@ -35,6 +36,18 @@ function toShow(){//To show items checked
 	var item = 0;
 	var src = Array();
 	var alt;
+
+	var canvas1Settings = {
+        target: 'canvas1',
+        max: 100,
+        props: ["circle","square","triangle","line"],
+        colors: [[165,104,246],[230,61,135],[0,199,228],[253,214,126]],
+        clock:25,
+        rotate:false
+        
+      };
+	var canvas1 = new ConfettiGenerator(canvas1Settings);
+
 	$(".item").each(function(){
 		if($(this).hasClass("toCheck")){
 			src[item] = $(this).html();
@@ -66,12 +79,12 @@ function toShow(){//To show items checked
 		}
 
 		if(score>=5){
-
 			try {
 			    var mySound = new buzz.sound("../../audios/juegos/Win_SergiodelaCruzHernan.mp3");
 			    mySound.play();
 			} catch (e) {}
 			$('#msg-game-over').append(" Muy Bien");
+			canvas1.render();
 			$(".globonext").click();
 			$(".globonext").removeClass("hidden");
 
@@ -148,6 +161,8 @@ $(function(){//Main function
 
 	});
 
+
+
 	$('#btn-comenzar').click(function(event) {//
 
 	$(this).hide();
@@ -155,7 +170,6 @@ $(function(){//Main function
 	$('#instructions').fadeIn();
 	$('#msg-game-over').html("Score: 0");
 	$('#container').fadeIn("slow");
-
 	try {
       var mySound = new buzz.sound("../../audios/UX_Interaccion/Snooker_Publicdomain.mp3");
       mySound.play();
