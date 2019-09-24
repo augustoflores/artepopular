@@ -393,6 +393,7 @@ center{
   top: 40px;
   background-color: #200e1a;
   border: #a0586c solid thin;
+  border-left: none!important;
   padding: 10px;
   overflow: hidden;
   color: #a0586c;
