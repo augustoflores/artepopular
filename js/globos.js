@@ -35,14 +35,17 @@ $(function () {
       if (personajeborrado.length > 0) {
         $(arrGlobos[indexglobo]).prepend(personajeborrado);
       }
-      //console.log(typewriter)
       typingSound.play();
       typewriter.typeString(texto)
         .callFunction(function () {typingSound.pause()})
         .pauseFor(0)
         .start();
 
-      $(arrImages[indexglobo]).fadeIn(0);
+        $(".imagecontainer")
+        .removeClass('fadeInDown ')
+        .height('auto') // the magic
+        .addClass('fadeInDown ')
+        $(arrImages[indexglobo]).fadeIn(500);
       return true;
     }
     window.location.href = '../../pantallas/' + $("body").data("nextscreen") + '/index.html';

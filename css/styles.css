@@ -175,6 +175,7 @@ center{
   position: absolute;
   width: 100%;
   top: 100px;
+  z-index: -1;
 }
 /*ESTILOS CUADROS DE TEXTO */
 .containertexto{
@@ -265,6 +266,7 @@ center{
   text-align: center;
   margin: auto;
   padding: 5px;
+  z-index: 1000!important;
 }
 .escena2 .tituloescena {
   /*width: 481px;
@@ -272,6 +274,7 @@ center{
   border-bottom-right-radius: 24px;*/
   border: solid 2px #07dd00;
   border-top: none;
+  z-index: 1000!important;
   /*position: absolute;
   left: 48px;
   padding: 10px 0 20px 20px;*/
