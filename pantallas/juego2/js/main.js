@@ -35,7 +35,7 @@ function inicio(){
 
 function empezarJuego(){
     $('.btnNav').on('click', abrirMneu);
-    $('.footer').fadeOut('slow');
+    $('.menuJ2').removeAttr('style');
     $('#menuCabezas').addClass('activo');
 
     // Borrarr
