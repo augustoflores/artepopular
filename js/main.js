@@ -14,6 +14,8 @@ var arrPages = [
   "escena5"
 ]
 $(function () {
+  var mySound = new buzz.sound("../../audios/Escenas/intro1-4_fondo.mp3",{loop:true});
+      mySound.play();
   //$('iframe').on('load', function (event) {
   //console.log(document.getElementById("contentframe").contentWindow.location.href);
   //});
