@@ -6,26 +6,30 @@ body {
   margin: 0; }
 
 #juego2 #btnDescripcion {
-  border: solid #07dd00 3px;
-  background-color: #333;
-  border-radius: 30px;
-  margin-left: -100px;
-  text-align: center;
+  background-color: transparent;
   position: absolute;
-  font-size: 21px;
-  cursor: pointer;
+  text-align: right;
   color: #07dd00;
-  height: 50px;
-  width: 200px;
-  top: -25px;
-  left: 50%; }
+  font-size: 30px;
+  cursor: pointer;
+  outline: none;
+  display: none;
+  height: 150px;
+  border: none;
+  width: 163px;
+  right: 30px;
+  top: -67px;
+  z-index: 100; }
+  #juego2 #btnDescripcion span {
+    padding-bottom: 30px;
+    display: block; }
 #juego2 #dropzone img {
   transition: background-color 0.3s ease-in-out;
   background-color: rgba(255, 255, 255, 0);
   border: dashed 1px rgba(255, 255, 255, 0); }
   #juego2 #dropzone img.flip {
     transform: scaleX(-1); }
-  #juego2 #dropzone img:hover {
+  #juego2 #dropzone img.dragg:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border: dashed 2px rgba(255, 255, 255, 0.1);
     border-radius: 15px; }
@@ -87,6 +91,17 @@ body {
   padding-top: 10px; }
 #juego2 #menuStickers .btn:nth-child(7) {
   padding-top: 50px; }
+#juego2 #my-canvas {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+#juego2 .colorAmarillo {
+  color: #ffc33e; }
+#juego2 .colorVerde {
+  color: #07dd00; }
 #juego2 .header {
   align-items: flex-start;
   display: flex; }
@@ -163,10 +178,12 @@ body {
   height: 289px;
   display: flex; }
   #juego2 .footer .pedro {
-    flex-basis: 150px; }
+    flex-basis: 270px;
+    min-width: 270px; }
   #juego2 .footer .txtFooter {
     flex-basis: 1535px;
-    font-size: 20px;
+    line-height: 1em;
+    font-size: 27px;
     color: #fefefe; }
   #juego2 .footer .footerRight {
     flex-basis: 300px; }
@@ -196,15 +213,14 @@ body {
   border-right: solid 2px #07dd00;
   border-left: solid 2px #07dd00;
   position: relative;
-  padding-left: 25px;
-  flex-basis: 440px;
-  height: 128px;
+  flex-basis: 260px;
+  height: 65px;
   left: 50px; }
   #juego2 .rectnguloTop h1 {
-    text-transform: uppercase;
-    padding-top: 20px;
+    text-align: center;
+    padding-top: 10px;
     color: #ffc33e;
-    font-size: 42px;
+    font-size: 36px;
     margin: 0; }
   #juego2 .rectnguloTop h2 {
     font-size: 22px;
@@ -212,12 +228,13 @@ body {
     margin: 0; }
 #juego2 .wrprBorrar {
   position: relative;
-  flex-basis: 140px;
+  flex-basis: 220px;
   height: 170px;
-  left: 50px; }
+  z-index: 100;
+  left: 10px; }
   #juego2 .wrprBorrar .borrar {
     background: url(../img/basurero.png) no-repeat center bottom;
-    background-size: 70px;
+    background-size: 40px;
     padding-top: 30px;
     height: 160px;
     width: 100%; }

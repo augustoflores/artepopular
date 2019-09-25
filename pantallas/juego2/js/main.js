@@ -20,6 +20,16 @@ var alebrije={
   orejas: [],
   stickers: []
 };
+var txtFooter=[
+  'Inicio',
+  '<p>Muy bien, ahora crea un personaje con los elementos disponibles. Puedes <span class="colorAmarillo">mover, voltear (doble click) y escalar</span> las piezas del alebrije como desees.<br>También se puedes eliminarlas arrastrándolas al ícono de la basura.</p>',
+  '<p>Imagina un animal fantástico, elige las partes que lo componen y arrástalas hacia abajo para ir formando tu alebrije. Puedes añadir tantos elementos quieras o bien, eliminarlos.</p><p>Pulsa <span class="colorAmarillo">Finalizar</span> cuando te guste el resultado de lo que ves.</p>',
+  '<p>Muchas gracias, eres un gran aprendiz. Te ofrezco este reconocimiento por tu creatividad.<br><span class="colorVerde">Alebrije Psicodélico</span></p><p>Esto te convierte en un maestro artesano por estas tierras. Vuelve cuando quieras.</p>',
+  '<p>Yo, de igual forma he enseñado el oficio a mi hijo Felipe y a mi nieto Leonardo…<br> Sé que con el tiempo también se han convertido en grandes artistas.</p><p>¡Mucha suerte en tu camino!</p>'
+];
+
+var AquiVas=0;
+
 var screenPosition = {
   x: 0,
   y: 0
@@ -27,12 +37,35 @@ var screenPosition = {
 var categoriaSelecc='menuCabezas';
 var dentroDropzone = false;
 var anchoAntesBorrar = []; // Guardamos el ancho para animar al borrar
+var typingSound;
+
 $(document).ready(inicio);
 
 function inicio(){
-  $('#btnDescripcion').on('click', empezarJuego);
+  typingSound = new buzz.sound("../../audios/UX_Interaccion/blip.mp3",{loop: true,volume: 0.5});
+  aplausos = new buzz.sound("../../audios/juegos/Win_SergiodelaCruzHernan.mp3", {loop: false, volume: 0.5});
+  borrar = new buzz.sound("../../audios/UX_Interaccion/BubblePop_BenjaminVogelzan.mp3", {loop: false, volume: 1});
+  flip = new buzz.sound("../../audios/UX_Interaccion/hollow_dog .mp3", {loop: false, volume: 0.7});
+  
+  animartexto('.txtFooter');
+  empezarJuego();
 }
+function animartexto(selector,texto) {
+    if(!texto) texto = $(selector).html();
+    var app = $(selector)[0];
+    var typewriter = new Typewriter(app, {
+      loop: false,
+      delay: 10,
+      cursor: ""
+    });
+    
+    typingSound.play();
+    typewriter.typeString(texto)
+      .callFunction(function () {typingSound.pause()})
+      .pauseFor(0)
+      .start();
 
+}
 function empezarJuego(){
     $('.btnNav').on('click', abrirMneu);
     $('.menuJ2').removeAttr('style');
@@ -45,7 +78,7 @@ function empezarJuego(){
       ondragenter: function (event) {
         var draggableElement = event.relatedTarget;
         var dropzoneElement = event.target;
-        console.log(event);
+        // console.log(event);
         
     
         // feedback the possibility of a drop
@@ -61,17 +94,15 @@ function empezarJuego(){
         event.relatedTarget.style.opacity = '1';
       },
       ondrop: function (event) {
-        // alert(event.relatedTarget.id
-        //       + ' was dropped into '
-        //       + event.target.id);
+        borrar.play();
+        event.target.classList.remove('animated');
+        event.target.classList.remove('bounce');
 
         id = event.relatedTarget.id;
         txtId = id.split('-');
         cat=txtId[0];
         nId=txtId[1]-1;
         indice=event.relatedTarget.getAttribute('data-indice');
-
-        console.log(cat+'-'+nId);
         
         
         switch(cat){
@@ -161,7 +192,6 @@ function empezarJuego(){
         
         //console.log(event.relatedTarget.offsetLeft+', '+event.relatedTarget.offsetTop);
         if(categoriaSelecc === 'menuCabezas'){
-          console.log(categoriaSelecc);
           
           // EVITAMOS QUE SE INSERTEN DOS OBJETOS
           if(alebrije.cabeza.id!=='' && alebrije.cabeza.id !== event.relatedTarget.id){ 
@@ -198,6 +228,22 @@ function empezarJuego(){
         //event.relatedTarget.
         if(dentroDropzone){
           // El objeto se ha depositado en la zona
+          borrar.play();
+          // Avanzar al siguiente paso (cambio de Textos, paso 2)
+          if(AquiVas < 2){
+            $('.txtFooter').empty();
+            AquiVas++;
+            animartexto('.txtFooter', txtFooter[AquiVas]);
+            
+            if(AquiVas === 2){
+              // Cambiamos la imágen por el alebrije
+              $('.pedro').removeClass('animated zoomIn').css('display','none');
+              $('#personajeFooter').attr('src', 'img/alebrije.png');
+              $('.pedro').fadeIn();
+              $('#btnDescripcion').css('display','block').on('click', finaliza);
+
+            }
+          }
 
           imgPos=[];
           imgPos.push( screenPosition.x - 160 );
@@ -331,11 +377,10 @@ function empezarJuego(){
 
     interact('.interaccion').on('doubletap', function (event) {
       event.preventDefault();
-      
+      flip.play();
       x=event.currentTarget.getAttribute('data-x');
       y=event.currentTarget.getAttribute('data-y');
       flipped=event.currentTarget.getAttribute('data-volteado');
-      console.log(flipped);
 
       if(flipped==='0'){
         event.currentTarget.style.transform='translate('+x+'px,'+y+'px) scaleX(-1)';
@@ -404,4 +449,41 @@ function dragMoveListener (event) {
     target.setAttribute('data-y', y)
     
     
+  }
+  function finaliza() {
+      $('.txtFooter').empty();
+      AquiVas++;
+      // Cambiamos la imágen por el alebrije
+      switch(AquiVas){
+        case 3:
+          aplausos.play();
+          confeti();
+          animartexto('.txtFooter', txtFooter[AquiVas]);
+            $('.pedro').css('display','none');
+            $('#personajeFooter').attr('src', 'img/pedro.png');
+            $('.pedro').fadeIn();
+            $('#btnDescripcion span').empty().html('Siguiente');
+            // Desaparecer Menú!
+            $('.navGame').addClass('animated fadeOutUp');
+            $('#borrarDrop').addClass('animated fadeOutUp');
+            // Eliminamos interacción de las imágenes
+            $('#dropzone img').each(function(){
+              $(this).removeClass('canErrase dragg interaccion').css('position','absolute');
+            });
+          break;
+        case 4:
+            animartexto('.txtFooter', txtFooter[AquiVas]);
+          break
+        default:
+          break
+      }
+
+    
+  }
+
+  function confeti(){
+    $('#my-canvas').fadeIn();
+    confettiSettings = {"target":"my-canvas","max":"300","size":"1","animate":true,"props":["circle","square","triangle","line"],"colors":[[165,104,246],[230,61,135],[0,199,228],[253,214,126]],"clock":"25","rotate":true,"width":"1908","height":"925"};
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
   }
