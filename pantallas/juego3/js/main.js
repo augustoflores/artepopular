@@ -4,10 +4,14 @@ $(function () {
   $(".opcion").css("opacity",.5)
   $("#equipar").hide();
   var objetoactual = null;
+  var fondoSound = new buzz.sound("../../audios/Juegos/Juego3/fondo.mp3",{volume:40});
+  fondoSound.play()
   actualizarpistas();
   $(".objeto").click(function () {
     objetoactual=this;
-    var mySound = new buzz.sound("./sounds/click.m4a");
+    //var mySound = new buzz.sound("./sounds/click.m4a");
+    var mySound = new buzz.sound("../../audios/Juegos/Juego3/"+$(this).data("audio"));
+
     let text = $(this).attr("alt")
     animartexto("#texto",text);
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
