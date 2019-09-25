@@ -5,7 +5,9 @@
   position: absolute;
   transform-origin: top left;
 }
-
+.opcion {
+  margin: 0px 26px;
+}
 .activo{
   filter: brightness(130%) grayscale(0);
 }
@@ -55,10 +57,12 @@
   display: block;
   background-image: url(../images/Salon_NoFondoNiObjetosColor.png);
 }
-#opciones{
+#opciones {
   position: absolute;
-  left: 1450px;
-  top:10px;
+  left: 50%;
+  top: -40px;
+  display: flex;
+  transform: translateX(-50%);
 }
 #ventana{
 
