@@ -13,8 +13,7 @@
     <div class="contenedor">
         <div class="header">
             <div class="rectnguloTop">
-                <h1>Reto 2</h1>
-                <h2>Animales fantásticos</h2>
+                <h1>Reto</h1>
             </div>
             <div class="navGame">
                 <ul class="menuJ2 animated slideInDown" style="display: none;">
@@ -107,20 +106,27 @@
         <div class="gameSceneCont" id="dropzone">
         </div>
         <div class="footer">
-            <button id="btnDescripcion">¡Vámos!</button>
+            <button id="btnDescripcion" class="animated fadeInLeft">
+                <span>Finalizar</span>
+                <img src="img/manita-verde.png" alt="Siguiente">
+            </button>
 
-            <div class="pedro">
-                <img src="img/pedro.png">
+            <div class="pedro animated zoomIn">
+                <img src="img/pedro.png" id="personajeFooter">
             </div>
             <div class="txtFooter">
-                <h3>BIENVENIDO A MI TALLER</h3>
-                <p>Justo ahora estoy preparando un gran alebrije para el gran desfile de la Ciudad, porqué no me ayudas a crear un personaje, a partir de tu propia imaginación.</p>
-                <p>Imagina un animal fantástico, elige las partes que lo componen y colócalas dentro del recuadro para ir formando tu alebrije.</p>
+                <h3>Bienvenido a mi taller</h3>
+                <p>Justo ahora estoy por crear <span class="colorVerde">un gran alebrije</span> para el desfile de la Ciudad, ¿porqué no me ayudas a diseñar un personaje de tu propia inspiración?</p>
+                <p>Arrastra cualquier forma de tu agrado al espacio del centro de la pantalla.</p>
             </div>
             <div class="footerRight"></div>
         </div>
     </div>
+    <canvas id="my-canvas"></canvas>
     <script src="../../utils/js/jquery-3.4.1.min.js"></script>
+    <script src="../../utils/js/type.js"></script>
+    <script src="../../utils/js/buzz.min.js"></script>
+    <script src="../../utils/js/confetti.min.js"></script>
     <script src="js/interact.min.js"></script>
     <script src="js/main.js"></script>
 </body>
