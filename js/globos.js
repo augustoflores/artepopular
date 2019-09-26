@@ -1,4 +1,5 @@
 $(function () {
+  let sonidoglobo=null
   let indexglobo = -1;
   let arrGlobos = $(".globostexto .globotexto");
   let arrImages = $(".imagecontainer .image");
@@ -12,10 +13,12 @@ $(function () {
   $(".globonext, .cajanext").click(function (event) {
     event.stopPropagation();
     try {
+      mySound.stop();
       var mySound = new buzz.sound("../../audios/UX_Interaccion/botones/Button_Click2_JFairbanks.mp3");
       mySound.play();
     } catch (e) {}
     if (indexglobo < (arrGlobos.length - 1)) {
+ 
       console.log(indexglobo)
       if($("body").data("nextscreen")=="fin" & indexglobo==1){
         $(".nombreescena").html("");
@@ -27,6 +30,18 @@ $(function () {
       $(".imagecontainer .image").hide(0);
       borrado = $(arrGlobos[indexglobo]).find(".bordertexto, .bordertextoright").detach();
       personajeborrado = $(arrGlobos[indexglobo]).find(".personaje").detach();
+      if($(arrGlobos[indexglobo]).data("audio")){
+        try{
+          sonidoglobo.stop();
+        }catch(e){
+          
+        }
+        sonidoglobo = new buzz.sound($(arrGlobos[indexglobo]).data("audio"),{
+          volume:100
+        });
+        sonidoglobo.play();
+        console.log("audio",$(arrGlobos[indexglobo]).data("audio"));
+      }
       texto = $(arrGlobos[indexglobo]).html();
       $(arrGlobos[indexglobo]).html("")
       $(arrGlobos[indexglobo]).fadeIn(0);

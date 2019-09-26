@@ -16,7 +16,7 @@ $(function () {
     "Toca las figuras en el mismo orden que se muestra el patrón. Si perdiste de vista alguno, recuerda que puedes pulsar e botón <span class='font-rosa'>Repetir</span> para intentarlo de nuevo...",
     "Excelente, ahora vamos con el patrón de arriba",
     "Excelente, ahora vamos con último patrón.",
-    "<span class='bold font-verde'>¡Felicidades lo lograste!</span> Has ganado la Medalla de Gran Maestro Artesano María Pérez te has ganado la siguiente insignia como recompensa. <br><b>Telar Chamula<<br>/b>"
+    "<span class='bold font-verde'>¡Felicidades lo lograste!</span> Has ganado la Medalla de Gran Maestro Artesano María Pérez te has ganado la siguiente insignia como recompensa. <br><b>Telar Chamula</b>"
   ]
   $("#iniciar").hide();
   $("#continuar").hide();
