@@ -51,13 +51,20 @@ body {
             &.flip {
                 transform: scaleX(-1);
             }
-            &.dragg:hover {
+            &.interaccion:hover {
                 background-color: rgba(255,255,255,0.1);
                 border: dashed 2px rgba(255,255,255,0.1);
                 border-radius: 15px;
             }
 
         }
+    }
+    .interaccion {
+        transition: 0.3s ease-in-out;
+        touch-action: none;
+        -webkit-transform: translate(0px, 0px);
+                transform: translate(0px, 0px);
+        position: absolute
     }
     #menuCabezas {
         .btn {
