@@ -303,6 +303,7 @@ center{
   width: 40px;
   text-align: center;
   border-radius: 10px;
+  display: none;
 }
 #prev{
   right: 55px;
