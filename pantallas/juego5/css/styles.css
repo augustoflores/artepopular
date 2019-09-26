@@ -124,23 +124,29 @@ ul{
 }
 .item img{
 	display: block;
-	width: 135px;
+	/*width: 135px;*/
+
 	margin: 9px 0 0 9px;
+	
+	max-width:  100%;
 }
 .memorama{
 	display: block;
 	margin-bottom:20px;
 }
 .wrapper-item{
-	/*background:#55BAC6;*/
+	/*background:#000d2d;
 	background-image: url("../img/piedra@1,25x.png");
-	background-size: 154px 160px;
+	background-size: 154px 160px;*/
 	display: block;
-	height:auto;	
-	min-height: 160px;
-	margin: 7px 14px 7px 14px;
+	/*height:auto;	
+	min-height: 160px;*/
+	margin: 7px 10px 7px 10px;
 	padding: 0px;
-	width: 154px;
+	width: 200px;
+	height: 200px;
+	left: 0!important; 
+	top: 0!important;
 }
 
 .wrapper-item:hover{
@@ -222,16 +228,31 @@ ul{
 }
 
 .wrapper-card{
+
 	/*background:#55BAC6;
 	background-image: url("../img/piedra@1,25x.png");
 	background-size: 154px 160px;*/
 	display: block;
-	height:auto;	
-	min-height: 160px;
-	margin: 7px 14px 7px 14px;
+	/*height:auto;	*/
+	/*min-height: 160px;*/
+	margin: 7px 10px 7px 10px;
 	padding: 0px;
-	width: 190px
+	width: 200px;
+	height: 200px !important;
 }
+
+/*.wrapper-card::before {
+        border-radius: 80px;
+        border: solid #07dd00 2px;
+        position: absolute;
+        display: block;
+        height: 120px;
+        width: 120px;
+        content: "";
+        z-index: 5;
+        left: 0;
+        top: 0; 
+}*/
 
 .wrapper-card img{
 	max-width: 100%;
@@ -241,6 +262,8 @@ ul{
 #viewcards{
 	width: 100%;
 	text-align: center;
+	background-image: url("../img/vive5.2textura.png");
+	
 }
 
 .zoom {

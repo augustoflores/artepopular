@@ -1,11 +1,3 @@
-/*//////////////////////////////////////////////////////////////////////////
-//
-//  Author: Irvin Rangel, inherit.mx
-//  Date: 01 Ene, 2012
-//  En tiempos de ocio. (Cuando no hay algo que hacer en la chamba)
-//  Version 1.0
-//
-*//////////////////////////////////////////////////////////////////////////
 var score=0;
 
 function toSelect(attrId){//Select Items
@@ -111,7 +103,7 @@ function toHide(){//To hide items
 		if($(attrId + '> .item').hasClass("checked")){
 			//Do nothing
 		}else{
-			$(this).css("background-image", 'url("./img/piedra@1,25x.png")');//Change background color
+			//$(this).css("background-image", 'url("./img/piedra@1,25x.png")');//Change background color
 		}
 	});	
 }
