@@ -18,11 +18,12 @@
 			</hgroup>
 		</div>
 		<div class="gameboardWrpr">
-			<div class="jarrones">
-				<img src="img/chorro.gif" alt="agua">
-			</div>
+			<div class="jarrones"></div>
 			<div class="gameBoard">
-					<img src="img/chorro.gif" alt="agua" class="animated fadeIn" id="chorroFinal">
+				<img src="img/rectaInicio.png" class="tuboInicio">
+				<img src="img/circulo-azul.png" class="manivela">
+				<img src="img/llaveAzul.png" class="finTubo">
+				<img src="img/chorro.gif" alt="agua" class="animated fadeIn" id="chorroFinal">
 				<div class="gameActionWrp">
 					<div class="nivel">
 						<div id="A" class="row">
@@ -54,6 +55,9 @@
 			</div>
 			<div class="jarrones dos">
 				<div class="imgNiveles">
+					<div id="niv1Ok" class="animated fadeIn"></div>
+					<div id="niv2Ok" class="animated fadeIn"></div>
+					<div id="niv3Ok" class="animated fadeIn"></div>
 					<img src="img/cantaros-intro.png" class="animated fadeIn cantaroIntro">
 					<img src="img/cantarosN1.png" class="animated fadeIn cantaroN1">
 					<img src="img/cantarosN2.png" class="animated fadeIn cantaroN2">
@@ -61,20 +65,28 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="gameinst">
-			<button id="btnDescripcion">¡Vámos!</button>
+			<div class="notaMiddle animated flipInX">
+				<img src="img/palomita.png">
+				¡Muy bien!
+			</div>
+			<button id="btnDescripcion" class="animated fadeIn">
+				<span>Siguiente</span>
+				<img src="img/manitaAzul.png" alt="Siguiente">
+			</button>
 			<div class="elenaimg">
 				<img src="img/elena.png" id="elenaImagen">
 			</div>
-			<div class="instTxt">
-				<p>Vamos a poner a prueba tus habilidades, selecciona entre la figuras que consideres son de  y selecciónalas. </p>
-				<p>Una vez que las tenga, apila los cántaros en orden para poder llenarlos</p>
-				<p>Toca las piezas para alinearlas y hacer que el chorro,Alinea las piezas para que fluya el chorro y llene los cántaros</p>
-			</div>
+			<div class="instTxt"></div>
 		</div>
 
+		<canvas id="my-canvas"></canvas>
 	</div>
 	<script src="../../utils/js/jquery-3.4.1.min.js"></script>
+    <script src="../../utils/js/type.js"></script>
+    <script src="../../utils/js/buzz.min.js"></script>
+    <script src="../../utils/js/confetti.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
