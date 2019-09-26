@@ -127,7 +127,7 @@ html{
 }
 body {
   font-family: 'Nunito', sans-serif;
-  font-weight: lighter;
+  font-weight: normal;
   font-size: 28px;
   /*
   background: -moz-linear-gradient(270deg, rgba(6, 46, 72, 1) 0%, rgba(0, 9, 16, 1) 100%);

@@ -4,3 +4,33 @@ body{
 .imagecontainer{
   height: 100%;
 }
+.tituloescena {
+  border: solid 2px #d221ff;
+  border-top: none;
+}
+
+element.style {
+}
+.animated.faster {
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+.areatexto {
+    
+    border: solid 3px #d221ff;
+    border-bottom: none;
+}
+.bordertextoright{
+  border:solid 2px; #ff385e;
+  color: #d221ff
+}
