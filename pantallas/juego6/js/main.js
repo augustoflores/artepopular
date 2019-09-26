@@ -97,6 +97,7 @@ $(function () {
       $(".objeto").removeClass("inactivo");
       $("#fondo").removeClass("inactivo")
       $(".objeto").addClass("activo");
+      $(".globonext").removeClass("hidden");
     }
     actualizarpistas();
   }
@@ -157,4 +158,8 @@ $(function () {
     confetti.render();
     
   }
+
+  $(".globonext").click(function () {
+    window.location.href='../../pantallas/escena2/index.html';
+  });
 });

@@ -42,10 +42,10 @@ var typingSound;
 $(document).ready(inicio);
 
 function inicio(){
-  typingSound = new buzz.sound("../../audios/UX_Interaccion/blip.mp3",{loop: true,volume: 0.5});
-  aplausos = new buzz.sound("../../audios/juegos/Win_SergiodelaCruzHernan.mp3", {loop: false, volume: 0.5});
+  typingSound = new buzz.sound("../../audios/UX_Interaccion/blip.mp3",{loop: true,volume: 1});
+  aplausos = new buzz.sound("../../audios/juegos/Win_SergiodelaCruzHernan.mp3", {loop: false, volume: 1});
   borrar = new buzz.sound("../../audios/UX_Interaccion/BubblePop_BenjaminVogelzan.mp3", {loop: false, volume: 1});
-  flip = new buzz.sound("../../audios/UX_Interaccion/hollow_dog .mp3", {loop: false, volume: 0.7});
+  flip = new buzz.sound("../../audios/UX_Interaccion/hollow_dog .mp3", {loop: false, volume: 1});
   
   animartexto('.txtFooter');
   empezarJuego();
