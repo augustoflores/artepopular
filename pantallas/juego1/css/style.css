@@ -216,5 +216,7 @@ img {
     margin: 0 auto;
     width: 620px;
     height: 640px; }
-
+    #btnDescripcion img {
+      float: right;
+  }
 /*# sourceMappingURL=style.css.map */

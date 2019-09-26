@@ -75,5 +75,28 @@
   align-items: center;
 }
 div#contador {
-  font-size: 70px;
+}
+.areatexto {
+  /* background: rgba(255,255,255,.2); */
+  background-color: #181212!important;
+  border: solid 3px #ffc33e!important;
+  border-bottom: none!important;
+}
+.textnext{
+  color: #ffc33e!important;
+}
+.bordertexto {
+  background-color: black;
+  color: #ffc33e!important;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  border: solid 2px;
+  z-index: 40;
+  width: 490px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%,-50%);
 }

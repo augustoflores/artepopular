@@ -5,7 +5,7 @@
   width: 1067px;
   height: 703px;
   display: block;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-42%) scale(0.9);
   background-image: url(../img/fondojuegodes.png);
   background-repeat: no-repeat;
 }

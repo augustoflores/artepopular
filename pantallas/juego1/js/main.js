@@ -1,14 +1,14 @@
 var tablero;
 var gradSort=[];
 var texto=[
-    '<p>Vamos a poner a prueba tus habilidades.</p><p><span class="colorAmarillo">Toca las piezas para alinear los tubos</span> y hacer que el agua fluya para llenar el  nuestro primer cántaros. Con ello podremos almacenar agua y mantenerla fresca.</p>',
+    '<p>Vamos a poner a prueba tus habilidades.</p><p><span class="colorAmarillo">Toca las piezas para alinear los tubos</span> y hacer que el agua fluya para llenar el  nuestro primer cántaros. Con ello podremos almacenar agua y mantenerla fresca.</p>',
     '<p>Acabas de llenar tu primer cántaro. Cuando estés listo, pulsa para <span class="colorAmarillo">Siguiente</span> continuar...</p>',
     '<p>Toca las piezas para alinearlas y hacer que el chorro de agua fluya para llenarel segundo cántaro y comenzar a armar una pila.</p>',
-    '<p><span class="colorVerde">¡Muy bien!</span> Acabas de llenar el segundo cántaro.Solo falta uno más</p>',
+    '<p><span class="colorVerde">¡Muy bien!</span> Acabas de llenar el segundo cántaro.Solo falta uno más</p>',
     '<p>Toca las piezas para conectar los tubos y llenar el tercer cántaro.</p>',
     '<p>Ahora los cántaros de barro están llenos y habrá suficiente agua fresca para todos.<br><span class="colorVerde">¡Muchas gracias!</span></p>',
     '<p>Muchas gracias por ayudarnos te has ganado la siguiente insignia como recompensa. <span class="colorAmarillo">Jaguar de Barro</span></p><p>Eso te convierte en un colega artesano experto en Barro.</p>',
-    '<p>Parece que a manchas le caíste muy bien, quizá te ayude en tu aventura para encontrar <b class="colorVerde">Grandes Maestros Artesanos</b> de todo el país y así descubrir sus <b>técnicas y materiales</b>.<br>¡Suerte en tu aventura!</p>'
+    '<p>Parece que a manchas le caíste muy bien, quizá te ayude en tu aventura para encontrar <b class="colorVerde">Grandes Maestros Artesanos</b> de todo el país y así descubrir sus <b>técnicas y materiales</b>.<br>¡Suerte en tu aventura!</p>'
 ]
 //                 0               1                2               3                4                 5
 var idImg = ['recta-bca.png','codo-bco.png','recta-azul.png','codo-azul.png','circulo-vde.png','circulo-rojo.png'];
@@ -309,7 +309,7 @@ var gameData=[
 $(document).ready(inicio);
 function inicio(){
     typingSound = new buzz.sound("../../audios/UX_Interaccion/blip.mp3",{loop: true,volume: 1});
-    aplausos = new buzz.sound("../../audios/juegos/applause_VFX.mp3", {loop: false, volume: 1});
+    aplausos = new buzz.sound("../../audios/Juegos/applause_VFX.mp3", {loop: false, volume: 1});
     tablero = $('.gameActionWrp').html();
     cargarJuego(0);
     animartexto('.instTxt',texto[0]);
