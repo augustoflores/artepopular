@@ -37,10 +37,16 @@ body {
   border: dashed 1px rgba(255, 255, 255, 0); }
   #juego2 #dropzone img.flip {
     transform: scaleX(-1); }
-  #juego2 #dropzone img.dragg:hover {
+  #juego2 #dropzone img.interaccion:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border: dashed 2px rgba(255, 255, 255, 0.1);
     border-radius: 15px; }
+#juego2 .interaccion {
+  transition: 0.3s ease-in-out;
+  touch-action: none;
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  position: absolute; }
 #juego2 #menuCabezas .btn:nth-child(1) {
   padding: 8px 0 0 10px; }
 #juego2 #menuCabezas .btn:nth-child(2) {

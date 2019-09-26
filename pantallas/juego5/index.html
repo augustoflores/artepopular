@@ -29,18 +29,18 @@
   $( document ).ready(function() {
   
 
-    var card_01= {src:"Grupo440.png",title:"1"};
-    var card_02= {src:"Grupo441.png",title:"2"};
-    var card_03= {src:"Grupo442.png",title:"3"};
-    var card_04= {src:"Grupo443.png",title:"4"};
-    var card_05= {src:"Grupo444.png",title:"5"};
-    var card_06= {src:"piiedra@1,25x.png",title:"6"};
+    var card_01= {src:"molcaGT.png",title:"1",color:"rojo"};
+    var card_02= {src:"vasija.png",title:"2",color:"rojo"};
+    var card_03= {src:"molcajete2.png",title:"3",color:"rojo"};
+    var card_04= {src:"carrusel.png",title:"4",color:"rojo"};
+    var card_05= {src:"baul.png",title:"5",color:"rojo"};
+    /*var card_06= {src:"piiedra@1,25x.png",title:"6"};
     var card_07= {src:"piiedra@1,25x.png",title:"7"};
     var card_08= {src:"piiedra@1,25x.png",title:"8"};
-    var card_09= {src:"piiedra@1,25x.png",title:"9"};
+    var card_09= {src:"piiedra@1,25x.png",title:"9"};*/
 
-    var array1 = [card_01,card_02,card_03,card_04,card_05,card_06,card_07,card_08,card_09];
-    var array2 = [card_01,card_02,card_03,card_04,card_05,card_06,card_07,card_08,card_09];
+    var array1 = [card_01,card_02,card_03,card_04,card_05];
+    var array2 = [card_01,card_02,card_03,card_04,card_05];
     
     function aleatorio(variable){
       var long = variable.length;
@@ -58,7 +58,7 @@
     console.log(cards);
 
     for (var item = 0; item < cards.length; item++) {
-      $('#container').append('<div class="wrapper-item floatLeft" id="item'+item+'"><div class="item floatLeft off active"><img src="./img/'+cards[item].src+'" title="'+cards[item].title+'"/></div></div>');
+      $('#container').append('<div class="wrapper-item circulo '+cards[item].color+' floatLeft" id="item'+item+'"><div class="item floatLeft off active"><img src="./img/'+cards[item].src+'" title="'+cards[item].title+'"/></div></div>');
     }
 
     /*for (var i = 0; i < 4; i++) {
@@ -78,8 +78,8 @@
     <div class="cabecera">
 
         <div class="tituloescena  animated fadeInDown faster">
-          <div class="escenanumero"></div>
-          <div class="nombreescena">RETO FINAL</div>
+          <div class="escenanumero">Escena 5</div>
+          <div class="nombreescena">Piedra y Madera</div>
         </div>
         
     </div>
@@ -88,11 +88,11 @@
       <div id="mainbox"  class="">
 
     <div id="viewcards" class=""> 
-         <div id="c1" class="wrapper-card floatLeft animated fadeIn slow delay-1s"><img class="zoom" src="./img/Asset 1@2x.png" title=""/></div>
-         <div id="c2" class="wrapper-card floatLeft animated fadeIn slow delay-2s"><img class="zoom" src="./img/molcajete.png" title=""/></div>
-         <div id="c3" class="wrapper-card floatLeft animated fadeIn slow delay-3s"><img class="zoom" src="./img/madera.png" title=""/></div>
-         <div id="c4" class="wrapper-card floatLeft animated fadeIn slow delay-4s"><img class="zoom" src="./img/piedra@3x.png" title=""/></div>
-         <div id="c5" class="wrapper-card floatLeft animated fadeIn slow delay-5s"><img class="zoom" src="./img/tarro.png" title=""/></div>
+         <div id="c1" class="wrapper-card circulo amarillo floatLeft animated fadeIn slow delay-1s"><img class="zoom" src="./img/molcaGT.png" title=""/></div>
+         <div id="c2" class="wrapper-card circulo verde floatLeft animated fadeIn slow delay-2s"><img class="zoom" src="./img/vasija.png" title=""/></div>
+         <div id="c3" class="wrapper-card circulo rojo floatLeft animated fadeIn slow delay-3s"><img class="zoom" src="./img/molcajete2.png" title=""/></div>
+         <div id="c4" class="wrapper-card circulo cian floatLeft animated fadeIn slow delay-4s"><img class="zoom" src="./img/carrusel.png" title=""/></div>
+         <div id="c5" class="wrapper-card circulo magenta floatLeft animated fadeIn slow delay-5s"><img class="zoom" src="./img/baul.png" title=""/></div>
          <div stile="clear: both;"></div>
     </div>
     
@@ -120,10 +120,9 @@
           </div>
           <div class="globostexto">
             <div class="globotexto">
-              <p>¿Conoces el nombre estos utensilios? 
-              </p>
+              
               <p>
-                 Hay <strong>metates</strong> y los <strong>molcajetes</strong> de roca volcánica, forman parte del arte popular hecho en piedra. También tenemos un hermoso <strong>baúl de madera tallado</strong> y un <strong>xoloitzcuintle de piedra<strong> que puede adornar felizmente tu habitación...
+                 Como ves, la piedra y la madera  han estado presentes en nuestra vida cotidianas y a través de sus diferentes formas y usos. Ya sea en fuentes, esculturas, columnas y muros, han vestido nuestras ciudades desde su origen.
               </p>
 
             </div>
@@ -135,10 +134,11 @@
 
             </div>
             <div class="globotexto">
-              <p><span class="textRed">¡Felicidades lo lograste!</span> Has ganado la insignia:
-<strong>Objeto de Piedra</strong></p>
+              <p><span class="font-verde">¡Felicidades lo lograste!</span> Ahora eres un experto artesano en piedra y madera
+
+</p>
 <br>
-<p>De esta manera también vives el arte popular, vistiéndolo con gran orgullo.
+<p>De esta manera también <span class="font-amarilla">Vives el arte popular</span>.
 
 </p>
             </div>

@@ -244,10 +244,6 @@ function empezarJuego(){
 
             }
           }
-
-          imgPos=[];
-          imgPos.push( screenPosition.x - 160 );
-          imgPos.push( screenPosition.y - 290 );
           
           if(categoriaSelecc==='menuCabezas'){
             // Insertamos datos en el objeto
@@ -299,14 +295,28 @@ function empezarJuego(){
             alebrije.stickers[i].ancho = width;
             event.relatedTarget.dataset.indice=i;
           }
-          
+
+
           imgDropped=event.relatedTarget;
+          wObj=event.relatedTarget.width;
+          n=wObj*2;
+          scale=n+'px';
+
+          xik=screenPosition.x - (160 + wObj);
+          yik = screenPosition.y - (290 + wObj); 
           
+
+          imgPos=[];
+          imgPos.push( xik );
+          imgPos.push( yik );
+          
+
           event.relatedTarget.offsetParent.classList.add('empty');
           event.relatedTarget.classList.remove('dropIN');
+          event.relatedTarget.classList.remove('dragg');
           event.relatedTarget.classList.add('interaccion');
           event.relatedTarget.classList.add('canErrase');
-
+          event.relatedTarget.style.width=scale;
           
           event.relatedTarget.dataset.x=imgPos[0];
           event.relatedTarget.dataset.y=imgPos[1];
@@ -330,6 +340,10 @@ function empezarJuego(){
     });
 
     interact('.dragg').draggable({
+      inertia: true,
+      onmove: dragMoveListener
+    })
+    interact('.interaccion').draggable({
       inertia: true,
       onmove: dragMoveListener
     }).resizable({
@@ -373,7 +387,7 @@ function empezarJuego(){
       target.setAttribute('data-x', x)
       target.setAttribute('data-y', y)
       target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
-    });;
+    });
 
     interact('.interaccion').on('doubletap', function (event) {
       event.preventDefault();
