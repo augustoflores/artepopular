@@ -6,6 +6,10 @@
   transform-origin: top left;
 }
 
+.opcion{
+  display:none;
+}
+
 .categoria{
   position: absolute;
   transform-origin: top left;

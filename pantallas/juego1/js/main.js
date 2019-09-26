@@ -422,14 +422,17 @@ function jugar(){
         $('.tuboInicio').css('top','300px');
         $('.manivela').css('top','311px');
         $('.finTubo').css('top','12px');
+        $('.gameDesc h3').empty().text('Nivel 2');
     }else if(nivel==2){
         $('.cantaroN2').css('display','block');
         animartexto('.instTxt',texto[4]);
         $('.tuboInicio').css('top','450px');
         $('.manivela').css('top','461px');
+        $('.gameDesc h3').empty().text('Nivel 3');
     }
     else if(nivel==3){
         $('.cantaroN3').css('display','block');
+        $('.gameDesc h3').empty();
     }
 }
 function validarAccion(img, row){
@@ -495,21 +498,21 @@ function nivelCompletado() {
         imgElena = imgRoute+'bernardina.png';
         $('.notaMiddle ').css('display','block');
         $('#niv1Ok').css('display','block');
-        $('#chorroFinal').css({ 'top': '185px', 'display': 'block'});
+        $('#chorroFinal').css({ 'top': '295px', 'display': 'block'});
         $('#btnDescripcion').css('display','block').off('click').on('click', jugar);
     }else if(nivel===2){
         txt = texto[3];
         imgElena = imgRoute+'bernardina.png';
         $('.notaMiddle ').css('display','block');
         $('#niv2Ok').css('display','block');
-        $('#chorroFinal').css({ 'top': '30px', 'display': 'block'});
+        $('#chorroFinal').css({ 'top': '140px', 'display': 'block'});
         $('#btnDescripcion').css('display','block').off('click').on('click', jugar);
     }else if(nivel===3){
         txt = texto[5];
         imgElena = imgRoute+'bernardina.png';
         $('.notaMiddle ').css('display','block');
         $('#niv3Ok').css('display','block');
-        $('#chorroFinal').css({ 'top': '30px', 'display': 'block'});
+        $('#chorroFinal').css({ 'top': '140px', 'display': 'block'});
         $('#btnDescripcion').css('display','block').off('click');
         $('#btnDescripcion').on('click', finalizar);
     }
@@ -545,6 +548,8 @@ function validarCompletado(n){
 }
 function finalizar() {
     confeti();
+
+    $('.gameDesc h3').empty();
     imgPremio='<img src="img/premio.png" id="imgPremio" class="animated flipInX">';
     $('.gameboardWrpr').empty().append(imgPremio);
     imgElena=imgRoute+'elena.png';
@@ -554,9 +559,15 @@ function finalizar() {
     $('#btnDescripcion').off('click').css('z-index','100').on('click', function(){
         $('.instTxt').empty();
         animartexto('.instTxt', texto[7]);
+        $(this).off('click');
+        agregarClickFinal();
     });
 }
-
+function agregarClickFinal(){
+    $('#btnDescripcion').on('click', function(){
+        window.location.href = '../../pantallas/escena2/index.html';
+    });
+}
 function animartexto(selector,texto) {
     if(!texto) texto = $(selector).html();
     var app = $(selector)[0];
