@@ -5,6 +5,14 @@ body {
   padding: 0;
   margin: 0; }
 
+#juego2 .header {
+  display: block;
+  position: relative;
+  width: 1920px;
+  height: 110px; }
+#juego2 .contenedor {
+  width: 1920px;
+  height: 1080px; }
 #juego2 #btnDescripcion {
   background-color: transparent;
   position: absolute;
@@ -102,48 +110,51 @@ body {
   color: #ffc33e; }
 #juego2 .colorVerde {
   color: #07dd00; }
-#juego2 .header {
+#juego2 .wrapNav {
+  justify-content: center;
   align-items: flex-start;
   display: flex; }
-  #juego2 .header .navGame {
+  #juego2 .wrapNav .navGame {
     flex-basis: 1180px;
     position: relative;
     padding-top: 20px;
-    height: 200px;
+    height: 240px;
     left: 50px; }
-    #juego2 .header .navGame ul {
+    #juego2 .wrapNav .navGame ul {
       justify-content: center;
       list-style: none;
       display: flex;
       width: 100%;
-      padding: 0;
-      margin: 0; }
-      #juego2 .header .navGame ul li {
+      padding: 0 0 10px 0;
+      margin: 0 0 10px 0;
+      border-bottom: 2px solid #ffc33e; }
+      #juego2 .wrapNav .navGame ul li {
         flex-basis: auto;
         margin: 0 5px; }
-    #juego2 .header .navGame .btnNav {
+    #juego2 .wrapNav .navGame .btnNav {
+      font-size: 34px;
       text-decoration: none;
       cursor: pointer;
       padding: 0 15px;
       display: block;
       color: #ff1743; }
-      #juego2 .header .navGame .btnNav:hover {
+      #juego2 .wrapNav .navGame .btnNav:hover {
         color: #07dd00; }
-      #juego2 .header .navGame .btnNav.activo {
+      #juego2 .wrapNav .navGame .btnNav.activo {
         color: #07dd00; }
-  #juego2 .header .sbMenuItemsCont {
+  #juego2 .wrapNav .sbMenuItemsCont {
     justify-content: center;
     display: none; }
-    #juego2 .header .sbMenuItemsCont.activo {
+    #juego2 .wrapNav .sbMenuItemsCont.activo {
       display: flex; }
-    #juego2 .header .sbMenuItemsCont .btn {
+    #juego2 .wrapNav .sbMenuItemsCont .btn {
       position: relative;
       flex-basis: 140px;
       margin: 0 10px;
       height: 160px; }
-      #juego2 .header .sbMenuItemsCont .btn.empty::before {
+      #juego2 .wrapNav .sbMenuItemsCont .btn.empty::before {
         border-color: #ffc33e; }
-      #juego2 .header .sbMenuItemsCont .btn::before {
+      #juego2 .wrapNav .sbMenuItemsCont .btn::before {
         border-radius: 80px;
         border: solid #07dd00 2px;
         position: absolute;
@@ -154,12 +165,12 @@ body {
         z-index: 5;
         left: 0;
         top: 0; }
-      #juego2 .header .sbMenuItemsCont .btn img {
+      #juego2 .wrapNav .sbMenuItemsCont .btn img {
         position: relative;
         display: block;
         z-index: 10;
         width: 144px; }
-  #juego2 .header .submenus {
+  #juego2 .wrapNav .submenus {
     padding-top: 10px; }
 #juego2 .gameSceneCont {
   border-radius: 30px;
@@ -172,10 +183,12 @@ body {
   border-left: #07dd00 2px solid;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 48px;
   margin: 0 auto;
-  width: 1840px;
-  height: 289px;
+  width: 1824px;
+  height: 277px;
   display: flex; }
   #juego2 .footer .pedro {
     flex-basis: 270px;
@@ -183,7 +196,7 @@ body {
   #juego2 .footer .txtFooter {
     flex-basis: 1535px;
     line-height: 1em;
-    font-size: 27px;
+    font-size: 28px;
     color: #fefefe; }
   #juego2 .footer .footerRight {
     flex-basis: 300px; }
@@ -212,10 +225,13 @@ body {
   border-bottom: solid 2px #07dd00;
   border-right: solid 2px #07dd00;
   border-left: solid 2px #07dd00;
-  position: relative;
-  flex-basis: 260px;
-  height: 65px;
-  left: 50px; }
+  padding: 14px 30px 0px;
+  position: absolute;
+  display: block;
+  width: 260px;
+  height: 102px;
+  left: 50%;
+  margin-left: -130px; }
   #juego2 .rectnguloTop h1 {
     text-align: center;
     padding-top: 10px;
