@@ -4,3 +4,9 @@ body{
 .imagecontainer{
   height: 100%;
 }
+.escenanumero{
+  color: #d221ff;
+}
+.tituloescena {
+  color: white;
+}

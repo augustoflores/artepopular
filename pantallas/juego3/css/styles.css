@@ -5,7 +5,9 @@
   position: absolute;
   transform-origin: top left;
 }
-
+.opcion {
+  margin: 0px 26px;
+}
 .activo{
   filter: brightness(130%) grayscale(0);
 }
@@ -24,8 +26,7 @@
   width: 1200px;
   height: 620px;
   display: block;
-  transform: translate(-50%,-60%) scale(0.8);
-  /*background-image: url(../img/fondojuego.png);*/
+  transform: translate(-50%,-60%) scale(1);
 }
 #tapiz{
   position: absolute;
@@ -56,10 +57,12 @@
   display: block;
   background-image: url(../images/Salon_NoFondoNiObjetosColor.png);
 }
-#opciones{
+#opciones {
   position: absolute;
-  left: 1450px;
-  top:10px;
+  left: 50%;
+  top: -40px;
+  display: flex;
+  transform: translateX(-50%);
 }
 #ventana{
 

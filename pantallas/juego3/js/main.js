@@ -4,10 +4,13 @@ $(function () {
   $(".opcion").css("opacity",.5)
   $("#equipar").hide();
   var objetoactual = null;
+  var fondoSound = new buzz.sound("../../audios/Juegos/Juego3/fondo.mp3",{volume:20, loop:true});
+  fondoSound.play()
   actualizarpistas();
   $(".objeto").click(function () {
     objetoactual=this;
-    var mySound = new buzz.sound("./sounds/click.m4a");
+    //var mySound = new buzz.sound("./sounds/click.m4a");
+    var mySound = new buzz.sound("../../audios/Juegos/Juego3/"+$(this).data("audio"));
     let text = $(this).attr("alt")
     animartexto("#texto",text);
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
@@ -15,7 +18,6 @@ $(function () {
     $(".objeto").removeClass("activo");
     $(".objeto").addClass("inactivo")
     $("#fondo").addClass("inactivo")
-
     $(this).removeClass("inactivo");
     $(this).addClass("activo");
     $("#equipar").show();
@@ -25,7 +27,8 @@ $(function () {
     $(this).hide()
     name="#Text"+$(objetoactual).attr("id");
     $(name).css("opacity",1);
-    $(name).append("&#10003;");
+    $(name).css("color","#ff385e")
+    //$(name).append("&#10003;");
     $(".objeto").removeClass("activo");
     $(".objeto").removeClass("inactivo");
     $(objetoactual).addClass("equipado");
@@ -36,6 +39,9 @@ $(function () {
       aventarConfetti()
       animartexto("#texto","¡Felicidades! Acabaste de equipar la Nao");
       $("#ventana #imagen").attr("src", "./imgs/angelito.png");
+      fondoSound.pause()
+      var felicidadeSound = new buzz.sound("../../audios/Juegos/Win_SergiodelaCruzHernan.mp3",{volume:20});
+      felicidadeSound.play()
     }
     actualizarpistas();
   });
