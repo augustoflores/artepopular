@@ -3,6 +3,7 @@ $(function () {
   var pistasencontradas=0;
   $(".opcion").css("opacity",.5)
   $("#equipar").hide();
+  $(".objeto").hide();
   var objetoactual = null;
   actualizarpistas();
   $(".objeto").click(function () {
@@ -13,8 +14,8 @@ $(function () {
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
     //inactivar($(".objeto"));
     $(".objeto").removeClass("activo");
-    $(".objeto").addClass("inactivo")
-    $("#fondo").addClass("inactivo")
+    $(".objeto").addClass("inactivo");
+    $("#fondo").addClass("inactivo");
 
     $(this).removeClass("inactivo");
     $(this).addClass("activo");
@@ -23,11 +24,60 @@ $(function () {
   })
   //
   $("#btn-hilos").click(function () {
-    $("#Imagen01").css("opacity",1).delay(3000).css("opacity",0.6);
-    $("#Imagen02").css("opacity",1).delay(3000).css("opacity",0.6);
-    $("#Imagen03").css("opacity",1).delay(3000).css("opacity",0.6);
+      //alert('clic');
+    if($("#fondo").hasClass("inactivo")){
+      $("#fondo").removeClass("inactivo");
+    }  
+    $(this).css("color", "#ffc33e");
+    var mySound = new buzz.sound("./sounds/click.m4a");
+    let text = $(this).attr("alt")
+    animartexto("#texto",text);
 
+    $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
+    //inactivar($(".objeto"));
+    $("#Imagen01").fadeIn(2000);
+    $("#Imagen02").fadeIn(2000);
+    $("#Imagen03").fadeIn(2000);
+    
+    //$(".objeto").fadeIn("slow");
+    
+    //$(".objeto").removeClass("activo");
+    $(".objeto").addClass("inactivo")
+    //$("#fondo").addClass("inactivo")
+    //$(this).removeClass("inactivo");
+    //$(this).addClass("activo");
+    //$("#equipar").show();
+    mySound.play();
+  });
+
+  $("#btn-tinturas").click(function () {
+      //alert('clic');
+    if($("#fondo").hasClass("inactivo")){
+      $("#fondo").removeClass("inactivo");
+    }
+
+    $(this).css("color", "#ffc33e");
+    var mySound = new buzz.sound("./sounds/click.m4a");
+    let text = $(this).attr("alt")
+    animartexto("#texto",text);
+
+    $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
+    //inactivar($(".objeto"));
+    $("#Imagen05").fadeIn(2000);
+    $("#Imagen06").fadeIn(2000);
+    $("#Imagen07").fadeIn(2000);
+    
+    //$(".objeto").fadeIn("slow");
+    
+    //$(".objeto").removeClass("activo");
+    $(".objeto").addClass("inactivo")
+    //$("#fondo").addClass("inactivo")
+    //$(this).removeClass("inactivo");
+    //$(this).addClass("activo");
+    //$("#equipar").show();
+    mySound.play();
   });  
+
   //
 
   $("#equipar").click(function () {

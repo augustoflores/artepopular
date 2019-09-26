@@ -1,9 +1,32 @@
 .objeto, .opcion{
-  transition-duration: 500ms
+  transition-duration: 500ms;
 }
 .objeto{
   position: absolute;
   transform-origin: top left;
+}
+
+.categoria{
+  position: absolute;
+  transform-origin: top left;
+  transition-duration: 500ms;
+  font-size: 40px;
+  font-weight: bolder;
+  text-decoration: underline;
+  color: #ff385e;
+}
+.categoria:hover{
+  cursor:pointer;
+  font-size: 46px;
+  color: #ffc33e;
+}
+
+#btn-hilos{
+  
+}
+
+#btn-tinturas{
+ 
 }
 
 .activo{
@@ -73,4 +96,8 @@
 }
 div#contador {
   font-size: 70px;
+}
+
+.hidden{
+  display:none;
 }
