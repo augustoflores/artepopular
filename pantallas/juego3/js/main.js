@@ -22,10 +22,9 @@ $(function () {
       $(".globonext, .textnext").hide();
       activo = true;
       index++;
-    } else if (index === 1) {
-      window.location.href = '../../pantallas/escena4/index.html';
+    } else  {
+      window.location.href = '../../pantallas/escena3-conclusion/index.html';
     }
-
 
   });
   $(".objeto").click(function () {
@@ -60,7 +59,8 @@ $(function () {
     $("#fondo").removeClass("inactivo")
     pistasencontradas++;
     if (pistasencontradas == totalpistas) {
-      aventarConfetti()
+      aventarConfetti();
+      //$(".globonext, .textnext").show();
       animartexto("#texto", "¡Felicidades! Acabaste de equipar la Nao");
       $("#ventana #imagen").attr("src", "./imgs/angelito.png");
 

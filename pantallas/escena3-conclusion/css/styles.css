@@ -4,3 +4,31 @@ body{
 .imagecontainer{
   height: 100%;
 }
+.tituloescena {
+  border: solid 2px #ffc33e!important;
+  border-top: none!important;
+}
+.textnext{
+  color: #ffc33e;
+}
+.areatexto {
+  background-color: #212e3f!important;
+  border: solid 3px #ffc33e!important;
+  border-bottom: none!important;
+  z-index: -1
+}
+img.imagenfondo {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -26%;
+  left: 0%;
+}
+.relative{
+  position: relative;
+}
+.bordertextoright {
+  background-color: #212e3f!important;
+  border: solid 3px #ffc33e!important;
+  color: #ffc33e
+}

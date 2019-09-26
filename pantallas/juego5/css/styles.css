@@ -328,3 +328,12 @@ body {
         box-shadow: 0 0 5px 0 rgba(55,55,55,.3);
       }
 /**/
+.areatexto {
+  /* background: rgba(255,255,255,.2); */
+  background-color: #242947;
+  border: solid 3px #ff385e;
+  border-bottom: none;
+}
+.textnext {
+  color: #ff385e;
+}

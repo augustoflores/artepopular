@@ -15,3 +15,27 @@
 .areatexto {
   /*height: 207px!important;*/
 }
+.bordertexto {
+  border-color: #d221ff!important;
+  color:#ff385e!important;
+  background-color: #19121a!important;
+
+}
+.areatexto {
+  border: solid 3px #d221ff!important;
+  border-bottom: none!important;
+  background-color: #19121a!important;
+}
+.textnext{
+  color:#d221ff!important;
+}
+#confetti-holder{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 1920px;
+  height: 1080px;
+  display: block;
+  pointer-events: none;
+
+}

@@ -4,10 +4,11 @@ $(function () {
   let arrImages = $(".imagecontainer .image");
   let texto = "";
   var typingSound = new buzz.sound(
-    "../../audios/UX_Interaccion/blip.mp3",
-    {loop: true,
-    volume:1}
-    );
+    "../../audios/UX_Interaccion/blip.mp3", {
+      loop: true,
+      volume: 1
+    }
+  );
   $(".globonext, .cajanext").click(function (event) {
     event.stopPropagation();
     try {
@@ -15,6 +16,12 @@ $(function () {
       mySound.play();
     } catch (e) {}
     if (indexglobo < (arrGlobos.length - 1)) {
+      console.log(indexglobo)
+      if($("body").data("nextscreen")=="fin" & indexglobo==1){
+        $(".nombreescena").html("");
+        $(".escenanumero").html("Recuerda, estamos hechos de:");
+        $(".tituloescena").css("width","600px");
+      }
       indexglobo++;
       $(".globostexto .globotexto").hide(0);
       $(".imagecontainer .image").hide(0);
@@ -37,18 +44,25 @@ $(function () {
       }
       typingSound.play();
       typewriter.typeString(texto)
-        .callFunction(function () {typingSound.pause()})
+        .callFunction(function () {
+          typingSound.pause()
+        })
         .pauseFor(0)
         .start();
 
-        $(".imagecontainer")
+      $(".imagecontainer")
         .removeClass('fadeInDown ')
         .height('auto') // the magic
         .addClass('fadeInDown ')
-        $(arrImages[indexglobo]).fadeIn(500);
+      $(arrImages[indexglobo]).fadeIn(500);
       return true;
     }
-    window.location.href = '../../pantallas/' + $("body").data("nextscreen") + '/index.html';
+    if ($("body").data("nextscreen") != "fin") {
+
+      window.location.href = '../../pantallas/' + $("body").data("nextscreen") + '/index.html';
+    } else {
+
+    }
   });
   $(".globonext").click();
 });

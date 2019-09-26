@@ -160,6 +160,6 @@ $(function () {
   }
 
   $(".globonext").click(function () {
-    window.location.href='../../pantallas/escena2/index.html';
+    window.location.href='../../pantallas/juego4/index.html';
   });
 });

@@ -4,3 +4,11 @@ body{
 .imagecontainer{
   height: 100%;
 }
+.bordertextoright {
+  background-color: #040b05;
+  border: solid 3px #07dd00;
+  color: #07dd00;
+}
+.textnext{
+  color: #07dd00;
+}

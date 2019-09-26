@@ -4,3 +4,12 @@ body{
 .imagecontainer{
   height: 100%;
 }
+.areatexto {
+  /* background: rgba(255,255,255,.2); */
+  background-color: #1f0417;
+  border: solid 3px #ff385e;
+  border-bottom: none;
+}
+.textnext {
+  color: #ff385e;
+}

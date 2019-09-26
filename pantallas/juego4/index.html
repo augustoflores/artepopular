@@ -12,6 +12,7 @@
   <script src="../../utils/js/jquery-3.4.1.min.js"></script>
   <script src="../../utils/js/currentpage.js"></script>
   <script src="../../utils/js/buzz.min.js"></script>
+  <script src="../../utils/js/confetti.min.js"></script>
   <script src="../../utils/js/type.js"></script>
   <script src="../../utils/js/Tone.js"></script>
   <script src="./js/main.js"></script>
@@ -43,7 +44,7 @@
 
     <div id="retro"></div>
   </div>
-  <div class="containertexto" id="ventana">
+  <div class="containertexto cajanext" id="ventana">
     <div class="areatexto animated fadeInUp faster">
       <div class="personaje  animated zoomIn delay-1s">
         <img src="./img/chiapas.png" id="imagen">
@@ -56,20 +57,26 @@
           Comenzar
         </div>
         <div class="animated fadeIn faster bordertexto" id="iniciar">
-          Iniciar
+          Comenzar
+        </div>
+        <div class="animated fadeIn faster bordertexto" id="repetir">
+            Repetir
         </div>
         <div class="animated fadeIn faster bordertexto" id="continuar">
             Continuar
         </div>
         <div class="globotexto">
-          <p>Vamos a poner a prueba tu memoria</p>
-          <p>A continuación verás un patrón textil que se iluminará en cierto orden. Observa con atención.</p>
-          <p>Al terminar la secuencia, toca sobre cada patrón para repetir el orden anterior, cuidado que si te
-            equivocas, tendrás qué repetir el patrón. <span class="bolder">Hagamos una prueba</span> </p>
+            <p><span class="bold font-rosa">¡Hola! Vamos a poner a prueba tu memoria.</span> A continuación verás un patrón textil que se iluminará en cierto orden. <span  class="bold">Observa con mucha atención.</span></p>
+
+            <p>Al terminar la secuencia, toca sobre cada patrón y así repetir el orden que observaste, puedes  repetir el patrón si te equivocaste. <span>Hagamos una prueba</span></p>
+            
         </div>
       </div>
+      <img src="./img/adelante.png" class="globonext">
+      <div class="textnext">Siguiente</div>
     </div>
   </div>
+  <canvas id="confetti-holder"></canvas>
 
 </body>
 

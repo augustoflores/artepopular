@@ -565,7 +565,7 @@ function finalizar() {
 }
 function agregarClickFinal(){
     $('#btnDescripcion').on('click', function(){
-        window.location.href = '../../pantallas/escena2/index.html';
+        window.location.href = '../../pantallas/escena1-conclusion/index.html';
     });
 }
 function animartexto(selector,texto) {
