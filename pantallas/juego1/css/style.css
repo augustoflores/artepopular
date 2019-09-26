@@ -27,181 +27,194 @@ img {
   left: -140px;
   top: 161px; }
 
-#juego1 #my-canvas {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0; }
-#juego1 #niv1Ok {
-  background: url(../img/palomita.png) no-repeat center center rgba(0, 68, 213, 0.7);
-  border-radius: 50%;
-  position: absolute;
-  display: none;
-  height: 165px;
-  bottom: 11px;
-  width: 182px;
-  left: -13px;
-  z-index: 1; }
-#juego1 #niv2Ok {
-  background: url(../img/palomita.png) no-repeat center center rgba(0, 68, 213, 0.7);
-  border-radius: 50%;
-  position: absolute;
-  display: none;
-  bottom: 197px;
-  height: 102px;
-  width: 104px;
-  left: 18px;
-  z-index: 1; }
-#juego1 #niv3Ok {
-  background: url(../img/palomita.png) no-repeat center center rgba(0, 68, 213, 0.7);
-  border-radius: 50%;
-  position: absolute;
-  display: none;
-  bottom: 318px;
-  height: 75px;
-  width: 80px;
-  z-index: 1;
-  left: 28px; }
-#juego1 #btnDescripcion {
-  background-color: transparent;
-  position: absolute;
-  text-align: right;
-  color: #00d7fc;
-  font-size: 30px;
-  cursor: pointer;
-  outline: none;
-  display: none;
-  height: 150px;
-  border: none;
-  width: 163px;
-  right: 30px;
-  top: -67px;
-  z-index: 100; }
-  #juego1 #btnDescripcion span {
-    padding-bottom: 30px;
-    display: block; }
-#juego1 .notaMiddle {
-  display: none;
-  border: solid #07dd00 3px;
-  background-color: #222;
-  border-radius: 30px;
-  margin-left: -150px;
-  text-align: center;
-  position: absolute;
-  font-size: 29px;
-  color: #07dd00;
-  height: 50px;
-  width: 300px;
-  top: -25px;
-  left: 50%;
-  line-height: 43px; }
-  #juego1 .notaMiddle img {
-    display: inline-block;
-    vertical-align: middle;
-    width: 25px; }
-#juego1 #chorroFinal {
-  transform: rotate(32deg);
-  position: absolute;
-  outline: none;
-  display: none;
-  width: 120px;
-  right: 30px; }
-#juego1 .contenedor {
+#juego1 {
+  margin: 0 auto;
   width: 1920px;
   height: 1080px; }
-#juego1 .cabecera {
-  position: relative;
-  display: block;
-  height: 150px;
-  padding: 1px;
-  width: 100%; }
-#juego1 .gameDesc {
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-bottom: #ff1743 2px solid;
-  border-right: #ff1743 2px solid;
-  border-left: #ff1743 2px solid;
-  padding: 20px 30px 0px;
-  position: absolute;
-  display: block;
-  height: 128px;
-  width: 440px;
-  left: 30px; }
-  #juego1 .gameDesc h2 {
-    text-transform: uppercase;
-    line-height: 1.2em;
-    color: #ffc33e;
+  #juego1 #my-canvas {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+  #juego1 #niv1Ok {
+    background: url(../img/palomita.png) no-repeat center center rgba(0, 68, 213, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+    height: 165px;
+    bottom: 11px;
+    width: 182px;
+    left: -13px;
+    z-index: 1; }
+  #juego1 #niv2Ok {
+    background: url(../img/palomita.png) no-repeat center center rgba(0, 68, 213, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+    bottom: 197px;
+    height: 102px;
+    width: 104px;
+    left: 18px;
+    z-index: 1; }
+  #juego1 #niv3Ok {
+    background: url(../img/palomita.png) no-repeat center center rgba(0, 68, 213, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+    bottom: 318px;
+    height: 75px;
+    width: 80px;
+    z-index: 1;
+    left: 28px; }
+  #juego1 #btnDescripcion {
+    background-color: transparent;
+    position: absolute;
+    text-align: right;
+    color: #00d7fc;
     font-size: 30px;
-    margin: 0; }
-  #juego1 .gameDesc h3 {
-    line-height: 1em;
-    font-size: 23px;
-    color: #ddd;
-    margin: 0; }
-#juego1 .gameActionWrp {
-  height: 626px;
-  width: 100%; }
-  #juego1 .gameActionWrp .row {
+    cursor: pointer;
+    outline: none;
+    display: none;
+    height: 150px;
+    border: none;
+    width: 163px;
+    right: 30px;
+    top: -67px;
+    z-index: 100; }
+    #juego1 #btnDescripcion span {
+      padding-bottom: 30px;
+      display: block; }
+  #juego1 .notaMiddle {
+    display: none;
+    border: solid #07dd00 3px;
+    background-color: #222;
+    border-radius: 30px;
+    margin-left: -150px;
+    text-align: center;
+    position: absolute;
+    font-size: 29px;
+    color: #07dd00;
+    height: 50px;
+    width: 300px;
+    top: -25px;
+    left: 50%;
+    line-height: 43px; }
+    #juego1 .notaMiddle img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 25px; }
+  #juego1 #chorroFinal {
+    transform: rotate(120deg);
+    position: absolute;
+    outline: none;
+    display: none;
+    width: 120px;
+    right: -130px;
+    top: 20px; }
+  #juego1.contenedor {
+    width: 1920px;
+    height: 1080px; }
+  #juego1 .cabecera {
+    position: relative;
+    display: block;
+    height: 150px;
+    padding: 1px;
+    width: 100%; }
+  #juego1 .gameDesc {
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom: #00d7fc 2px solid;
+    border-right: #00d7fc 2px solid;
+    border-left: #00d7fc 2px solid;
+    padding: 14px 30px 0px;
+    position: absolute;
+    display: block;
+    width: 260px;
+    height: 102px;
+    left: 50%;
+    margin-left: -130px; }
+    #juego1 .gameDesc h2 {
+      text-transform: uppercase;
+      line-height: 1.2em;
+      color: #ff1743;
+      font-size: 36px;
+      margin: 0;
+      text-align: center; }
+    #juego1 .gameDesc h3 {
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1em;
+      font-size: 23px;
+      color: #FFF;
+      margin: 0; }
+  #juego1 .gameActionWrp {
+    height: 626px;
+    width: 100%; }
+    #juego1 .gameActionWrp .row {
+      margin: 0 auto;
+      display: flex;
+      width: 600px; }
+    #juego1 .gameActionWrp .col {
+      flex-basis: 150px; }
+      #juego1 .gameActionWrp .col img {
+        transition: transform 0.3s ease-in-out; }
+  #juego1 .gameBoard {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 900px; }
+  #juego1 .gameboardWrpr {
+    margin: 0 auto;
+    height: 640px;
+    width: 1620px; }
+    #juego1 .gameboardWrpr #imgPremio {
+      margin: 0 auto; }
+  #juego1 .gameinst {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-right: solid 2px #00d7fc;
+    border-left: solid 2px #00d7fc;
+    border-top: solid 2px #00d7fc;
+    background-color: #011c3a;
+    align-items: center;
+    position: absolute;
+    padding-top: 10px;
     margin: 0 auto;
     display: flex;
-    width: 600px; }
-  #juego1 .gameActionWrp .col {
-    flex-basis: 150px; }
-    #juego1 .gameActionWrp .col img {
-      transition: transform 0.3s ease-in-out; }
-#juego1 .gameBoard {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: 900px; }
-#juego1 .gameboardWrpr {
-  margin: 0 auto;
-  height: 640px;
-  width: 1620px; }
-  #juego1 .gameboardWrpr #imgPremio {
-    margin: 0 auto; }
-#juego1 .gameinst {
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  border-right: solid 2px #00d7fc;
-  border-left: solid 2px #00d7fc;
-  border-top: solid 2px #00d7fc;
-  align-items: center;
-  position: relative;
-  padding-top: 10px;
-  margin: 0 auto;
-  display: flex;
-  width: 1820px; }
-  #juego1 .gameinst .elenaimg {
-    flex-basis: 320px; }
-  #juego1 .gameinst .instTxt {
-    flex-basis: 1500px;
-    font-size: 23px; }
-#juego1 .jarrones {
-  display: inline-block;
-  vertical-align: top;
-  width: 350px;
-  left: -48px;
-  top: 151px; }
-  #juego1 .jarrones .imgNiveles {
-    position: relative;
-    height: 605px;
-    width: 239px; }
-    #juego1 .jarrones .imgNiveles img {
-      position: absolute;
-      display: none;
-      width: 189px;
-      left: -17px;
-      top: 120px; }
-    #juego1 .jarrones .imgNiveles .cantaroIntro {
-      display: block; }
-#juego1 .gameActionWrp {
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 620px;
-  height: 640px; }
+    width: 1824px;
+    height: 277px;
+    left: 48px;
+    bottom: 0; }
+    #juego1 .gameinst .elenaimg {
+      flex-basis: 320px; }
+    #juego1 .gameinst .instTxt {
+      flex-basis: 1500px;
+      font-size: 28px; }
+  #juego1 .jarrones {
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+    left: -48px;
+    top: 151px; }
+    #juego1 .jarrones .imgNiveles {
+      position: relative;
+      height: 605px;
+      width: 239px; }
+      #juego1 .jarrones .imgNiveles img {
+        position: absolute;
+        display: none;
+        width: 189px;
+        left: -17px;
+        top: 120px; }
+      #juego1 .jarrones .imgNiveles .cantaroIntro {
+        display: block; }
+  #juego1 .gameActionWrp {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 620px;
+    height: 640px; }
 
 /*# sourceMappingURL=style.css.map */

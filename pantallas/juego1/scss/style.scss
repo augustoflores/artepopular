@@ -33,6 +33,9 @@ img {
     top: 161px;
 }
 #juego1 {
+    margin: 0 auto;
+    width: 1920px;
+    height: 1080px;
     #my-canvas {
         display: none;
         width: 100%;
@@ -116,14 +119,15 @@ img {
         }
     }
     #chorroFinal{
-        transform: rotate(32deg);
+        transform: rotate(120deg);
         position: absolute;
         outline: none;
         display: none;
         width: 120px;
-        right: 30px;
+        right: -130px;
+        top: 20px;
     }
-    .contenedor {
+    &.contenedor {
         width: 1920px;
         height: 1080px;
     }
@@ -137,26 +141,30 @@ img {
     .gameDesc {
         border-bottom-right-radius: 30px;
         border-bottom-left-radius: 30px;
-        border-bottom: $rojo 2px solid;
-        border-right: $rojo 2px solid;
-        border-left: $rojo 2px solid;
-        padding: 20px 30px 0px;
+        border-bottom: $azul 2px solid;
+        border-right: $azul 2px solid;
+        border-left: $azul 2px solid;
+        padding: 14px 30px 0px;
         position: absolute;
         display: block;
-        height: 128px;
-        width: 440px;
-        left: 30px;
+        width: 260px;
+        height: 102px;
+        left: 50%;
+        margin-left: -130px;
         h2 {
             text-transform: uppercase;
             line-height: 1.2em;
-            color: $amarillo;
-            font-size: 30px;
+            color: $rojo;
+            font-size: 36px;
             margin: 0;
+            text-align: center; 
         }
         h3 {
+            text-transform: uppercase;
+            text-align: center;
             line-height: 1em;
             font-size: 23px;
-            color: #ddd;
+            color: #FFF;
             margin: 0;
         }
     }
@@ -195,18 +203,22 @@ img {
         border-right: solid 2px $azul;
         border-left: solid 2px $azul;
         border-top: solid 2px $azul;
+        background-color: #011c3a;
         align-items: center;
-        position: relative;
+        position: absolute;
         padding-top: 10px;
         margin: 0 auto;
         display: flex;
-        width: 1820px;
+        width: 1824px;
+        height: 277px;
+        left: 48px;
+        bottom: 0;
         .elenaimg {
             flex-basis: 320px; 
         }
         .instTxt {
             flex-basis: 1500px;
-            font-size: 23px;
+            font-size: 28px;
         }
     }
     .jarrones {
