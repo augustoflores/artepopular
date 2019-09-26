@@ -20,6 +20,7 @@ $(function () {
     $(this).removeClass("inactivo");
     $(this).addClass("activo");
     //$("#equipar").show();
+    equipar($(this).attr("id"));
     mySound.play();
   })
   //
@@ -79,6 +80,28 @@ $(function () {
   });  
 
   //
+  function equipar(id){
+    name="#Text"+id;
+    $(name).css("opacity",1);
+    $(name).append("&#10003;");
+    //$(".objeto").removeClass("activo");
+   // $(".objeto").removeClass("inactivo");
+    //$(objetoactual).addClass("equipado");
+    //$(objetoactual).unbind( "click" );
+    //$("#fondo").removeClass("inactivo")
+    pistasencontradas++;
+    if(pistasencontradas==totalpistas){
+      aventarConfetti()
+      animartexto("#texto","¡Felicidades! Acabaste con los Hilos y Tinturas");
+      $("#ventana #imagen").attr("src", "./imgs/mujer3.png");
+      $(".objeto").removeClass("inactivo");
+      $("#fondo").removeClass("inactivo")
+      $(".objeto").addClass("activo");
+    }
+    actualizarpistas();
+  }
+
+
 
   $("#equipar").click(function () {
     $(this).hide()
