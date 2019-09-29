@@ -18,9 +18,8 @@ $(function () {
       mySound.play();
     } catch (e) {}
     if (indexglobo < (arrGlobos.length - 1)) {
- 
-      console.log(indexglobo)
-      if($("body").data("nextscreen")=="fin" & indexglobo==1){
+      personajeborrado =[]
+       if($("body").data("nextscreen")=="fin" & indexglobo==1){
         $(".nombreescena").html("");
         $(".escenanumero").html("Recuerda, estamos hechos de:");
         $(".tituloescena").css("width","600px");
@@ -29,7 +28,21 @@ $(function () {
       $(".globostexto .globotexto").hide(0);
       $(".imagecontainer .image").hide(0);
       borrado = $(arrGlobos[indexglobo]).find(".bordertexto, .bordertextoright").detach();
-      personajeborrado = $(arrGlobos[indexglobo]).find(".personaje").detach();
+      var personajeactual=$(arrGlobos[indexglobo]).find(".personaje");
+      var personajeant=$(arrGlobos[indexglobo-1]).find(".personaje");
+      console.log($(personajeactual).find('img').attr("src"));
+      console.log($(personajeant).find('img').attr("src"));
+      if(
+          $(personajeactual).find('img').attr("src")
+          !=$(personajeant).find('img').attr("src")
+      ){
+        personajeborrado = $(arrGlobos[indexglobo]).find(".personaje").detach();
+      }else{
+        $(arrGlobos[indexglobo]).find(".personaje").removeClass("animated")
+        personajeborrado = $(arrGlobos[indexglobo]).find(".personaje").detach();
+        console.log("iguales");
+      }
+      
       if($(arrGlobos[indexglobo]).data("audio")){
         try{
           sonidoglobo.stop();
@@ -64,11 +77,11 @@ $(function () {
         })
         .pauseFor(0)
         .start();
-
+      let cssclass = $(".imagecontainer").attr("class");
       $(".imagecontainer")
-        .removeClass('fadeInDown ')
-        .height('auto') // the magic
-        .addClass('fadeInDown ')
+        .attr('class','')
+        .height('auto')
+        .attr('class',cssclass)
       $(arrImages[indexglobo]).fadeIn(500);
       return true;
     }

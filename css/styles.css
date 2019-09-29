@@ -2,13 +2,13 @@
 @font-face {
   font-family: 'Nunito';
   src: url('../utils/nunito/Nunito-Black.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: 'Nunito';
   src: url('../utils/nunito/Nunito-BlackItalic.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 900;
   font-style: italic;
 }
 @font-face {
@@ -145,6 +145,9 @@ body {
   color: white;
   margin: 0px;
 }
+b{
+  font-weight: 900;
+}
 #fondonegro{
   position: absolute;
   top:0;
@@ -195,7 +198,7 @@ center{
   height: 277px;
   padding: 20px;
   margin: 0px 48px;
-  border: solid 3px cyan;
+  border: solid 3px #00d7fc;
   border-bottom: none;
   position: relative;
 }
