@@ -358,7 +358,7 @@ function empezarJuego(){
     });
 
     interact('.dragg').draggable({
-      inertia: true,
+      inertia: false,
       onmove: dragMoveListener
     })
     interact('.interaccion').draggable({
@@ -366,7 +366,7 @@ function empezarJuego(){
       onmove: dragMoveListener
     }).resizable({
       // resize from all edges and corners
-      edges: { left: true, right: true, bottom: true, top: true },
+      edges: { left: true, right: true, bottom: false, top: false },
       modifiers: [
         // keep the edges inside the parent
         interact.modifiers.restrictEdges({
@@ -390,6 +390,9 @@ function empezarJuego(){
       // update the element's style
       target.style.width = event.rect.width + 'px'
       target.style.height = event.rect.height + 'px'
+
+      console.log(event);
+      
   
       // translate when resizing from top or left edges
       x += event.deltaRect.left
