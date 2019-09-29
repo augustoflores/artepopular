@@ -1,4 +1,4 @@
-$(function () {
+g$(function () {
   var totalpistas = $(".opcion").length;
   var pistasencontradas = 0;
   $(".opcion").css("opacity", .5)
@@ -18,7 +18,7 @@ $(function () {
     if (activo) return false;
 
     if (index === 0) {
-      animartexto("#texto", "<p>Vamos a hacer una prueba. Haz clic sobre la figura del yunque para descubir su origen.</p><p> Posteriormente toca Equipar para llevarla a la Nueva España. Completa ocho objetos para regresar a casa.</p>");
+      animartexto("#texto", "<p>Vamos a hacer una prueba.<br>Haz clic sobre la figura del <b>yunque</b> para descubrir su origen Posteriormente toca <b>Equipar</b> para llevar los productos a la Nueva España. Completa <b>ocho objetos</b>.</p>");
       $(".globonext, .textnext").hide();
       activo = true;
       index++;
@@ -61,8 +61,11 @@ $(function () {
     if (pistasencontradas == totalpistas) {
       aventarConfetti();
       //$(".globonext, .textnext").show();
-      animartexto("#texto", "¡Felicidades! Acabaste de equipar la Nao");
+      animartexto("#texto", "<p class='bold font-verde'>¡Felicidades lo lograste!</p> <p>Has llevado los artículos y animales sanos y salvos a la Nueva España.<br> Te has ganado el reconocimiento como colega explorador y viajero por todo el mundo.</>");
       $("#ventana #imagen").attr("src", "./imgs/angelito.png");
+      $(".objeto").removeClass("equipado");
+      $(".objeto").each
+
 
       fondoSound.pause()
       var felicidadeSound = new buzz.sound("../../audios/Juegos/Win_SergiodelaCruzHernan.mp3", {
