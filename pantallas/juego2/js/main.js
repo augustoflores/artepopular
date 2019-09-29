@@ -27,7 +27,7 @@ var txtFooter=[
   '<p>Muchas gracias, eres un gran aprendiz. Te ofrezco este reconocimiento por tu creatividad.<br><span class="colorVerde">Alebrije Psicodélico</span></p><p>Esto te convierte en un maestro artesano por estas tierras. Vuelve cuando quieras.</p>',
   '<p>Yo, de igual forma he enseñado el oficio a mi hijo Felipe y a mi nieto Leonardo…<br> Sé que con el tiempo también se han convertido en grandes artistas.</p><p>¡Mucha suerte en tu camino!</p>'
 ];
-
+var angle = 0;
 var AquiVas=0;
 
 var screenPosition = {
@@ -316,14 +316,8 @@ function empezarJuego(){
           n=wObj*2;
           scale=n+'px';
 
-          posWindow=$(imgDropped).offset();
-          posXWin=posWindow.left - (410 + wObj);
-          posYWin= posWindow.top - (440 + wObj);
-          console.log('x: '+posWindow.left+', y: '+posWindow.top);
-          
-
           xik=screenPosition.x - (410 + wObj);
-          yik = screenPosition.y - (440 + wObj); 
+          yik = screenPosition.y - (440); 
           
 
           imgPos=[];
@@ -355,6 +349,10 @@ function empezarJuego(){
           event.relatedTarget.setAttribute('data-x', 0);
           event.relatedTarget.setAttribute('data-y', 0);
         }
+        
+      },
+      ondrop: function(event){
+        console.log(event);
         
       }
     });
@@ -424,19 +422,6 @@ function empezarJuego(){
         event.currentTarget.setAttribute('data-volteado', 0);
       }
 
-    }).gesturable({
-      onmove: function (event) {
-        var arrow = document.getElementById('arrow')
-    
-        angle += event.da
-    
-        arrow.style.webkitTransform =
-        arrow.style.transform =
-          'rotate(' + angle + 'deg)'
-    
-        document.getElementById('angle-info').textContent =
-          angle.toFixed(2) + '\u00b0'
-      }
     });
     // interact('.interaccion').resizable({
     //   // resize from all edges and corners

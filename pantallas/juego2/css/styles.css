@@ -474,19 +474,22 @@ body {
   border-top-left-radius: 25px;
   position: absolute;
   bottom: 0;
-  left: 48px;
-  margin: 0 auto;
+  left: 50%;
+  margin-left: -912px;
   width: 1824px;
   height: 277px;
   display: flex; }
   #juego2 .footer .pedro {
+    text-align: center;
     flex-basis: 270px;
+    padding-top: 30px;
     min-width: 270px; }
   #juego2 .footer .txtFooter {
     flex-basis: 1535px;
-    line-height: 1em;
+    line-height: 1.15em;
     font-size: 28px;
-    color: #fefefe; }
+    color: #fefefe;
+    font-weight: bolder; }
   #juego2 .footer .footerRight {
     flex-basis: 300px; }
 #juego2 .dragg {
