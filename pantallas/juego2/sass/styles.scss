@@ -2,6 +2,7 @@ $verde: #07dd00;
 $amarillo: #ffc33e;
 $rojo: #ff1743;
 $bco: #fefefe;
+@import 'roundslider.min';
 
 * {
     transition-duration: 0s !important;
@@ -20,8 +21,10 @@ body {
         height: 110px;
     }
     .contenedor {
-        width: 1920px;
+        position: relative;
         height: 1080px;
+        margin: 0 auto;
+        width: 1920px;
     }
     #btnDescripcion {
         background-color: rgba(0,0,0,0);

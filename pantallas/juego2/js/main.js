@@ -49,6 +49,20 @@ function inicio(){
   
   animartexto('.txtFooter');
   empezarJuego();
+  $("#roundSlider").roundSlider({
+    sliderType: "min-range",
+    handleShape: "round",
+    radius: 100,
+    value: 360,
+    keyboardAction: false,
+    animation: false,
+    width: 0,
+    step: "10",
+    max: "360",
+    handleSize: "+34",
+    editableTooltip: false,
+    showTooltip: false
+  });
 }
 function animartexto(selector,texto) {
     if(!texto) texto = $(selector).html();
@@ -302,8 +316,14 @@ function empezarJuego(){
           n=wObj*2;
           scale=n+'px';
 
-          xik=screenPosition.x - (160 + wObj);
-          yik = screenPosition.y - (290 + wObj); 
+          posWindow=$(imgDropped).offset();
+          posXWin=posWindow.left - (410 + wObj);
+          posYWin= posWindow.top - (440 + wObj);
+          console.log('x: '+posWindow.left+', y: '+posWindow.top);
+          
+
+          xik=screenPosition.x - (410 + wObj);
+          yik = screenPosition.y - (440 + wObj); 
           
 
           imgPos=[];
@@ -404,6 +424,19 @@ function empezarJuego(){
         event.currentTarget.setAttribute('data-volteado', 0);
       }
 
+    }).gesturable({
+      onmove: function (event) {
+        var arrow = document.getElementById('arrow')
+    
+        angle += event.da
+    
+        arrow.style.webkitTransform =
+        arrow.style.transform =
+          'rotate(' + angle + 'deg)'
+    
+        document.getElementById('angle-info').textContent =
+          angle.toFixed(2) + '\u00b0'
+      }
     });
     // interact('.interaccion').resizable({
     //   // resize from all edges and corners
@@ -504,4 +537,8 @@ function dragMoveListener (event) {
     confettiSettings = {"target":"my-canvas","max":"300","size":"1","animate":true,"props":["circle","square","triangle","line"],"colors":[[165,104,246],[230,61,135],[0,199,228],[253,214,126]],"clock":"25","rotate":true,"width":"1908","height":"925"};
     var confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
+  }
+
+  function mostrarGirar($obj){
+    
   }
