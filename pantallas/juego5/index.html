@@ -58,7 +58,7 @@
     console.log(cards);
 
     for (var item = 0; item < cards.length; item++) {
-      $('#container').append('<div class="wrapper-item circulo '+cards[item].color+' floatLeft" id="item'+item+'"><div class="item floatLeft off active"><img src="./img/'+cards[item].src+'" title="'+cards[item].title+'"/></div></div>');
+      $('#container').append('<div class="wrapper-item circulo '+cards[item].color+' floatLeft" id="item'+item+'"><div class="item floatLeft off active"><img src="./img/'+cards[item].src+'" data-title="'+cards[item].title+'"/></div></div>');
     }
 
     /*for (var i = 0; i < 4; i++) {
@@ -97,7 +97,7 @@
     </div>
     
     <!--Memorama-->
-        <div id="msg-game-over"class=""></div>
+        <div id="msg-game-over"class="hidden"></div>
         <div id="btn-comenzar" class="bordertexto animated fadeIn slow delay-7s">Comenzar</div>
         <div id="container" class="hidden memorama floatLeft"> 
          
@@ -127,10 +127,15 @@
 
             </div>
             <div class="globotexto">
-              <p>Ayuda a José Alfredo a tallar las piezas para descubrir su forma y organizarlas en pares. Talla por turnos pares e intenta encontrar todas las piezas ocultas.
-            </p>
 
-              <p><span class="textRed">Talla dos piedras</span> por turno y encuentra los pares en el menor número de turnos posible.</p>
+
+
+
+
+              <p>Vamos a probar tu memoria.</p>
+
+              <p><span class="font-amarilla">Toca y voltea por turnos pares las fichas</span> e intenta encontrar todas las piezas de madera y piedra tallada ocultas</p><br>
+              <p><span class="font-rosa">Completa el memorama hasta encontrar las 5 piezas ocultas.</span></p>
 
             </div>
             <div class="globotexto">
@@ -145,6 +150,7 @@
 
           </div>
           <img src="./img/adelante.png" class="globonext hidden">
+          <div class="textnext hidden">Siguiente</div>
         </div>
       </div>
     <!--</div>  -->

@@ -47,7 +47,7 @@ function toShow(){//To show items checked
 		}
 	});
 	for(var cont = 0; cont<2; cont++){
-		src[cont] = src[cont].split('title="');
+		src[cont] = src[cont].split('data-title="');
 		var total=(src[cont][1].length)-2;
 		src[cont] = src[cont][1].substr(0,total);
 	}
@@ -79,6 +79,8 @@ function toShow(){//To show items checked
 			canvas1.render();
 			$(".globonext").click();
 			$(".globonext").removeClass("hidden");
+			$(".textnext").removeClass("hidden");
+			
 
 		}
 		
@@ -96,7 +98,10 @@ function toHide(){//To hide items
 		  $(this).removeClass("toCheck").removeClass("on").addClass("off").css("display","none");
 	  }
 	});
-	
+	try {
+      var mySound = new buzz.sound("../../audios/UX_Interaccion/blip.mp3");
+      mySound.play();
+    } catch (e) {}
 	$(".wrapper-item").each(function(){
 		var attrId = $(this).attr("id");
 		attrId = '#'+attrId;
@@ -172,6 +177,8 @@ $(function(){//Main function
 	
 
 	});	
+
+
 });
 
 
