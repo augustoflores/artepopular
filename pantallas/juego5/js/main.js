@@ -96,7 +96,10 @@ function toHide(){//To hide items
 		  $(this).removeClass("toCheck").removeClass("on").addClass("off").css("display","none");
 	  }
 	});
-	
+	try {
+      var mySound = new buzz.sound("../../audios/UX_Interaccion/blip.mp3");
+      mySound.play();
+    } catch (e) {}
 	$(".wrapper-item").each(function(){
 		var attrId = $(this).attr("id");
 		attrId = '#'+attrId;
