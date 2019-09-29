@@ -16,6 +16,12 @@ img {
 .colorVerde {
     color: $verde;
 }
+.colorAzul {
+    color: $azul;
+}
+.colorRojo {
+    color: $rojo;
+}
 .tuboInicio, 
 .manivela, 
 .finTubo {
@@ -128,8 +134,9 @@ img {
         top: 20px;
     }
     &.contenedor {
-        width: 1920px;
+        position: relative;
         height: 1080px;
+        width: 1920px;
     }
     .cabecera {
         position: relative;
@@ -204,21 +211,25 @@ img {
         border-left: solid 2px $azul;
         border-top: solid 2px $azul;
         background-color: #011c3a;
+        margin-left: -912.5px;
         align-items: center;
         position: absolute;
         padding-top: 10px;
-        margin: 0 auto;
         display: flex;
-        width: 1824px;
+        width: 1825px;
         height: 277px;
-        left: 48px;
+        left: 50%;
         bottom: 0;
         .elenaimg {
             flex-basis: 320px; 
         }
         .instTxt {
+            font-weight: bolder;
             flex-basis: 1500px;
             font-size: 28px;
+        }
+        #elenaImagen {
+            margin: 0 auto;
         }
     }
     .jarrones {

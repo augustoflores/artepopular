@@ -2,12 +2,12 @@ var tablero;
 var gradSort=[];
 var texto=[
     '<p>Vamos a poner a prueba tus habilidades.</p><p><span class="colorAmarillo">Toca las piezas para alinear los tubos</span> y hacer que el agua fluya para llenar el  nuestro primer cántaros. Con ello podremos almacenar agua y mantenerla fresca.</p>',
-    '<p>Acabas de llenar tu primer cántaro. Cuando estés listo, pulsa para <span class="colorAmarillo">Siguiente</span> continuar...</p>',
-    '<p>Toca las piezas para alinearlas y hacer que el chorro de agua fluya para llenarel segundo cántaro y comenzar a armar una pila.</p>',
-    '<p><span class="colorVerde">¡Muy bien!</span> Acabas de llenar el segundo cántaro.Solo falta uno más</p>',
+    '<p>Acabas de llenar tu primer cántaro. Cuando estés listo, pulsa para <span class="colorAzul">Siguiente</span> continuar...</p>',
+    '<p>Toca las piezas para alinearlas y hacer que el chorro de agua fluya para llenar el segundo cántaro y comenzar a armar una pila.</p>',
+    '<p><span class="colorVerde">¡Muy bien!</span> Acabas de llenar el segundo cántaro.</p><p>¡Solo falta uno más!</p>',
     '<p>Toca las piezas para conectar los tubos y llenar el tercer cántaro.</p>',
     '<p>Ahora los cántaros de barro están llenos y habrá suficiente agua fresca para todos.<br><span class="colorVerde">¡Muchas gracias!</span></p>',
-    '<p>Muchas gracias por ayudarnos te has ganado la siguiente insignia como recompensa. <span class="colorAmarillo">Jaguar de Barro</span></p><p>Eso te convierte en un colega artesano experto en Barro.</p>',
+    '<p>Muchas gracias por ayudarnos te has ganado la siguiente insignia como recompensa.<br><span class="colorAmarillo">Jaguar de Barro</span></p><p>Eso te convierte en un colega artesano <span class="colorRojo">experto en Barro.</span></p>',
     '<p>Parece que a manchas le caíste muy bien, quizá te ayude en tu aventura para encontrar <b class="colorVerde">Grandes Maestros Artesanos</b> de todo el país y así descubrir sus <b>técnicas y materiales</b>.<br>¡Suerte en tu aventura!</p>'
 ]
 //                 0               1                2               3                4                 5
@@ -308,8 +308,12 @@ var gameData=[
 
 $(document).ready(inicio);
 function inicio(){
-    typingSound = new buzz.sound("../../audios/UX_Interaccion/blip.mp3",{loop: true,volume: 1});
-    aplausos = new buzz.sound("../../audios/Juegos/applause_VFX.mp3", {loop: false, volume: 1});
+    typingSound = new buzz.sound("../../audios/UX_Interaccion/blip.mp3",{loop: true, volume: 7});
+    aplausos = new buzz.sound("../../audios/Juegos/applause_VFX.mp3", {loop: false, volume: 20});
+    aplausosFin = new buzz.sound("../../audios/Juegos/Win_SergiodelaCruzHernan.mp3", {loop: false, volume: 2});
+    gracias = new buzz.sound('../../audios/editados/juego1.8.mp3', {loop: false,volume: 100});
+    vozFinal = new buzz.sound('../../audios/editados/juego1.9.mp3', {loop: false,volume: 100});
+    muyBien = new buzz.sound('audio/juego1-5.mp3', {loop: false,volume: 100});
     tablero = $('.gameActionWrp').html();
     cargarJuego(0);
     animartexto('.instTxt',texto[0]);
@@ -500,6 +504,7 @@ function nivelCompletado() {
         $('#niv1Ok').css('display','block');
         $('#chorroFinal').css({ 'top': '295px', 'display': 'block'});
         $('#btnDescripcion').css('display','block').off('click').on('click', jugar);
+        aplausos.play();
     }else if(nivel===2){
         txt = texto[3];
         imgElena = imgRoute+'bernardina.png';
@@ -507,6 +512,7 @@ function nivelCompletado() {
         $('#niv2Ok').css('display','block');
         $('#chorroFinal').css({ 'top': '140px', 'display': 'block'});
         $('#btnDescripcion').css('display','block').off('click').on('click', jugar);
+        muyBien.play();
     }else if(nivel===3){
         txt = texto[5];
         imgElena = imgRoute+'bernardina.png';
@@ -515,8 +521,8 @@ function nivelCompletado() {
         $('#chorroFinal').css({ 'top': '140px', 'display': 'block'});
         $('#btnDescripcion').css('display','block').off('click');
         $('#btnDescripcion').on('click', finalizar);
+        muyBien.play();
     }
-    aplausos.play();
     $('#elenaImagen').attr('src',imgElena);
     $('.instTxt').empty();
     animartexto('.instTxt', txt);
@@ -547,16 +553,18 @@ function validarCompletado(n){
     return true;
 }
 function finalizar() {
+    aplausosFin.play();
     confeti();
-
     $('.gameDesc h3').empty();
     imgPremio='<img src="img/premio.png" id="imgPremio" class="animated flipInX">';
     $('.gameboardWrpr').empty().append(imgPremio);
     imgElena=imgRoute+'elena.png';
     $('#elenaImagen').attr('src',imgElena);
     $('.instTxt').empty();
+    gracias.play();
     animartexto('.instTxt', texto[6]);
     $('#btnDescripcion').off('click').css('z-index','100').on('click', function(){
+        vozFinal.play();
         $('.instTxt').empty();
         animartexto('.instTxt', texto[7]);
         $(this).off('click');

@@ -11,6 +11,12 @@ img {
 .colorVerde {
   color: #07dd00; }
 
+.colorAzul {
+  color: #00d7fc; }
+
+.colorRojo {
+  color: #ff1743; }
+
 .tuboInicio,
 .manivela,
 .finTubo {
@@ -114,8 +120,9 @@ img {
     right: -130px;
     top: 20px; }
   #juego1.contenedor {
-    width: 1920px;
-    height: 1080px; }
+    position: relative;
+    height: 1080px;
+    width: 1920px; }
   #juego1 .cabecera {
     position: relative;
     display: block;
@@ -178,20 +185,23 @@ img {
     border-left: solid 2px #00d7fc;
     border-top: solid 2px #00d7fc;
     background-color: #011c3a;
+    margin-left: -912.5px;
     align-items: center;
     position: absolute;
     padding-top: 10px;
-    margin: 0 auto;
     display: flex;
-    width: 1824px;
+    width: 1825px;
     height: 277px;
-    left: 48px;
+    left: 50%;
     bottom: 0; }
     #juego1 .gameinst .elenaimg {
       flex-basis: 320px; }
     #juego1 .gameinst .instTxt {
+      font-weight: bolder;
       flex-basis: 1500px;
       font-size: 28px; }
+    #juego1 .gameinst #elenaImagen {
+      margin: 0 auto; }
   #juego1 .jarrones {
     display: inline-block;
     vertical-align: top;
@@ -216,7 +226,5 @@ img {
     margin: 0 auto;
     width: 620px;
     height: 640px; }
-    #btnDescripcion img {
-      float: right;
-  }
+
 /*# sourceMappingURL=style.css.map */
