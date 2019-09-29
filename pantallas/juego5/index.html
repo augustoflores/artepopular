@@ -58,7 +58,7 @@
     console.log(cards);
 
     for (var item = 0; item < cards.length; item++) {
-      $('#container').append('<div class="wrapper-item circulo '+cards[item].color+' floatLeft" id="item'+item+'"><div class="item floatLeft off active"><img src="./img/'+cards[item].src+'" title="'+cards[item].title+'"/></div></div>');
+      $('#container').append('<div class="wrapper-item circulo '+cards[item].color+' floatLeft" id="item'+item+'"><div class="item floatLeft off active"><img src="./img/'+cards[item].src+'" data-title="'+cards[item].title+'"/></div></div>');
     }
 
     /*for (var i = 0; i < 4; i++) {
@@ -150,6 +150,7 @@
 
           </div>
           <img src="./img/adelante.png" class="globonext hidden">
+          <div class="textnext hidden">Siguiente</div>
         </div>
       </div>
     <!--</div>  -->
