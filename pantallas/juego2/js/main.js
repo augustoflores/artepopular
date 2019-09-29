@@ -36,8 +36,6 @@ var screenPosition = {
 };
 var categoriaSelecc='menuCabezas';
 var dentroDropzone = false;
-var anchoAntesBorrar = []; // Guardamos el ancho para animar al borrar
-var typingSound;
 
 $(document).ready(inicio);
 
@@ -184,7 +182,7 @@ function empezarJuego(){
         draggable,         // draggable Interactable
         draggableElement) {// draggable element
         
-        var obj = event.target;
+        
         screenPosition.x = event.x;
         screenPosition.y = event.y;
         // console.log(screenPosition.x+' ,'+screenPosition.y);
@@ -315,14 +313,11 @@ function empezarJuego(){
           wObj=event.relatedTarget.width;
           n=wObj*2;
           scale=n+'px';
-
-          xik=screenPosition.x - (410 + wObj);
-          yik = screenPosition.y - (440); 
+          hObj=event.relatedTarget.height;
           
-
-          imgPos=[];
-          imgPos.push( xik );
-          imgPos.push( yik );
+          xik=screenPosition.x - wObj;
+          yik = screenPosition.y - hObj; 
+          
           
 
           event.relatedTarget.offsetParent.classList.add('empty');
@@ -332,13 +327,16 @@ function empezarJuego(){
           event.relatedTarget.classList.add('canErrase');
           event.relatedTarget.style.width=scale;
           
-          event.relatedTarget.dataset.x=imgPos[0];
-          event.relatedTarget.dataset.y=imgPos[1];
+          event.relatedTarget.dataset.x=xik;
+          event.relatedTarget.dataset.y=yik;
+          console.log(screenPosition.x+', '+screenPosition.y);
+          
           //console.log($(imgDropped).data('volteado'));
           if(!$(imgDropped).data('volteado')){
             event.relatedTarget.dataset.volteado=0;
-            event.relatedTarget.style.transform="translate("+imgPos[0]+"px, "+imgPos[1]+"px)";
-            //event.relatedTarget.style.transform="translate("+screenPosition.x+"px, "+screenPosition.y+"px)";
+            event.relatedTarget.style.transform="none";
+            event.relatedTarget.style.left=xik+'px';
+            event.relatedTarget.style.top=yik+'px';
           }
 
           $('#dropzone').append(imgDropped);
@@ -359,8 +357,14 @@ function empezarJuego(){
 
     interact('.dragg').draggable({
       inertia: false,
-      onmove: dragMoveListener
+      onmove: dragMoveWindowListener
     })
+
+    // INTERACCIÓN PRINCIPAL
+
+    interact('.interaccion')
+
+    /*
     interact('.interaccion').draggable({
       inertia: true,
       onmove: dragMoveListener
@@ -409,7 +413,7 @@ function empezarJuego(){
       target.setAttribute('data-y', y)
       target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
     });
-
+    */
     interact('.interaccion').on('doubletap', function (event) {
       event.preventDefault();
       flip.play();
@@ -426,33 +430,6 @@ function empezarJuego(){
       }
 
     });
-    // interact('.interaccion').resizable({
-    //   // resize from all edges and corners
-    //   edges: { left: true, right: true, bottom: true, top: true },
-  
-  
-    //   inertia: true
-    // })
-    //.on('resizemove', function (event) {
-    //   var target = event.target
-    //   var x = (parseFloat(target.getAttribute('data-x')) || 0)
-    //   var y = (parseFloat(target.getAttribute('data-y')) || 0)
-  
-    //   // update the element's style
-    //   target.style.width = event.rect.width + 'px'
-    //   target.style.height = event.rect.height + 'px'
-  
-    //   // translate when resizing from top or left edges
-    //   x += event.deltaRect.left
-    //   y += event.deltaRect.top
-  
-    //   target.style.webkitTransform = target.style.transform =
-    //       'translate(' + x + 'px,' + y + 'px)'
-  
-    //   target.setAttribute('data-x', x)
-    //   target.setAttribute('data-y', y)
-    //   target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
-    // });
 }
 function abrirMneu(){
     if($(this).hasClass('activo')){ return false; }
@@ -466,11 +443,14 @@ function abrirMneu(){
  
 }
 function dragMoveListener (event) {
-    var target = event.target
-    // keep the dragged position in the data-x/data-y attributes
-    var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
-    var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-    var v = target.getAttribute('data-volteado');
+  
+  var target = event.target
+  // keep the dragged position in the data-x/data-y attributes
+  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+  var v = target.getAttribute('data-volteado');
+
+ 
 
     if(target.getAttribute('data-volteado') && v>0){
       target.style.transform = 'translate(' + x + 'px, ' + y + 'px)  scaleX(-1)';
@@ -484,8 +464,33 @@ function dragMoveListener (event) {
     target.setAttribute('data-y', y)
     
     
+}
+
+function dragMoveWindowListener (event) {
+  
+  var target = event.target
+  move=$(target).offset();
+  //console.log('x= '+move.left+', y= '+move.top);
+  
+  // keep the dragged position in the data-x/data-y attributes
+  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+  var v = target.getAttribute('data-volteado');
+  
+  if(target.getAttribute('data-volteado') && v>0){
+    target.style.transform = 'translate(' + x + 'px, ' + y + 'px)  scaleX(-1)';
+  }else{
+    target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
   }
-  function finaliza() {
+
+
+  // update the posiion attributes
+  target.setAttribute('data-x', x)
+  target.setAttribute('data-y', y)
+  
+    
+}
+function finaliza() {
       $('.txtFooter').empty();
       AquiVas++;
       // Cambiamos la imágen por el alebrije
