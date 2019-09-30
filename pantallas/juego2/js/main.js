@@ -334,7 +334,7 @@ function empezarJuego(){
           //console.log($(imgDropped).data('volteado'));
           if(!$(imgDropped).data('volteado')){
             event.relatedTarget.dataset.volteado=0;
-            event.relatedTarget.style.transform="none";
+            event.relatedTarget.style.transform='translate(0px, 0px)';
             event.relatedTarget.style.left=xik+'px';
             event.relatedTarget.style.top=yik+'px';
           }
@@ -361,8 +361,37 @@ function empezarJuego(){
     })
 
     // INTERACCIÓN PRINCIPAL
+    var angleScale = {
+      angle: 0,
+      scale: 1
+    }
+    interact('#dropzone').gesturable({
+      onstart: function (event) {
+        angleScale.angle -= event.angle
+  
+        
+      },
+      onmove: function (event) {
+        // document.body.appendChild(new Text(event.scale))
+        var currentAngle = event.angle + angleScale.angle
+        var currentScale = event.scale * angleScale.scale
+  
+        scaleElement.style.webkitTransform =
+        scaleElement.style.transform =
+          'rotate(' + currentAngle + 'deg)' + 'scale(' + currentScale + ')'
+  
+        // uses the dragMoveListener from the draggable demo above
+        dragMoveListener(event)
+      },
+      onend: function (event) {
+        console.log(event);
+        
+        angleScale.angle = angleScale.angle + event.angle
+        angleScale.scale = angleScale.scale * event.scale
 
-    interact('.interaccion')
+      }
+    })
+    .draggable({ onmove: dragMoveListener });
 
     /*
     interact('.interaccion').draggable({
