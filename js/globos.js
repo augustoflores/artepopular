@@ -31,8 +31,12 @@ $(function () {
       $(".globostexto .globotexto").hide(0);
       //$(".imagecontainer .image").hide(0);
       if(imageactual!=imageanterior){
+        
         $(arrImages[indexglobo]).siblings().hide(0);
         imagenigual=true;
+      }else{
+        //$(arrImages[indexglobo-1]).siblings().hide(0);
+        imagenigual=false;
       }
       borrado = $(arrGlobos[indexglobo]).find(".bordertexto, .bordertextoright").detach();
       var personajeactual=$(arrGlobos[indexglobo]).find(".personaje");
@@ -82,21 +86,15 @@ $(function () {
         .pauseFor(0)
         .start();
       let cssclass = $(".imagecontainer").attr("class");
-
-
-      //console.log(imageactual,"/",imageanterior);
-      console.log("igual",imagenigual);
-      
       if(imagenigual){
         $(".imagecontainer")
         .attr('class','')
         .height('auto')
         .attr('class',cssclass);
-
-      }else{
         $(arrImages[indexglobo]).fadeIn(500);
-
-        }
+      }else{
+        
+      }
       return true;
     }
     if ($("body").data("nextscreen") != "fin") {

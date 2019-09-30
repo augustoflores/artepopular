@@ -1,4 +1,4 @@
-g$(function () {
+$(function () {
   var totalpistas = $(".opcion").length;
   var pistasencontradas = 0;
   $(".opcion").css("opacity", .5)
@@ -64,7 +64,11 @@ g$(function () {
       animartexto("#texto", "<p class='bold font-verde'>¡Felicidades lo lograste!</p> <p>Has llevado los artículos y animales sanos y salvos a la Nueva España.<br> Te has ganado el reconocimiento como colega explorador y viajero por todo el mundo.</>");
       $("#ventana #imagen").attr("src", "./imgs/angelito.png");
       $(".objeto").removeClass("equipado");
-      $(".objeto").each
+      $(".objeto").each(function() {
+        glow=$( this ).attr("src").replace("color","glow");
+        $( this ).attr("src",glow);
+
+      });
 
 
       fondoSound.pause()
