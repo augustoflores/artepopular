@@ -1,4 +1,11 @@
 $(function () {
+  var Sound = new buzz.sound(
+    "../../audios/editados/materiales4.1_ambiental.mp3", {
+      loop: true,
+      volume: 100
+    }
+  );
+  Sound.play()
   var totalpistas=$(".opcion").length;
   var pistasencontradas=0;
   $(".opcion").css("opacity",.5)
