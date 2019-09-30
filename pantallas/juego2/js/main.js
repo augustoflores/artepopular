@@ -403,11 +403,8 @@ function empezarJuego() {
           dragMoveListener(event)
         },
         onend: function (event) {
-          console.log(event);
-
           angleScale.angle = angleScale.angle + event.angle
           angleScale.scale = angleScale.scale * event.scale
-
         }
       })
       .draggable({
