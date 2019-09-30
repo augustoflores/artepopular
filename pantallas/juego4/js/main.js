@@ -4,6 +4,7 @@ $(function () {
   var turnoUsuario = false
   var iniciado = false;
   var sonando = false;
+  var numeronivel=3
   nivelactual = 0;
   var textoactual = 0;
   nextactivo=true
@@ -25,9 +26,17 @@ $(function () {
   function crearsecuencia(nivel) {
     arrNivel = [];
     notas = niveles[nivel];
-    for (let index = 0; index < 4; index++) {
+    //for (let index = 0; index < 30; index++) {
+
+    for (let index = 0; index < numeronivel; index++) {
       cual = Math.floor(Math.random() * 3);
-      console.log(cual);
+      //console.log("anterior",arrNivel[arrNivel.length-1]);
+      //console.log("nuevo",cual);
+      
+      while(cual==arrNivel[arrNivel.length-1]){
+        console.log("salio igual");
+        cual = Math.floor(Math.random() * 3);
+      }
       arrNivel.push(notas[cual]);
     }
     return arrNivel;
@@ -73,7 +82,7 @@ $(function () {
     turnoMaquina();
   })
   $("#repetir").click(function (event) {
-    animartexto(".globotexto", "Observa y pon atención");
+    animartexto(".globotexto", "Inténtalo de nuevo.");
     turnoUsuario = false;
     arrSecuenciaUsuario = [];
     maquinaToca()
@@ -102,6 +111,7 @@ $(function () {
             $("#pieza" + element).css("opacity", 1)
           }
           nivelactual++;
+          numeronivel+=2;
           textoactual++;
           if(textoactual==3){
             $("#imagen").attr("src","./img/telar.png")
@@ -123,7 +133,7 @@ $(function () {
           //$("#retro").html("Muy bien, sigue jugando");
         }
       } else {
-        animartexto(".globotexto", "Intentalo de nuevo, pulsa repetir");
+        animartexto(".globotexto", "Intentalo de nuevo, pulsa repetir.");
         $("#repetir").show();
         //$("#inicar").show();
         //inicia();
