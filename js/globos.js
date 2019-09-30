@@ -12,6 +12,7 @@ $(function () {
   );
   $(".globonext, .cajanext").click(function (event) {
     event.stopPropagation();
+    imagenigual=false
     try {
       mySound.stop();
       var mySound = new buzz.sound("../../audios/UX_Interaccion/botones/Button_Click2_JFairbanks.mp3");
@@ -25,13 +26,17 @@ $(function () {
         $(".tituloescena").css("width","600px");
       }
       indexglobo++;
+      imageactual=$(arrImages[indexglobo]).find("img").attr("src");
+      imageanterior=$(arrImages[indexglobo-1]).find("img").attr("src");
       $(".globostexto .globotexto").hide(0);
-      $(".imagecontainer .image").hide(0);
+      //$(".imagecontainer .image").hide(0);
+      if(imageactual!=imageanterior){
+        $(arrImages[indexglobo]).siblings().hide(0);
+        imagenigual=true;
+      }
       borrado = $(arrGlobos[indexglobo]).find(".bordertexto, .bordertextoright").detach();
       var personajeactual=$(arrGlobos[indexglobo]).find(".personaje");
       var personajeant=$(arrGlobos[indexglobo-1]).find(".personaje");
-      console.log($(personajeactual).find('img').attr("src"));
-      console.log($(personajeant).find('img').attr("src"));
       if(
           $(personajeactual).find('img').attr("src")
           !=$(personajeant).find('img').attr("src")
@@ -40,7 +45,6 @@ $(function () {
       }else{
         $(arrGlobos[indexglobo]).find(".personaje").removeClass("animated")
         personajeborrado = $(arrGlobos[indexglobo]).find(".personaje").detach();
-        console.log("iguales");
       }
       
       if($(arrGlobos[indexglobo]).data("audio")){
@@ -78,11 +82,21 @@ $(function () {
         .pauseFor(0)
         .start();
       let cssclass = $(".imagecontainer").attr("class");
-      $(".imagecontainer")
+
+
+      //console.log(imageactual,"/",imageanterior);
+      console.log("igual",imagenigual);
+      
+      if(imagenigual){
+        $(".imagecontainer")
         .attr('class','')
         .height('auto')
-        .attr('class',cssclass)
-      $(arrImages[indexglobo]).fadeIn(500);
+        .attr('class',cssclass);
+
+      }else{
+        $(arrImages[indexglobo]).fadeIn(500);
+
+        }
       return true;
     }
     if ($("body").data("nextscreen") != "fin") {
