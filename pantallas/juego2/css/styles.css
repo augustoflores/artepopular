@@ -205,7 +205,6 @@ body {
     min-width: 270px; }
   #juego2 .footer .txtFooter {
     flex-basis: 1535px;
-    line-height: 1.15em;
     font-size: 28px;
     color: #fefefe;
     font-weight: bolder; }

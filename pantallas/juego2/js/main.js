@@ -22,7 +22,7 @@ var alebrije = {
 };
 var txtFooter = [
   'Inicio',
-  '<p>Muy bien, ahora crea un personaje con los elementos disponibles. Puedes <span class="colorAmarillo">mover, voltear (doble click) y escalar</span> las piezas del alebrije como desees.<br>También se puedes eliminarlas arrastrándolas al ícono de la basura.</p>',
+  '<p>Muy bien, ahora crea un personaje con los elementos disponibles. Puedes <span class="colorAmarillo">mover, girar, voltear (doble click) y escalar</span> las piezas del alebrije como desees.<br>También se puedes eliminarlas arrastrándolas al ícono de la basura.</p>',
   '<p>Imagina un animal fantástico, elige las partes que lo componen y arrástalas hacia abajo para ir formando tu alebrije. Puedes añadir tantos elementos quieras o bien, eliminarlos.</p><p>Pulsa <span class="colorVerde">Finalizar</span> cuando te guste el resultado de lo que ves.</p>',
   '<p>Muchas gracias, eres un gran aprendiz. Te ofrezco este reconocimiento por tu creatividad.<br><span class="colorVerde">Alebrije Psicodélico</span></p><p>Esto te convierte en un maestro artesano por estas tierras. Vuelve cuando quieras.</p>',
   '<p>Yo, de igual forma he enseñado el oficio a mi hijo Felipe y a mi nieto Leonardo…<br> Sé que con el tiempo también se han convertido en grandes artistas.</p><p>¡Mucha suerte en tu camino!</p>'
@@ -59,20 +59,6 @@ function inicio() {
 
   animartexto('.txtFooter');
   empezarJuego();
-  $("#roundSlider").roundSlider({
-    sliderType: "min-range",
-    handleShape: "round",
-    radius: 100,
-    value: 360,
-    keyboardAction: false,
-    animation: false,
-    width: 0,
-    step: "10",
-    max: "360",
-    handleSize: "+34",
-    editableTooltip: false,
-    showTooltip: false
-  });
 }
 
 function animartexto(selector, texto) {
@@ -345,7 +331,6 @@ function empezarJuego() {
 
         event.relatedTarget.dataset.x = xik;
         event.relatedTarget.dataset.y = yik;
-        console.log(screenPosition.x + ', ' + screenPosition.y);
 
         //console.log($(imgDropped).data('volteado'));
         if (!$(imgDropped).data('volteado')) {
@@ -397,19 +382,19 @@ function empezarJuego() {
 
           scaleElement.style.webkitTransform =
             scaleElement.style.transform =
-            'rotate(' + currentAngle + 'deg)' + 'scale(' + currentScale + ')'
+            'rotate(' + currentAngle + 'deg)' + 'scale(' + currentScale + ')';
 
           // uses the dragMoveListener from the draggable demo above
-          dragMoveListener(event)
+          dragMoveListener(event);
         },
         onend: function (event) {
           angleScale.angle = angleScale.angle + event.angle
           angleScale.scale = angleScale.scale * event.scale
         }
-      })
-      .draggable({
-        onmove: dragMoveListener
-      });
+    })
+    .draggable({
+      onmove: dragMoveListener
+    });
   }
 
   /*

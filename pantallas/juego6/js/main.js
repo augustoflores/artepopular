@@ -8,34 +8,49 @@ $(function () {
   actualizarpistas();
   $(".objeto").click(function () {
     objetoactual=this;
-    var mySound = new buzz.sound("./sounds/click.m4a");
+    try {
+          var mySound = new buzz.sound("../../audios/UX_Interaccion/BubblePop_BenjaminVogelzan.mp3");
+          mySound.play();
+      } catch (e) {}
     let text = $(this).attr("alt")
     animartexto("#texto",text);
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
     //inactivar($(".objeto"));
     $(".objeto").removeClass("activo");
     $(".objeto").addClass("inactivo");
-    $("#fondo").addClass("inactivo");
+    //$("#fondo").addClass("inactivo");
 
     $(this).removeClass("inactivo");
     $(this).addClass("activo");
     //$("#equipar").show();
+    //$(".objeto").removeClass("activo");
+   // $(".objeto").removeClass("inactivo");
+    $(objetoactual).addClass("equipado");
     equipar($(this).attr("id"));
-    mySound.play();
+    $(this).unbind( "click" );
+    //mySound.play();
   })
   //
   $("#btn-hilos").click(function () {
       //alert('clic');
-    if($("#fondo").hasClass("inactivo")){
+    /*if($("#fondo").hasClass("inactivo")){
       $("#fondo").removeClass("inactivo");
-    }  
+    } */
+    $('#fondo').css("background-image", 'url("./img/tinturas_hilosBN.png")');
+
+     
     $(this).css("color", "#ffc33e");
-    var mySound = new buzz.sound("./sounds/click.m4a");
+    try {
+          var mySound = new buzz.sound("../../audios/UX_Interaccion/plim_Gatopreto .mp3");
+          mySound.play();
+      } catch (e) {}
+    //var mySound = new buzz.sound("./sounds/BubblePop_BenjaminVogelzan.m4a");
     let text = $(this).attr("alt")
     animartexto("#texto",text);
 
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
     //inactivar($(".objeto"));
+    $(".objeto").hide();
     $("#Imagen01").fadeIn(2000);
     $("#Imagen02").fadeIn(2000);
     $("#Imagen03").fadeIn(2000);
@@ -43,27 +58,32 @@ $(function () {
     //$(".objeto").fadeIn("slow");
     
     //$(".objeto").removeClass("activo");
-    $(".objeto").addClass("inactivo")
+    //$(".objeto").addClass("inactivo")
     //$("#fondo").addClass("inactivo")
     //$(this).removeClass("inactivo");
     //$(this).addClass("activo");
     //$("#equipar").show();
-    mySound.play();
+    //mySound.play();
   });
 
   $("#btn-tinturas").click(function () {
       //alert('clic');
-    if($("#fondo").hasClass("inactivo")){
+   /* if($("#fondo").hasClass("inactivo")){
       $("#fondo").removeClass("inactivo");
-    }
+    }*/
+    $('#fondo').css("background-image", 'url("./img/tinturas_hilosBN.png")');
 
     $(this).css("color", "#ffc33e");
-    var mySound = new buzz.sound("./sounds/click.m4a");
+     try {
+          var mySound = new buzz.sound("../../audios/UX_Interaccion/plim_Gatopreto .mp3");
+          mySound.play();
+      } catch (e) {}
     let text = $(this).attr("alt")
     animartexto("#texto",text);
 
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
     //inactivar($(".objeto"));
+    $(".objeto").hide();
     $("#Imagen05").fadeIn(2000);
     $("#Imagen06").fadeIn(2000);
     $("#Imagen07").fadeIn(2000);
@@ -71,7 +91,7 @@ $(function () {
     //$(".objeto").fadeIn("slow");
     
     //$(".objeto").removeClass("activo");
-    $(".objeto").addClass("inactivo")
+    //$(".objeto").addClass("inactivo")
     //$("#fondo").addClass("inactivo")
     //$(this).removeClass("inactivo");
     //$(this).addClass("activo");
@@ -91,13 +111,23 @@ $(function () {
     //$("#fondo").removeClass("inactivo")
     pistasencontradas++;
     if(pistasencontradas==totalpistas){
-      aventarConfetti()
+      $(".objeto").hide();
+      aventarConfetti();
+      try {
+          var mySound = new buzz.sound("../../audios/juegos/Win_SergiodelaCruzHernan.mp3");
+          mySound.play();
+      } catch (e) {}
+      $('#fondo').css("background-image", 'url("./img/tinturas_hilos.png")');
       animartexto("#texto","¡Felicidades! Acabaste con los Hilos y Tinturas");
       $("#ventana #imagen").attr("src", "./imgs/mujer3.png");
       $(".objeto").removeClass("inactivo");
-      $("#fondo").removeClass("inactivo")
+      $(".objeto").fadeIn(2000);
+      //$("#fondo").removeClass("inactivo")
       $(".objeto").addClass("activo");
       $(".globonext").removeClass("hidden");
+      $(".textnext").removeClass("hidden");
+
+
     }
     actualizarpistas();
   }
@@ -116,7 +146,7 @@ $(function () {
     $("#fondo").removeClass("inactivo")
     pistasencontradas++;
     if(pistasencontradas==totalpistas){
-      aventarConfetti()
+      aventarConfetti();
       animartexto("#texto","¡Felicidades! Acabaste con los Hilos y Tinturas");
       $("#ventana #imagen").attr("src", "./imgs/mujer3.png");
     }
