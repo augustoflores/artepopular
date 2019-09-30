@@ -378,7 +378,7 @@ function empezarJuego() {
   })
 
   function makegesturable(obj) {
-    console.log(obj);
+    // console.log(obj);
     
     // INTERACCIÓN PRINCIPAL
     var angleScale = {
