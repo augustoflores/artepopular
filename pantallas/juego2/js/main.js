@@ -59,20 +59,6 @@ function inicio() {
 
   animartexto('.txtFooter');
   empezarJuego();
-  $("#roundSlider").roundSlider({
-    sliderType: "min-range",
-    handleShape: "round",
-    radius: 100,
-    value: 360,
-    keyboardAction: false,
-    animation: false,
-    width: 0,
-    step: "10",
-    max: "360",
-    handleSize: "+34",
-    editableTooltip: false,
-    showTooltip: false
-  });
 }
 
 function animartexto(selector, texto) {
