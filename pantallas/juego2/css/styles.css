@@ -220,15 +220,23 @@ body {
   background-color: rgba(255, 255, 255, 0.04);
   border: 2px rgba(255, 255, 255, 0.1) dashed; }
 #juego2 .in15 {
+  position: absolute;
   z-index: 15; }
 #juego2 .in10 {
+  position: absolute;
   z-index: 10; }
 #juego2 .in8 {
+  position: absolute;
   z-index: 8; }
 #juego2 .in5 {
+  position: absolute;
   z-index: 5; }
 #juego2 .in3 {
+  position: absolute;
   z-index: 3; }
+#juego2 .in2 {
+  position: absolute;
+  z-index: 2; }
 #juego2 .rectnguloTop {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;

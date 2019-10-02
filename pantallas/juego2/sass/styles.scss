@@ -333,19 +333,28 @@ body {
         }
     }
     .in15 {
+        position: absolute;
         z-index: 15;
     }
     .in10 {
+        position: absolute;
         z-index: 10;
     }
     .in8 {
+        position: absolute;
         z-index: 8;
     }
     .in5 {
+        position: absolute;
         z-index: 5;
     }
     .in3 {
+        position: absolute;
         z-index: 3;
+    }
+    .in2 {
+        position: absolute;
+        z-index: 2;
     }
     .rectnguloTop {
         border-bottom-left-radius: 25px;
