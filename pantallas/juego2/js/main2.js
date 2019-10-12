@@ -426,11 +426,7 @@ function finaliza() {
             $('.pedro').css('display', 'none');
             $('#personajeFooter').attr('src', 'img/pedro.png');
             $('.pedro').fadeIn();
-            $('#btnDescripcion span').empty().html('Siguiente').click(
-                function() {
-                    window.location.href = '../../pantallas/escena2-conclusion/index.html';
-                }
-            );
+            $('#btnDescripcion span').empty().html('Siguiente');
             // Desaparecer Menú!
             $('.navGame').addClass('animated fadeOutUp');
             $('#borrarDrop').addClass('animated fadeOutUp');
@@ -439,8 +435,13 @@ function finaliza() {
                 $(this).removeClass('canErrase dragg interaccion').css('position', 'absolute');
             });
             break;
-        case 4:
-            animartexto('.txtFooter', txtFooter[AquiVas]);
+            case 4:
+                animartexto('.txtFooter', txtFooter[AquiVas]);
+                $('#btnDescripcion').click(
+                    function() {
+                        window.location.href = '../../pantallas/escena2-conclusion/index.html';
+                    }
+                );
             break
         default:
             break
