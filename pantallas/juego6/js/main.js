@@ -13,6 +13,7 @@ $(function () {
   $(".objeto").hide();
   var objetoactual = null;
   actualizarpistas();
+  
   $(".objeto").click(function () {
     objetoactual=this;
     try {
@@ -31,7 +32,45 @@ $(function () {
     $(this).addClass("activo");
     //$("#equipar").show();
     //$(".objeto").removeClass("activo");
-   // $(".objeto").removeClass("inactivo");
+    //$(".objeto").removeClass("inactivo");
+    let id_objeto=$(this).attr("id");
+    	switch( id_objeto ){
+
+	   case "Imagen01":
+	   				  	
+                      $('#btn-hilos').css({"color":"#ff1743","font-size":"46px"});
+                      $('#btn-tinturas').css({"color": "#ffc33e","font-size":"40px"});
+                      break;
+
+	   case "Imagen02":
+
+                      $('#btn-hilos').css({"color":"#ff1743","font-size":"46px"});
+                      $('#btn-tinturas').css({"color": "#ffc33e","font-size":"40px"});
+                      break;
+
+	   case "Imagen03":
+
+                      $('#btn-hilos').css({"color":"#ff1743","font-size":"46px"});
+                      $('#btn-tinturas').css({"color": "#ffc33e","font-size":"40px"});
+                      break;
+       case "Imagen05":
+
+                      $('#btn-tinturas').css({"color":"#ff1743","font-size":"46px"});
+                      $('#btn-hilos').css({"color": "#ffc33e","font-size":"40px"});
+                      break;
+
+	   case "Imagen06":
+
+                      $('#btn-tinturas').css({"color":"#ff1743","font-size":"46px"});
+                      $('#btn-hilos').css({"color": "#ffc33e","font-size":"40px"});
+                      break;
+
+	   case "Imagen07":
+
+                      $('#btn-tinturas').css({"color":"#ff1743","font-size":"46px"});
+                      $('#btn-hilos').css({"color": "#ffc33e","font-size":"40px"});
+                      break;               
+    }
     $(objetoactual).addClass("equipado");
     equipar($(this).attr("id"));
     $(this).unbind( "click" );
@@ -57,7 +96,7 @@ $(function () {
 
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
     //inactivar($(".objeto"));
-    $(".objeto").hide();
+    //$(".objeto").hide();
     $("#Imagen01").fadeIn(2000);
     $("#Imagen02").fadeIn(2000);
     $("#Imagen03").fadeIn(2000);
@@ -90,7 +129,7 @@ $(function () {
 
     $("#ventana #imagen").attr("src", "./imgs/" + $(this).data("img"));
     //inactivar($(".objeto"));
-    $(".objeto").hide();
+    //$(".objeto").hide();
     $("#Imagen05").fadeIn(2000);
     $("#Imagen06").fadeIn(2000);
     $("#Imagen07").fadeIn(2000);
@@ -124,6 +163,7 @@ $(function () {
           var mySound = new buzz.sound("../../audios/juegos/Win_SergiodelaCruzHernan.mp3");
           mySound.play();
       } catch (e) {}
+      $('.categoria').css({"color":"#ff1743","font-size":"46px"});
       $('#fondo').css("background-image", 'url("./img/tinturas_hilos.png")');
       animartexto("#texto","¡Felicidades! Acabaste con los Hilos y Tinturas");
       $("#ventana #imagen").attr("src", "./imgs/mujer3.png");
