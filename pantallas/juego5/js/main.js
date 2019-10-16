@@ -71,6 +71,7 @@ function toShow(){//To show items checked
 		}
 
 		if(score>=5){
+			$('#reloj').attr('data','OFF');
 			try {
 			    var mySound = new buzz.sound("../../audios/juegos/Win_SergiodelaCruzHernan.mp3");
 			    mySound.play();
@@ -112,6 +113,45 @@ function toHide(){//To hide items
 		}
 	});	
 }
+
+function reloj() {
+      var s = 0;
+      var m = 0;
+    var seg = document.getElementById("segundos");
+    var min = document.getElementById("minutos");
+        
+	//window.setInterval(function(){
+
+	var intervalo = setInterval(function() {	
+	      if($('#reloj').attr("data")=="OFF"){
+      			clearInterval(intervalo);
+    	  }
+	      
+		      if(s==60){
+		        m++;
+		        if (m.toString().length == 1){
+		          minuto = "0" + m;
+		        }else{
+		          minuto = m;
+		        }
+		      
+
+		        min.innerHTML = minuto;
+		        s=0;
+		      }
+		      
+		      if (s.toString().length == 1){
+		          segundo = "0" + s;
+		        }else{
+		          segundo = s;
+		        }
+		      seg.innerHTML = segundo;
+		      s++;
+	      
+	},1000);
+	
+}	
+
 $(function(){//Main function
 
 	$('.wrapper-item').click(function(event) {//Handle click event				
@@ -164,9 +204,11 @@ $(function(){//Main function
 
 	$(this).hide();
 	$('#viewcards').hide();
+	$('#reloj').fadeIn();
 	$('#instructions').fadeIn();
 	$('#msg-game-over').html("Score: 0");
 	$('#container').fadeIn("slow");
+
 	try {
       var mySound = new buzz.sound("../../audios/UX_Interaccion/Snooker_Publicdomain.mp3");
       mySound.play();
@@ -174,7 +216,7 @@ $(function(){//Main function
 
 	$(".globonext").click();
 
-	
+	reloj('ON');
 
 	});	
 
