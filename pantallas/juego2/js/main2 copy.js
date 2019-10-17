@@ -105,50 +105,50 @@ function empezarJuego() {
             indice = event.relatedTarget.getAttribute('data-indice');
 
 
-            // switch (cat) {
-            //     case 'pata':
-            //         idpata = '#' + alebrije.patas[indice].id;
-            //         origen = alebrije.patas[indice].origen;
-            //         $(origen).removeClass('empty').html(alebrije.patas[indice].image);
-            //         $(idpata).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.patas[indice].ancho);
-            //         break;
-            //     case 'cola':
-            //         idcola = '#' + alebrije.colas[indice].id;
-            //         origen = alebrije.colas[indice].origen;
+            switch (cat) {
+                case 'pata':
+                    idpata = '#' + alebrije.patas[indice].id;
+                    origen = alebrije.patas[indice].origen;
+                    $(origen).removeClass('empty').html(alebrije.patas[indice].image);
+                    $(idpata).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.patas[indice].ancho);
+                    break;
+                case 'cola':
+                    idcola = '#' + alebrije.colas[indice].id;
+                    origen = alebrije.colas[indice].origen;
 
-            //         $(origen).removeClass('empty').html(alebrije.colas[indice].image);
-            //         $(idcola).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.colas[indice].ancho);
-            //         break;
-            //     case 'oreja':
-            //         idOreja = '#' + alebrije.orejas[indice].id;
-            //         origen = alebrije.orejas[indice].origen;
+                    $(origen).removeClass('empty').html(alebrije.colas[indice].image);
+                    $(idcola).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.colas[indice].ancho);
+                    break;
+                case 'oreja':
+                    idOreja = '#' + alebrije.orejas[indice].id;
+                    origen = alebrije.orejas[indice].origen;
 
-            //         $(origen).removeClass('empty').html(alebrije.orejas[indice].image);
-            //         $(idOreja).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.orejas[indice].ancho);
-            //         break;
-            //     case 'cuerpo':
-            //         idcuerpo = '#' + alebrije.cuerpo[indice].id;
-            //         origen = alebrije.cuerpo[indice].origen;
+                    $(origen).removeClass('empty').html(alebrije.orejas[indice].image);
+                    $(idOreja).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.orejas[indice].ancho);
+                    break;
+                case 'cuerpo':
+                    idcuerpo = '#' + alebrije.cuerpo[indice].id;
+                    origen = alebrije.cuerpo[indice].origen;
 
-            //         $(origen).removeClass('empty').html(alebrije.cuerpo[indice].image);
-            //         $(idcuerpo).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.cuerpo[indice].ancho);
-            //         break;
-            //     case 'stick':
-            //         idStick = '#' + alebrije.stickers[indice].id;
-            //         origen = alebrije.stickers[indice].origen;
+                    $(origen).removeClass('empty').html(alebrije.cuerpo[indice].image);
+                    $(idcuerpo).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.cuerpo[indice].ancho);
+                    break;
+                case 'stick':
+                    idStick = '#' + alebrije.stickers[indice].id;
+                    origen = alebrije.stickers[indice].origen;
 
-            //         $(origen).removeClass('empty').html(alebrije.stickers[indice].image);
-            //         $(idStick).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.stickers[indice].ancho);
-            //         break;
-            //     case 'cabeza':
-            //         // idCabeza = '#' + alebrije.cabeza[indice].id;
-            //         // origen = alebrije.cabeza[indice].origen;
+                    $(origen).removeClass('empty').html(alebrije.stickers[indice].image);
+                    $(idStick).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.stickers[indice].ancho);
+                    break;
+                case 'cabeza':
+                    idCabeza = '#' + alebrije.cabeza[indice].id;
+                    origen = alebrije.cabeza[indice].origen;
 
-            //         // $(origen).removeClass('empty').html(alebrije.cabeza[indice].image);
-            //         // $(idCabeza).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.cabeza[indice].ancho);
-            //         break;
-            // }
-            $('.senializacion').remove();
+                    $(origen).removeClass('empty').html(alebrije.cabeza[indice].image);
+                    $(idCabeza).removeAttr('style').data('x', 0).data('y', 0).css('width', alebrije.cabeza[indice].ancho);
+                    break;
+            }
+
             $(event.relatedTarget).remove();
 
         }
@@ -167,7 +167,7 @@ function empezarJuego() {
 
             screenPosition.x = event.x;
             screenPosition.y = event.y;
-            
+
 
             dentroDropzone = dropped;
 
@@ -202,8 +202,7 @@ function empezarJuego() {
 
                     }
                 }
-                
-                
+
                 if (categoriaSelecc === 'menuCabezas') {
                     // Insertamos datos en el objeto
 
@@ -214,13 +213,6 @@ function empezarJuego() {
                     alebrije.cabeza[i].origen = event.relatedTarget.offsetParent;
                     alebrije.cabeza[i].ancho = width;
                     indiceClass = 'in8';
-                    // Parche para poder insertar dos vece sel mismo objeto
-                    // idCabeza = '#' + event.relatedTarget.id;
-                    // origen = event.relatedTarget.offsetParent;
-
-                    // $(origen).removeClass('empty').html(event.relatedTarget.outerHTML);
-                    // $(idCabeza).removeAttr('style').data('x', 0).data('y', 0).css('width', width);
-
                 } else if (categoriaSelecc === 'menuCuerpo') {
                     // Insertamos datos en el objeto
 
@@ -274,7 +266,6 @@ function empezarJuego() {
 
 
                 imgDropped = event.relatedTarget;
-                
                 wObj = event.relatedTarget.width;
                 n = wObj * 2;
                 scale = n + 'px';
@@ -303,14 +294,7 @@ function empezarJuego() {
                 var idFake = Date.now();
 
                 $('#dropzone').append('<div class="gestos canErrase ' + indiceClass + '" id="' + idFake + '" data-x="' + xik + '" data-y="' + yik + '" data-indice="' + i + '"></div>');
-                $('#dropzone #' + idFake).css('transform', 'translate(' + xik + 'px, ' + yik + 'px)');
-                $(imgDropped).removeAttr('id').clone().appendTo('#dropzone #' + idFake);
-
-                // Parche para poder insertar dos vece sel mismo objeto
-                origen = event.relatedTarget.offsetParent;
-
-                $(origen).removeClass('empty').find('img').removeClass('interaccion').addClass('dragg dropIN').css('width', width);
-                
+                $('#dropzone #' + idFake).css('transform', 'translate(' + xik + 'px, ' + yik + 'px)').append(imgDropped);
 
             } else {
                 event.relatedTarget.style.transform = 'translate(0px, 0px)';
